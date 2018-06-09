@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <title>Build A Card</title>
+        
+        <meta name="author" content="Thomas Terp">
+        <meta name="description" content="Hearthstone build-a-card simulator.">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/build_a_card.css">
+        
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/fill_ribbon.js"></script>
+        <script src="js/sunwell.js"></script>
+        <script src="js/build_a_card.js"></script>
+    </head>
+    
+    <body>
+        <div id="img-cache" style="display: none;">
+            <img src="images/loading.png">
+        </div>
+        <canvas id="art-renderer" width="256" height="382" style="display: none;"></canvas>
+        <div class="container">
+            <br />
+            <h1 id="page-title" class="jumbotron-heading">Loading...</h1>
+            <span id="page-description"></span>
+            <br />
+            <br />
+            <div id="page-states">
+                <div id="page-state-loading" class="page-state">
+                    
+                </div>
+                <div id="page-state-main" class="page-state" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-4 bottom-margin">
+                            <div id="draxir" class="card border border-secondary">
+                                <img class="card-img-top clickable" src="images/draxir.png" alt="Draxir, the Necromancer">
+                                <div class="card-body">
+                                    <h5 class="card-title">Draxir, the Necromancer</h5>
+                                    <p class="card-text">
+                                        Custom Spirits is a combination of a trigger card and a Deathrattle card.
+                                        <br />
+                                        <br />
+                                        The first choice is a trigger card (any card with "Whenever", "After", "Start of turn" or "End of turn").
+                                        <br />
+                                        <br />
+                                        The second choice is a Deathrattle card to replace the trigger effect.
+                                        <br />
+                                        <br />
+                                        Cost, Attack, Health and Keywords will be combined. Both choices cost 5 or less.
+                                    </p>
+                                    <button class="btn btn-primary btn-block" type="button">Craft</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 bottom-margin">
+                            <div id="kazakus" class="card border border-secondary">
+                                <img class="card-img-top clickable" src="images/kazakus.png" alt="Kazakus">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kazakus</h5>
+                                    <p class="card-text">
+                                        Legendary minion from the game.
+                                    </p>
+                                    <button class="btn btn-primary btn-block" type="button">Craft</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 bottom-margin">
+                            <div id="build-a-beast" class="card border border-secondary">
+                                <img class="card-img-top clickable" src="images/build_a_beast.png" alt="Build-A-Beast">
+                                <div class="card-body">
+                                    <h5 class="card-title">Build-A-Beast</h5>
+                                    <p class="card-text">
+                                        Hero power from the game.
+                                    </p>
+                                    <button class="btn btn-primary btn-block" type="button">Craft</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page-state-choose" class="page-state" style="display: none;">
+                    <div class="row">
+                        <div id="card-choice-1" class="col-md-4 card-choice clickable text-center">
+                            
+                        </div>
+                        <div id="card-choice-2" class="col-md-4 card-choice clickable text-center">
+                            
+                        </div>
+                        <div id="card-choice-3" class="col-md-4 card-choice clickable text-center">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="page-state-result" class="page-state" style="display: none;">
+                    <div class="row">
+                        <div id="card-result-info" class="col-md-4 text-center">
+                            
+                        </div>
+                        <div id="card-result" class="col-md-4 text-center">
+                            
+                        </div>
+                        <div class="col-md-4">
+                            <button id="build-a-card-another" class="btn btn-primary btn-block" type="button">Craft another</button>
+                            <button id="build-a-card-download" class="btn btn-primary btn-block" type="button">Download</button>
+                            <button id="build-a-card-back" class="btn btn-primary btn-block" type="button">Back</button>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

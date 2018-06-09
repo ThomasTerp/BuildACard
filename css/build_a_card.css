@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "OPTIBelweMedium";
+    src: url("../fonts/OPTIBelweMedium.otf");
+}
+
+.bottom-margin {
+    margin-bottom: 20px;
+}
+
+#imageCache {
+    display: none;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+#hs-card-result-info {
+    text-align: center;
+}
+
