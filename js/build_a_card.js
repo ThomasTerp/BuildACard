@@ -881,7 +881,7 @@ class BuildACardApp
     getArtDataForCardID(cardID, cardType)
     {
         let artData = {
-            texture: "images/art/" + cardID + ".png",
+            texture: "images/art/" + cardID + ".jpg",
             x: 0,
             y: 0,
             width: 256,
@@ -892,7 +892,7 @@ class BuildACardApp
         {
             case "MINION":
                 artData = {
-                    texture: "images/art/" + cardID + ".png",
+                    texture: "images/art/" + cardID + ".jpg",
                     x: -62,
                     y: -86,
                     width: 380,
@@ -903,7 +903,7 @@ class BuildACardApp
                 
             case "SPELL":
                 artData = {
-                    texture: "images/art/" + cardID + ".png",
+                    texture: "images/art/" + cardID + ".jpg",
                     x: -70,
                     y: -112,
                     width: 400,
