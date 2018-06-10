@@ -294,7 +294,7 @@ class BuildACardApp
         this.setupCardChoice(this.createCardFromJSONData(this.getRandomElementAndRemove(pool1)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool1)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool1)), (card1) =>
         {
             
-            this.setPageInfo("Build-A-Beast", "Choose a beast only keywords or no text:");
+            this.setPageInfo("Build-A-Beast", "Choose a beast with only keywords or no text:");
             this.setupCardChoice(this.createCardFromJSONData(this.getRandomElementAndRemove(pool2)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool2)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool2)), (card2) =>
             {
                 this.setPageState("page-state-result");
