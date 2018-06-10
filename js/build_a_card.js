@@ -566,12 +566,12 @@ class BuildACardApp
     {
         window.scrollTo(0, 0);
         
-        this.setHash("draxir");
+        this.setHash("nazar");
         
         //Minions with a trigger ("Whenever ...", "After ...", "At the start of your turn ..." and "At the end of your turn ...")
-        if(typeof this.pools.draxir1 === "undefined")
+        if(typeof this.pools.nazar1 === "undefined")
         {
-            this.pools.draxir1 = this.pools.allCollectibleMinions.filter((cardData) =>
+            this.pools.nazar1 = this.pools.allCollectibleMinions.filter((cardData) =>
             {
                 if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "PRIEST")
                 {
@@ -603,7 +603,7 @@ class BuildACardApp
         }
         
         //Minions with deathrattle
-        if(typeof this.pools.draxir2 === "undefined")
+        if(typeof this.pools.nazar2 === "undefined")
         {
             const blacklist = {
                 ["FP1_014"]: true,
@@ -613,7 +613,7 @@ class BuildACardApp
                 ["ICC_025"]: true
             }
             
-            this.pools.draxir2 = this.pools.allCollectibleMinions.filter((cardData) =>
+            this.pools.nazar2 = this.pools.allCollectibleMinions.filter((cardData) =>
             {
                 if(blacklist[cardData.id])
                 {
@@ -644,17 +644,17 @@ class BuildACardApp
             });
         }
         
-        const pool1 = this.pools.draxir1.slice();
-        const pool2 = this.pools.draxir2.slice();
+        const pool1 = this.pools.nazar1.slice();
+        const pool2 = this.pools.nazar2.slice();
         
-        this.setPageInfo("Draxir", "Choose a trigger card:");
+        this.setPageInfo("Nazar, the Necromancer", "Choose a trigger card:");
         this.setupCardChoice(this.createCardFromJSONData(this.getRandomElementAndRemove(pool1)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool1)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool1)), (card1) =>
         {
-            this.setPageInfo("Draxir", "Choose a deathrattle card to replace the trigger effect:");
+            this.setPageInfo("Nazar, the Necromancer", "Choose a deathrattle card to replace the trigger effect:");
             this.setupCardChoice(this.createCardFromJSONData(this.getRandomElementAndRemove(pool2)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool2)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool2)), (card2) =>
             {
                 this.setPageState("page-state-result");
-                this.setPageInfo("Draxir", "Result:");
+                this.setPageInfo("Nazar, the Necromancer", "Result:");
                 
                 let mechanics = this.getUniqueArray(card1.mechanics.concat(card2.mechanics));
                 let displayedMechanics = []
@@ -940,7 +940,7 @@ class BuildACardApp
     
     setupMainPage()
     {
-        $("#draxir img, #draxir button").on("click", () =>
+        $("#nazar img, #nazar button").on("click", () =>
         {
             this.gotoCraftASpiritPage();
         });
@@ -964,7 +964,7 @@ class BuildACardApp
                     
                     break;
                 
-                case "#draxir":
+                case "#nazar":
                     this.gotoCraftASpiritPage();
                 
                     break;
