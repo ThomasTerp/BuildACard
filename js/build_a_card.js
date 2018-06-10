@@ -24,51 +24,54 @@ class Card
     
     createHTML(onLoad)
     {
-        this.html = $(`<canvas class="hs-card" width="256" height="382"></canvas>`);
+        this.html = $(`
+            <div class="hs-card">
+                <img src="images/loading.png" />
+                <canvas class="hs-card" width="256" height="382"></canvas>
+            </div>
+        `);
+        this.canvasHTML = this.html.find("canvas");
         
-        this.buildACardApp.getImageCached("images/loading.png", (loadingImgHTML) =>
+        this.buildACardApp.getImageCached(this.artData.texture, (artImgHTML) =>
         {
-            const canvas = this.html[0];
-            const context = this.html[0].getContext("2d");
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            context.drawImage(loadingImgHTML[0], 0, 0, canvas.width, canvas.height);
+            const canvas = this.canvasHTML[0];
+            const context = canvas.getContext("2d");
+            const artCanvas = this.buildACardApp.cache.artRendererHTML[0];
+            const artContext = artCanvas.getContext("2d");
             
-            this.buildACardApp.getImageCached(this.artData.texture, (artImgHTML) =>
-            {
-                const artCanvas = $("#art-renderer")[0];
-                const artContext = artCanvas.getContext("2d");
-                artContext.clearRect(0, 0, artCanvas.width, artCanvas.height);
-                artContext.drawImage(artImgHTML[0], this.artData.x, this.artData.y, this.artData.width, this.artData.height);
-                
-                this.buildACardApp.sunwell.createCard(
+            artContext.clearRect(0, 0, artCanvas.width, artCanvas.height);
+            artContext.drawImage(artImgHTML[0], this.artData.x, this.artData.y, this.artData.width, this.artData.height);
+            
+            this.buildACardApp.sunwell.createCard(
+                {
+                    "id": this.id,
+                    "name": this.name,
+                    "text": this.description,
+                    "attack": this.attack,
+                    "cardClass": this.cardClass,
+                    "collectible": this.isCollectible,
+                    "cost": this.cost,
+                    "elite": this.isElite,
+                    "health": this.health,
+                    "mechanics": this.mechanics,
+                    "rarity": this.rarity,
+                    "set": this.set,
+                    "type": this.type,
+                    "texture": artCanvas.toDataURL()
+                },
+                canvas.width,
+                false,
+                canvas,
+                () =>
+                {
+                    this.html.find("img").css("display", "none");
+                    
+                    if(typeof onLoad !== "undefined")
                     {
-                        "id": this.id,
-                        "name": this.name,
-                        "text": this.description,
-                        "attack": this.attack,
-                        "cardClass": this.cardClass,
-                        "collectible": this.isCollectible,
-                        "cost": this.cost,
-                        "elite": this.isElite,
-                        "health": this.health,
-                        "mechanics": this.mechanics,
-                        "rarity": this.rarity,
-                        "set": this.set,
-                        "type": this.type,
-                        "texture": artCanvas.toDataURL()
-                    },
-                    canvas.width,
-                    false,
-                    canvas,
-                    () =>
-                    {
-                        if(typeof onLoad !== "undefined")
-                        {
-                            onLoad(this.html);
-                        }
+                        onLoad(this.html);
                     }
-                );
-            });
+                }
+            );
         });
         
         return this.html;
@@ -132,6 +135,7 @@ class BuildACardApp
         this.cache.buildACardAnotherHTML = $("#build-a-card-another");
         this.cache.buildACardDownloadHTML = $("#build-a-card-download");
         this.cache.buildACardBacktHTML = $("#build-a-card-back");
+        this.cache.artRendererHTML = $("#art-renderer")
     }
     
     getRandomElementAndRemove(list)
@@ -371,6 +375,8 @@ class BuildACardApp
                     this.setHash("");
                     this.gotoMainPage();
                 });
+                
+                zombeast.html[0].scrollIntoView();
             });
         });
     }
@@ -557,6 +563,8 @@ class BuildACardApp
                         this.setHash("");
                         this.gotoMainPage();
                     });
+                    
+                    potion.html[0].scrollIntoView();
                 });
             });
         });
@@ -752,6 +760,8 @@ class BuildACardApp
                     this.setHash("");
                     this.gotoMainPage();
                 });
+                
+                spirit.html[0].scrollIntoView();
             });
         });
     }
@@ -1003,17 +1013,22 @@ class BuildACardApp
 
 $(window).on("load", () =>
 {
-    const sunwell = new Sunwell({
-        assetFolder: "images/sunwell/",
-        titleFont: "OPTIBelweMedium",
-        bodyFontRegular: "franklin_gothic_fsMdCn",
-        bodyFontItalic: "franklin_gothic_fsMdCnIt",
-        bodyFontBold: "franklin_gothic_fsDemiCn",
-        bodyFontBoldItalic: "franklin_gothic_fsDemiCn",
-        bodyFontSize: 32,
-        bodyLineHeight: 40,
-        bodyFontOffset: {x: 0, y: 26}
-    });
+    const fontOPTIBelweMedium = new FontFaceObserver("OPTIBelweMedium");
     
-    new BuildACardApp(sunwell);
+    fontOPTIBelweMedium.load().then(() =>
+    {
+        const sunwell = new Sunwell({
+            assetFolder: "images/sunwell/",
+            titleFont: "OPTIBelweMedium",
+            bodyFontRegular: "franklin_gothic_fsMdCn",
+            bodyFontItalic: "franklin_gothic_fsMdCnIt",
+            bodyFontBold: "franklin_gothic_fsDemiCn",
+            bodyFontBoldItalic: "franklin_gothic_fsDemiCn",
+            bodyFontSize: 32,
+            bodyLineHeight: 40,
+            bodyFontOffset: {x: 0, y: 26}
+        });
+        
+        new BuildACardApp(sunwell);
+    });
 });

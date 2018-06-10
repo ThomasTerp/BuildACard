@@ -19,3 +19,7 @@
     text-align: center;
 }
 
+.hs-card > img {
+    position: absolute;
+    top: 0px;
+}
