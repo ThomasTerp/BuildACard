@@ -366,7 +366,7 @@ class BuildACardApp
                 this.cache.buildACardDownloadHTML.off("click");
                 this.cache.buildACardDownloadHTML.on("click", () =>
                 {
-                    this.downloadCanvas(zombeast.html[0], "Zombeast-" + card1.id + "-" + card2.id + ".png");
+                    this.downloadCanvas(zombeast.canvasHTML[0], "Zombeast-" + card1.id + "-" + card2.id + ".png");
                 });
                 
                 this.cache.buildACardBacktHTML.off("click");
@@ -554,7 +554,7 @@ class BuildACardApp
                     this.cache.buildACardDownloadHTML.off("click");
                     this.cache.buildACardDownloadHTML.on("click", () =>
                     {
-                        this.downloadCanvas(potion.html[0], "Kazakus_Potion-" + card1.id + "-" + card2.id + "-" + card3.id + ".png");
+                        this.downloadCanvas(potion.canvasHTML[0], "Kazakus_Potion-" + card1.id + "-" + card2.id + "-" + card3.id + ".png");
                     });
                     
                     this.cache.buildACardBacktHTML.off("click");
@@ -752,7 +752,7 @@ class BuildACardApp
                 this.cache.buildACardDownloadHTML.off("click");
                 this.cache.buildACardDownloadHTML.on("click", () =>
                 {
-                    this.downloadCanvas(spirit.html[0], "Spirit-" + card1.id + "-" + card2.id + ".png");
+                    this.downloadCanvas(spirit.canvasHTML[0], "Spirit-" + card1.id + "-" + card2.id + ".png");
                 });
                 
                 this.cache.buildACardBacktHTML.off("click");
