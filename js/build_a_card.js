@@ -581,7 +581,7 @@ class BuildACardApp
         {
             this.pools.nazar1 = this.pools.allCollectibleMinions.filter((cardData) =>
             {
-                if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "PRIEST")
+                if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "WARLOCK")
                 {
                     return false;
                 }
@@ -618,7 +618,8 @@ class BuildACardApp
                 ["FP1_015"]: true,
                 ["GIL_614"]: true,
                 ["LOOT_161"]: true,
-                ["ICC_025"]: true
+                ["ICC_025"]: true,
+                ["AT_019"]: true
             }
             
             this.pools.nazar2 = this.pools.allCollectibleMinions.filter((cardData) =>
@@ -628,7 +629,7 @@ class BuildACardApp
                     return false;
                 }
                 
-                if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "PRIEST")
+                if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "WARLOCK")
                 {
                     return false;
                 }
