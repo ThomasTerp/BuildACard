@@ -621,7 +621,8 @@ class BuildACardApp
                 ["ICC_025"]: true,
                 ["AT_019"]: true,
                 ["ICC_019"]: true,
-                ["ICC_067"]: true
+                ["ICC_067"]: true,
+                ["CFM_637"]: true
             }
             
             this.pools.necromancer2 = this.pools.allCollectibleMinions.filter((cardData) =>
