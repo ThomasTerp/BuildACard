@@ -479,7 +479,7 @@ class BuildACardApp
             });
         }
         
-        this.setPageInfo("Kazakus", "Choose a cost:");
+        this.setPageInfo("Kazakus Potion", "Choose a cost:");
         this.setupCardChoice(this.createCardFromJSONData(this.pools.kazakusCost[0]), this.createCardFromJSONData(this.pools.kazakusCost[1]), this.createCardFromJSONData(this.pools.kazakusCost[2]), (card1) =>
         {
             const potionCost = card1.cost;
@@ -500,17 +500,17 @@ class BuildACardApp
             
             const choicePool1 = effectPool.slice();
             
-            this.setPageInfo("Kazakus", "Choose the first effect:");
+            this.setPageInfo("Kazakus Potion", "Choose the first effect:");
             this.setupCardChoice(this.createCardFromJSONData(this.getRandomElementAndRemove(choicePool1)), this.createCardFromJSONData(this.getRandomElementAndRemove(choicePool1)), this.createCardFromJSONData(this.getRandomElementAndRemove(choicePool1)), (card2) =>
             {
                 let choicePool2 = effectPool.slice();
                 choicePool2 = choicePool2.filter((cardData) => cardData.id !== card2.id);
                 
-                this.setPageInfo("Kazakus", "Choose the second effect:");
+                this.setPageInfo("Kazakus Potion", "Choose the second effect:");
                 this.setupCardChoice(this.createCardFromJSONData(this.getRandomElementAndRemove(choicePool2)), this.createCardFromJSONData(this.getRandomElementAndRemove(choicePool2)), this.createCardFromJSONData(this.getRandomElementAndRemove(choicePool2)), (card3) =>
                 {
                     this.setPageState("page-state-result");
-                    this.setPageInfo("Kazakus", "Result:");
+                    this.setPageInfo("Kazakus Potion", "Result:");
                     
                     let id;
                     
@@ -619,7 +619,9 @@ class BuildACardApp
                 ["GIL_614"]: true,
                 ["LOOT_161"]: true,
                 ["ICC_025"]: true,
-                ["AT_019"]: true
+                ["AT_019"]: true,
+                ["ICC_019"]: true,
+                ["ICC_067"]: true
             }
             
             this.pools.necromancer2 = this.pools.allCollectibleMinions.filter((cardData) =>
@@ -656,14 +658,14 @@ class BuildACardApp
         const pool1 = this.pools.necromancer1.slice();
         const pool2 = this.pools.necromancer2.slice();
         
-        this.setPageInfo("Necromancer", "Choose a trigger card:");
+        this.setPageInfo("Craft a Spirit", "Choose a trigger card:");
         this.setupCardChoice(this.createCardFromJSONData(this.getRandomElementAndRemove(pool1)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool1)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool1)), (card1) =>
         {
-            this.setPageInfo("Necromancer", "Choose a deathrattle card to replace the trigger effect:");
+            this.setPageInfo("Craft a Spirit", "Choose a deathrattle card to replace the trigger effect:");
             this.setupCardChoice(this.createCardFromJSONData(this.getRandomElementAndRemove(pool2)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool2)), this.createCardFromJSONData(this.getRandomElementAndRemove(pool2)), (card2) =>
             {
                 this.setPageState("page-state-result");
-                this.setPageInfo("Necromancer", "Result:");
+                this.setPageInfo("Craft a Spirit", "Result:");
                 
                 let mechanics = this.getUniqueArray(card1.mechanics.concat(card2.mechanics));
                 let displayedMechanics = []
