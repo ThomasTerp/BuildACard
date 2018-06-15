@@ -576,11 +576,28 @@ class BuildACardApp
         
         this.setHash("necromancer");
         
+        const blacklist = {
+            ["FP1_014"]: true,
+            ["FP1_015"]: true,
+            ["GIL_614"]: true,
+            ["LOOT_161"]: true,
+            ["ICC_025"]: true,
+            ["AT_019"]: true,
+            ["ICC_019"]: true,
+            ["ICC_067"]: true,
+            ["CFM_637"]: true
+        }
+        
         //Minions with a trigger ("Whenever ...", "After ...", "At the start of your turn ..." and "At the end of your turn ...")
         if(typeof this.pools.necromancer1 === "undefined")
         {
             this.pools.necromancer1 = this.pools.allCollectibleMinions.filter((cardData) =>
             {
+                if(blacklist[cardData.id])
+                {
+                    return false;
+                }
+                
                 if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "WARLOCK")
                 {
                     return false;
@@ -613,18 +630,6 @@ class BuildACardApp
         //Minions with deathrattle
         if(typeof this.pools.necromancer2 === "undefined")
         {
-            const blacklist = {
-                ["FP1_014"]: true,
-                ["FP1_015"]: true,
-                ["GIL_614"]: true,
-                ["LOOT_161"]: true,
-                ["ICC_025"]: true,
-                ["AT_019"]: true,
-                ["ICC_019"]: true,
-                ["ICC_067"]: true,
-                ["CFM_637"]: true
-            }
-            
             this.pools.necromancer2 = this.pools.allCollectibleMinions.filter((cardData) =>
             {
                 if(blacklist[cardData.id])
