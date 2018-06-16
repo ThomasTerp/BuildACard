@@ -347,7 +347,7 @@ class BuildACardApp
                     health: card1.health + card2.health,
                     mechanics: mechanics,
                     rarity: card1.rarity,
-                    set: "ICECROWN",
+                    set: card1.set,
                     race: "BEAST",
                     type: "MINION"
                 }, card1.artData);
