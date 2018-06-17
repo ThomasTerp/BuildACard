@@ -56,6 +56,7 @@ class Card
                     "mechanics": this.mechanics,
                     "rarity": this.rarity,
                     "set": this.set,
+                    "race": this.race,
                     "type": this.type,
                     "texture": artCanvas.toDataURL()
                 },
