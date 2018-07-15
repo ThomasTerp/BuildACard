@@ -3,6 +3,18 @@
     src: url("../fonts/OPTIBelweMedium.otf");
 }
 
+body {
+    background-color: white;
+}
+
+hr {
+    border-color: #6c757d;
+}
+
+.card-img-top {
+    padding: 4px 4px 0px 4px;
+}
+
 .bottom-margin {
     margin-bottom: 20px;
 }
