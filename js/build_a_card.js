@@ -123,6 +123,40 @@ class CardBuilder
         this.title = "";
         this.description = "";
         this.downloadPrefix = "";
+        this.processors = [];
+    }
+    
+    createHTML()
+    {
+        this.html = $(`
+            <div class="col-md-3 bottom-margin">
+                <div class="card border border-secondary">
+                    <img class="card-img-top clickable" src="` + this.imageSrc + `" alt="Kazakus">
+                    <div class="card-body">
+                        <h5 class="card-title">` + this.title + `</h5>
+                        <p class="card-text">
+                            ` + this.description + `
+                        </p>
+                        <button class="btn btn-primary btn-block" type="button">Craft</button>
+                    </div>
+                </div>
+            </div>
+        `);
+        
+        this.html.on("click", ".card-img-top, .btn-primary", (event) =>
+        {
+            this.start();
+        });
+        
+        $(window).on("hashchange", (event) =>
+        {
+            if(location.hash === "#" + this.hash)
+            {
+                this.start();
+            }
+        });
+        
+        return this.html;
     }
     
     start()
@@ -132,6 +166,11 @@ class CardBuilder
         this.buildACardApp.setHash(this.hash);
         
         this.loadPools();
+        
+        this.processPools(this.processors, (cards) =>
+        {
+            this.showResultCard(cards);
+        });
     }
     
     addPool(key, cards)
@@ -149,6 +188,11 @@ class CardBuilder
         
     }
     
+    processPools(processors, onProcessed)
+    {
+        
+    }
+    
     createResultCard(cards)
     {
         return null;
@@ -156,6 +200,9 @@ class CardBuilder
     
     showResultCard(cards)
     {
+        this.buildACardApp.setPageState("page-state-result");
+        this.buildACardApp.setPageInfo(this.title, "Result:");
+        
         const resultCard = this.createResultCard(cards);
         
         let resultInfo = "<h2>";
@@ -186,6 +233,15 @@ class CardBuilder
             this.start();
         });
         
+        this.buildACardApp.cache.buildACardRandomizeHTML.off("click");
+        this.buildACardApp.cache.buildACardRandomizeHTML.on("click", (event) =>
+        {
+            this.getRandomCards((cards) =>
+            {
+                this.showResultCard(cards);
+            });
+        });
+        
         this.buildACardApp.cache.buildACardDownloadHTML.off("click");
         this.buildACardApp.cache.buildACardDownloadHTML.on("click", (event) =>
         {
@@ -201,6 +257,23 @@ class CardBuilder
         
         resultCard.html[0].scrollIntoView();
     }
+    
+    getRandomCards(onProcessed)
+    {
+        const randomProcessors = [];
+        
+        const randomProcessor = (pool, onProcessed) =>
+        {
+            onProcessed(this.buildACardApp.createCardFromCardData(pool[Math.floor(Math.random() * pool.length)]));
+        };
+        
+        for(let processorIndex = 0; processorIndex < this.processors.length; processorIndex++)
+        {
+            randomProcessors[processorIndex] = randomProcessor;
+        }
+        
+        this.processPools(randomProcessors, onProcessed);
+    }
 }
 
 class BuildAMechCardBuilder extends CardBuilder
@@ -214,25 +287,40 @@ class BuildAMechCardBuilder extends CardBuilder
         this.description = `Custom Mechs are crafted using the same rules as Zombeasts, except with Mechs instead of Beasts.<br />They also have a third choice, which is special Spare Parts to modify them.<br />Boom Bots are also included in the first choice, it's Boom Labs after all.`;
         this.imageSrc = "images/factory.png";
         this.downloadPrefix = "Mech";
-    }
-    
-    start()
-    {
-        super.start();
-        
-        this.buildACardApp.setPageInfo(this.title, "Choose a Mech with text:");
-        this.buildACardApp.setupRandomCardChoice(this.getPool("text"), true, (textCard) =>
-        {
-            this.buildACardApp.setPageInfo(this.title, "Choose a Mech with only keywords or no text:");
-            this.buildACardApp.setupRandomCardChoice(this.getPool("keywords"), true, (keywordsCard) =>
+        this.processors = [
+            (textPool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo(this.title, "Choose a Mech with text:");
+                this.buildACardApp.setupRandomCardChoice(textPool, true, onProcessed);
+            },
+            (keywordsPool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo(this.title, "Choose a Mech with only keywords or no text:");
+                this.buildACardApp.setupRandomCardChoice(keywordsPool, true, onProcessed);
+            },
+            (sparePartPool, onProcessed) =>
             {
                 this.buildACardApp.setPageInfo(this.title, "Choose a Spare Part:");
-                this.buildACardApp.setupRandomCardChoice(this.getPool("sparePart"), true, (sparePartCard) =>
+                this.buildACardApp.setupRandomCardChoice(sparePartPool, true, onProcessed);
+            }
+        ];
+    }
+    
+    processPools(processors, onProcessed)
+    {
+        super.processPools(processors, onProcessed);
+        
+        const textProcessor = processors[0];
+        const keywordsProcessor = processors[1];
+        const sparePartProcessor = processors[2];
+        
+        textProcessor(this.getPool("text"), (textCard) =>
+        {
+            keywordsProcessor(this.getPool("keywords"), (keywordsCard) =>
+            {
+                sparePartProcessor(this.getPool("sparePart"), (sparePartCard) =>
                 {
-                    this.buildACardApp.setPageState("page-state-result");
-                    this.buildACardApp.setPageInfo(this.title, "Result:");
-                    
-                    this.showResultCard([
+                    onProcessed([
                         textCard,
                         keywordsCard,
                         sparePartCard
@@ -680,22 +768,32 @@ class SpiritCardBuilder extends CardBuilder
         `;
         this.imageSrc = "images/necromancer.png";
         this.downloadPrefix = "Spirit";
+        this.processors = [
+            (triggerPool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo("Craft a Spirit", "Choose a trigger card:");
+                this.buildACardApp.setupRandomCardChoice(triggerPool, true, onProcessed);
+            },
+            (deathrattlePool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo("Craft a Spirit", "Choose a deathrattle card to replace the trigger effect:");
+                this.buildACardApp.setupRandomCardChoice(deathrattlePool, true, onProcessed);
+            }
+        ];
     }
     
-    start()
+    processPools(processors, onProcessed)
     {
-        super.start();
+        super.processPools(processors, onProcessed);
         
-        this.buildACardApp.setPageInfo("Craft a Spirit", "Choose a trigger card:");
-        this.buildACardApp.setupRandomCardChoice(this.getPool("trigger"), true, (triggerCard) =>
+        const triggerProcessor = processors[0];
+        const deathrattleProcessor = processors[1];
+        
+        triggerProcessor(this.getPool("trigger"), (triggerCard) =>
         {
-            this.buildACardApp.setPageInfo("Craft a Spirit", "Choose a deathrattle card to replace the trigger effect:");
-            this.buildACardApp.setupRandomCardChoice(this.getPool("deathrattle"), true, (deathrattleCard) =>
+            deathrattleProcessor(this.getPool("deathrattle"), (deathrattleCard) =>
             {
-                this.buildACardApp.setPageState("page-state-result");
-                this.buildACardApp.setPageInfo("Craft a Spirit", "Result:");
-                
-                this.showResultCard([
+                onProcessed([
                     triggerCard,
                     deathrattleCard
                 ]);
@@ -885,23 +983,32 @@ class BuildABeastCardBuilder extends CardBuilder
         this.description = `Hero card from the game.`;
         this.imageSrc = "images/deathstalker_rexxar.png";
         this.downloadPrefix = "Zombeast";
+        this.processors = [
+            (textPool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo("Deathstalker Rexxar", "Choose a Beast with text:");
+                this.buildACardApp.setupRandomCardChoice(textPool, true, onProcessed);
+            },
+            (keywordsPool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo("Deathstalker Rexxar", "Choose a Beast with only keywords or no text:");
+                this.buildACardApp.setupRandomCardChoice(keywordsPool, true, onProcessed);
+            }
+        ];
     }
     
-    start()
+    processPools(processors, onProcessed)
     {
-        super.start();
+        super.processPools(processors, onProcessed);
         
-        this.buildACardApp.setPageInfo("Deathstalker Rexxar", "Choose a Beast with text:");
-        this.buildACardApp.setupRandomCardChoice(this.getPool("text"), true, (textCard) =>
+        const textProcessor = processors[0];
+        const keywordsProcessor = processors[1];
+        
+        textProcessor(this.getPool("text"), (textCard) =>
         {
-            
-            this.buildACardApp.setPageInfo("Deathstalker Rexxar", "Choose a Beast with only keywords or no text:");
-            this.buildACardApp.setupRandomCardChoice(this.getPool("keywords"), true, (keywordsCard) =>
+            keywordsProcessor(this.getPool("keywords"), (keywordsCard) =>
             {
-                this.buildACardApp.setPageState("page-state-result");
-                this.buildACardApp.setPageInfo("Deathstalker Rexxar", "Result:");
-                
-                this.showResultCard([
+                onProcessed([
                     textCard,
                     keywordsCard
                 ]);
@@ -1082,45 +1189,58 @@ class KazakusPotionCardBuilder extends CardBuilder
         this.description = `Legendary minion from the game.`;
         this.imageSrc = "images/kazakus.png";
         this.downloadPrefix = "Kazakus_Potion";
+        this.processors = [
+            (costPool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo("Kazakus Potion", "Choose a cost:");
+                this.buildACardApp.setupCardChoice(costPool[0], costPool[1], costPool[2], onProcessed);
+            },
+            (effect1Pool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo("Kazakus Potion", "Choose the first effect:");
+                this.buildACardApp.setupRandomCardChoice(effect1Pool, true, onProcessed);
+            },
+            (effect2Pool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo("Kazakus Potion", "Choose the second effect:");
+                this.buildACardApp.setupRandomCardChoice(effect2Pool, true, onProcessed);
+            }
+        ];
     }
     
-    start()
+    processPools(processors, onProcessed)
     {
-        super.start();
+        super.processPools(processors, onProcessed);
         
-        const costPool = this.getPool("cost");
+        const costProcessor = processors[0];
+        const effect1Processor = processors[1];
+        const effect2Processor = processors[2];
         
-        this.buildACardApp.setPageInfo("Kazakus Potion", "Choose a cost:");
-        this.buildACardApp.setupCardChoice(costPool[0], costPool[1], costPool[2], (costCard) =>
+        costProcessor(this.getPool("cost"), (costCard) =>
         {
             let effect1Pool;
             
-            if(costCard.cost === 1)
+            if(costCard.id === "CFM_621t11")
             {
-                effect1Pool = this.getPool("1mana").slice();
+                effect1Pool = this.getPool("1mana");
             }
-            else if(costCard.cost === 5)
+            else if(costCard.id === "CFM_621t12")
             {
-                effect1Pool = this.getPool("5mana").slice();
+                effect1Pool = this.getPool("5mana");
             }
-            else
+            else if(costCard.id === "CFM_621t13")
             {
-                effect1Pool = this.getPool("10mana").slice();
+                effect1Pool = this.getPool("10mana");
             }
             
-            this.buildACardApp.setPageInfo("Kazakus Potion", "Choose the first effect:");
-            this.buildACardApp.setupRandomCardChoice(effect1Pool, true, (effect1Card) =>
+            effect1Processor(effect1Pool, (effect1Card) =>
             {
                 let effect2Pool = effect1Pool.slice();
                 effect2Pool = effect2Pool.filter(cardData => cardData.id !== effect1Card.id);
                 
-                this.buildACardApp.setPageInfo("Kazakus Potion", "Choose the second effect:");
-                this.buildACardApp.setupRandomCardChoice(effect2Pool, true, (effect2Card) =>
+                effect2Processor(effect2Pool, (effect2Card) =>
                 {
-                    this.buildACardApp.setPageState("page-state-result");
-                    this.buildACardApp.setPageInfo("Kazakus Potion", "Result:");
-                    
-                    this.showResultCard([
+                    onProcessed([
                         costCard,
                         effect1Card,
                         effect2Card
@@ -1291,6 +1411,7 @@ class BuildACardApp
         this.cache.cardResultInfoHTML = $("#card-result-info");
         this.cache.cardResultHTML = $("#card-result");
         this.cache.buildACardAnotherHTML = $("#build-a-card-another");
+        this.cache.buildACardRandomizeHTML = $("#build-a-card-randomize");
         this.cache.buildACardDownloadHTML = $("#build-a-card-download");
         this.cache.buildACardBacktHTML = $("#build-a-card-back");
         this.cache.artRendererHTML = $("#art-renderer")
@@ -1568,35 +1689,7 @@ class BuildACardApp
     {
         for(let [cardBuilderIndex, cardBuilder] of this.cardBuilders.entries())
         {
-            const cardBuilderHTML = $(`
-                <div class="col-md-3 bottom-margin">
-                    <div class="card border border-secondary">
-                        <img class="card-img-top clickable" src="` + cardBuilder.imageSrc + `" alt="Kazakus">
-                        <div class="card-body">
-                            <h5 class="card-title">` + cardBuilder.title + `</h5>
-                            <p class="card-text">
-                                ` + cardBuilder.description + `
-                            </p>
-                            <button class="btn btn-primary btn-block" type="button">Craft</button>
-                        </div>
-                    </div>
-                </div>
-            `);
-            
-            cardBuilderHTML.on("click", (event) =>
-            {
-                cardBuilder.start();
-            });
-            
-            $(window).on("hashchange", (event) =>
-            {
-                if(location.hash === "#" + cardBuilder.hash)
-                {
-                    cardBuilder.start();
-                }
-            });
-            
-            this.cache.cardBuildersHTML.append(cardBuilderHTML);
+            this.cache.cardBuildersHTML.append(cardBuilder.createHTML());
         }
         
         $(window).on("hashchange", (event) =>
