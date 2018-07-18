@@ -351,7 +351,7 @@ class BuildAMechCardBuilder extends CardBuilder
             mechanics: mechanics,
             rarity: textCard.rarity,
             set: textCard.set,
-            race: "MECHANICAL",
+            race: textCard.race,
             type: "MINION"
         }, textCard.artData);
         
@@ -365,7 +365,7 @@ class BuildAMechCardBuilder extends CardBuilder
         if(!this.isPoolsLoaded)
         {
             //Mechs with only card text
-            const keywordsPool = this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
+            const textPool = this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
                 if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "WARRIOR")
                 {
@@ -417,13 +417,13 @@ class BuildAMechCardBuilder extends CardBuilder
             });
             
             //Extra mechs
-            keywordsPool.push(this.buildACardApp.pools.allMinions.filter(cardData => cardData.id === "GVG_110t")[0]);
+            textPool.push(this.buildACardApp.pools.allMinions.filter(cardData => cardData.id === "GVG_110t")[0]);
             
-            this.addPool("text", keywordsPool);
+            this.addPool("text", textPool);
             
             
             //Mechs that are blank or only has keywords
-            this.addPool("keywords", this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
+            const keywordsPool = this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
                 if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "WARRIOR")
                 {
@@ -471,7 +471,97 @@ class BuildAMechCardBuilder extends CardBuilder
                 }
                 
                 return true;
-            }));
+            });
+            
+            //Extra mechs
+            keywordsPool.push(
+                new Card(
+                    this.buildACardApp,
+                    {
+                        id: "BACS_MECH_UPGRADEABLE_FRAMEBOT",
+                        name: "Upgradeable Framebot",
+                        text: "",
+                        attack: 1,
+                        cardClass: "NEUTRAL",
+                        collectible: true,
+                        cost: 2,
+                        elite: false,
+                        health: 5,
+                        mechanics: [],
+                        rarity: "COMMON",
+                        race: "MECHANICAL",
+                        type: "MINION"
+                    },
+                    {
+                        texture: "images/art_extra/mech_upgradeable_framebot.jpg",
+                        x: -62,
+                        y: -86,
+                        width: 380,
+                        height: 830
+                    }
+                ),
+                new Card(
+                    this.buildACardApp,
+                    {
+                        id: "BACS_MECH_WARGEAR",
+                        name: "Wargear",
+                        text: "<b>Magnetic.</b>",
+                        attack: 5,
+                        cardClass: "NEUTRAL",
+                        collectible: true,
+                        cost: 5,
+                        elite: false,
+                        health: 5,
+                        mechanics: [
+                            "MAGNETIC"
+                        ],
+                        rarity: "COMMON",
+                        race: "MECHANICAL",
+                        type: "MINION"
+                    },
+                    {
+                        texture: "images/art_extra/mech_wargear.jpg",
+                        x: -62,
+                        y: -86,
+                        width: 380,
+                        height: 830
+                    }
+                ),
+                new Card(
+                    this.buildACardApp,
+                    {
+                        id: "BACS_MECH_ZILLIAX",
+                        name: "Zilliax",
+                        text: "<b>Magnetic</b>\n<b>Divine Shield,</b> <b>Taunt,</b>\n<b>Lifesteal,</b> <b>Rush</b>",
+                        attack: 3,
+                        cardClass: "NEUTRAL",
+                        collectible: true,
+                        cost: 5,
+                        elite: true,
+                        health: 2,
+                        mechanics: [
+                            "MAGNETIC",
+                            "DIVINE_SHIELD",
+                            "TAUNT",
+                            "LIFESTEAL",
+                            "RUSH"
+                        ],
+                        rarity: "LEGENDARY",
+                        race: "MECHANICAL",
+                        type: "MINION"
+                    },
+                    {
+                        texture: "images/art_extra/mech_zilliax.jpg",
+                        x: -62,
+                        y: -86,
+                        width: 380,
+                        height: 830
+                    }
+                )
+            );
+            
+            this.addPool("keywords", keywordsPool);
+            
             
             //Spare Parts to modify the custom Mech
             this.addPool("sparePart", [
@@ -552,7 +642,7 @@ class BuildAMechCardBuilder extends CardBuilder
                         type: "SPELL"
                     },
                     {
-                        texture: "images/art_extra/magnetizer.jpg",
+                        texture: "images/art_extra/spare_part_magnetizer.jpg",
                         x: 0,
                         y: -70,
                         width: 256,
@@ -872,7 +962,7 @@ class BuildABeastCardBuilder extends CardBuilder
             mechanics: mechanics,
             rarity: textCard.rarity,
             set: textCard.set,
-            race: "BEAST",
+            race: textCard.race,
             type: "MINION"
         }, textCard.artData);
         
