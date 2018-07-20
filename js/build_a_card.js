@@ -645,6 +645,35 @@ class BuildAMechCardBuilder extends CardBuilder
                         width: 380,
                         height: 830
                     }
+                ),
+                new Card(
+                    this.buildACardApp,
+                    {
+                        id: "BACS_MECH_ANNOYOMODULE",
+                        name: "Annoy-o-Module",
+                        text: "<b>Magnetic</b>\n<b>Divine Shield</b>\n<b>Taunt</b>",
+                        attack: 2,
+                        cardClass: "PALADIN",
+                        collectible: true,
+                        cost: 4,
+                        elite: false,
+                        health: 4,
+                        mechanics: [
+                            "MAGNETIC",
+                            "DIVINE_SHIELD",
+                            "TAUNT"
+                        ],
+                        rarity: "RARE",
+                        race: "MECHANICAL",
+                        type: "MINION"
+                    },
+                    {
+                        texture: "images/art_extra/mech_annoy_o_module.jpg",
+                        x: -62,
+                        y: -86,
+                        width: 380,
+                        height: 830
+                    }
                 )
             );
             
