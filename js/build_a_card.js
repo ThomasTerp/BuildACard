@@ -455,7 +455,7 @@ class BuildAMechCardBuilder extends CardBuilder
             //Mechs with only card text
             const textPool = this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
-                if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "WARRIOR")
+                if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "PALADIN")
                 {
                     return false;
                 }
@@ -513,7 +513,7 @@ class BuildAMechCardBuilder extends CardBuilder
             //Mechs that are blank or only has keywords
             const keywordsPool = this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
-                if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "WARRIOR")
+                if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "PALADIN")
                 {
                     return false;
                 }
@@ -659,7 +659,7 @@ class BuildAMechCardBuilder extends CardBuilder
                         id: "BACS_DRBOOM_SPAREPART_HEALTH",
                         name: "Armor Plating",
                         text: "Gain +1 Health.",
-                        cardClass: "WARRIOR",
+                        cardClass: "PALADIN",
                         collectible: false,
                         cost: 0,
                         type: "SPELL"
@@ -672,7 +672,7 @@ class BuildAMechCardBuilder extends CardBuilder
                         id: "BACS_DRBOOM_SPAREPART_STEALTH",
                         name: "Finicky Cloakfield",
                         text: "Gain <b>Stealth.</b>",
-                        cardClass: "WARRIOR",
+                        cardClass: "PALADIN",
                         collectible: false,
                         cost: 0,
                         type: "SPELL"
@@ -685,7 +685,7 @@ class BuildAMechCardBuilder extends CardBuilder
                         id: "BACS_DRBOOM_SPAREPART_SWAP",
                         name: "Reversing Switch",
                         text: "Swap Attack and Health.",
-                        cardClass: "WARRIOR",
+                        cardClass: "PALADIN",
                         collectible: false,
                         cost: 0,
                         type: "SPELL"
@@ -698,7 +698,7 @@ class BuildAMechCardBuilder extends CardBuilder
                         id: "BACS_DRBOOM_SPAREPART_TAUNT",
                         name: "Rusty Horn",
                         text: "Gain <b>Taunt.</b>",
-                        cardClass: "WARRIOR",
+                        cardClass: "PALADIN",
                         collectible: false,
                         cost: 0,
                         type: "SPELL"
@@ -711,7 +711,7 @@ class BuildAMechCardBuilder extends CardBuilder
                         id: "BACS_DRBOOM_SPAREPART_ATTACK",
                         name: "Whirling Blades",
                         text: "Gain +1 Attack.",
-                        cardClass: "WARRIOR",
+                        cardClass: "PALADIN",
                         collectible: false,
                         cost: 0,
                         type: "SPELL"
@@ -724,7 +724,7 @@ class BuildAMechCardBuilder extends CardBuilder
                         id: "BACS_DRBOOM_SPAREPART_MAGNETIC",
                         name: "Magnetizer",
                         text: "Gain <b>Magnetic.</b>",
-                        cardClass: "WARRIOR",
+                        cardClass: "PALADIN",
                         collectible: false,
                         cost: 0,
                         type: "SPELL"
