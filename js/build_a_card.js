@@ -284,7 +284,15 @@ class BuildAMechCardBuilder extends CardBuilder
         
         this.hash = "boom-labs-factory";
         this.title = "Boom Labs Factory";
-        this.description = `Custom Mechs are crafted using the same rules as Zombeasts, except with Mechs instead of Beasts.<br />They also have a third choice, which is special Spare Parts to modify them.<br />Boom Bots are also included in the first choice, it's Boom Labs after all.`;
+        this.description = `
+            Custom Mechs are crafted using the same rules as Zombeasts, except with Mechs instead of Beasts.<br />
+            <br />
+            First a Mech with text.<br />
+            Second a Mech with only keywords or no text at all.<br />
+            They also have a third choice, which is special Spare Parts to modify them.<br />
+            <br />
+            Boom Bots are also included in the first choice, because it's Boom Labs after all.
+        `;
         this.imageSrc = "images/factory.png";
         this.downloadPrefix = "Mech";
         this.processors = [
