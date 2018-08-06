@@ -285,7 +285,18 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
         
         this.hash = "deathglitcher-rexxar";
         this.title = "Deathglitcher Rexxar";
-        this.description = `What if Zombeasts had no restrictions?`;
+        this.description = `
+            Works like Deathstalker Rexxar, except with less restrictions.
+            <br />
+            <br />
+            No restrictions on class, race and cost.
+            <br />
+            First choice can have keywords in addition to the text.
+            <br />
+            First choice can have spell damage.
+            <br />
+            If combined cost is above 10 mana it will be capped.
+        `;
         this.imageSrc = "images/deathglitcher_rexxar.png";
         this.downloadPrefix = "Zombie";
         this.processors = [
