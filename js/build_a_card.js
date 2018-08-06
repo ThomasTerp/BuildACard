@@ -129,7 +129,7 @@ class CardBuilder
     createHTML()
     {
         this.html = $(`
-            <div class="col-md-3 bottom-margin">
+            <div class="col-md-4 bottom-margin">
                 <div class="card border border-secondary">
                     <img class="card-img-top clickable" src="` + this.imageSrc + `" alt="Kazakus">
                     <div class="card-body">
@@ -276,6 +276,232 @@ class CardBuilder
     }
 }
 
+
+class DeathglitcherRexxarCardBuilder extends CardBuilder
+{
+    constructor(buildACardApp)
+    {
+        super(buildACardApp)
+        
+        this.hash = "deathglitcher-rexxar";
+        this.title = "Deathglitcher Rexxar";
+        this.description = `What if Zombeasts had no restrictions?`;
+        this.imageSrc = "images/deathglitcher_rexxar.png";
+        this.downloadPrefix = "Zombie";
+        this.processors = [
+            (textPool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo(this.title, "Choose a minion with text:");
+                this.buildACardApp.setupRandomCardChoice(textPool, true, onProcessed);
+            },
+            (keywordsPool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo(this.title, "Choose a minion with only keywords or no text:");
+                this.buildACardApp.setupRandomCardChoice(keywordsPool, true, onProcessed);
+            }
+        ];
+    }
+    
+    processPools(processors, onProcessed)
+    {
+        super.processPools(processors, onProcessed);
+        
+        const textProcessor = processors[0];
+        const keywordsProcessor = processors[1];
+        
+        textProcessor(this.getPool("text"), (textCard) =>
+        {
+            keywordsProcessor(this.getPool("keywords"), (keywordsCard) =>
+            {
+                onProcessed([
+                    textCard,
+                    keywordsCard
+                ]);
+            });
+        });
+    }
+    
+    start()
+    {
+        super.start();
+        
+        this.buildACardApp.setPageInfo("Deathglitcher Rexxar", "Choose a minion with text:");
+        this.buildACardApp.setupRandomCardChoice(this.getPool("text"), true, (textCard) =>
+        {
+            
+            this.buildACardApp.setPageInfo("Deathglitcher Rexxar", "Choose a minion with only keywords or no text:");
+            this.buildACardApp.setupRandomCardChoice(this.getPool("keywords"), true, (keywordsCard) =>
+            {
+                this.buildACardApp.setPageState("page-state-result");
+                this.buildACardApp.setPageInfo("Deathglitcher Rexxar", "Result:");
+                
+                this.showResultCard([
+                    textCard,
+                    keywordsCard
+                ]);
+            });
+        });
+    }
+    
+    createResultCard(cards)
+    {
+        const textCard = cards[0];
+        const keywordsCard = cards[1];
+        
+        let mechanics = this.buildACardApp.getUniqueArray(textCard.mechanics.concat(keywordsCard.mechanics));
+        let displayedMechanics = []
+        let spellDamage = textCard.getSpellDamage() + keywordsCard.getSpellDamage();
+        let description = "";
+        let attack = textCard.attack + keywordsCard.attack;
+        let health = textCard.health + keywordsCard.health
+        
+        let tempDescription = textCard.description;
+        tempDescription = textCard.description.replace(new RegExp("\n", "g"), " ");
+        
+        for(let [mechanicIndex, mechanic] of textCard.mechanics.entries())
+        {
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
+            {
+                tempDescription = tempDescription.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), ""), "");
+            }
+            
+            if(mechanic === "SPELLPOWER")
+            {
+                tempDescription = tempDescription.replace(new RegExp("Spell Damage \\+\\d+", ""), "");
+            }
+        }
+        
+        for(let [mechanicIndex, mechanic] of mechanics.entries())
+        {
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
+            {
+                displayedMechanics.push(mechanic);
+            }
+        }
+        
+        //TODO: Fix spell damage
+        if(spellDamage > 0)
+        {
+            const spellDamageText = "<b>Spell Damage +" + spellDamage + "</b>\n";
+            
+            if(description.indexOf("\n") === -1)
+            {
+                description += spellDamageText + "\n";
+            }
+        }
+        
+        for(let [mechanicIndex, mechanic] of displayedMechanics.entries())
+        {
+            description += "<b>" + this.buildACardApp.getMechanicName(mechanic) + (mechanicIndex === displayedMechanics.length - 1 ? "</b>" + (displayedMechanics.length <= 2 ? "\n" : ". ") : "</b>, ");
+        }
+        
+        description += tempDescription;
+        description = this.buildACardApp.fixCardDescription(description);
+        
+        const zombieCard = new Card(this.buildACardApp, {
+            id: "BACS_ZOMBIE",
+            name: "Zombie",
+            text: description,
+            attack: attack,
+            cardClass: textCard.cardClass,
+            collectible: false,
+            cost: Math.min(textCard.cost + keywordsCard.cost, Math.max(textCard.cost, 10)),
+            elite: textCard.isElite,
+            health: health,
+            mechanics: mechanics,
+            rarity: textCard.rarity,
+            set: textCard.set,
+            race: textCard.race,
+            type: "MINION"
+        }, textCard.artData);
+        
+        return zombieCard;
+    }
+    
+    loadPools()
+    {
+        super.loadPools();
+        
+        if(!this.isPoolsLoaded)
+        {
+            //Minions with only card text
+            this.addPool("text", this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
+            {
+                if(typeof cardData.text === "undefined")
+                {
+                    return false;
+                }
+                
+                let description = typeof cardData.text === "undefined" ? "" : cardData.text;
+                
+                if(typeof cardData.mechanics !== "undefined")
+                {
+                    for(let [mechanicIndex, mechanic] of cardData.mechanics.entries())
+                    {
+                        description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
+                    }
+                }
+                
+                //Remove everything a card with only keyworlds will have
+                
+                description = description.replace(new RegExp("<b>", "g"), "");
+                description = description.replace(new RegExp("</b>", "g"), "");
+                description = description.replace(new RegExp("\\.", "g"), "");
+                description = description.replace(new RegExp("\\,", "g"), "");
+                description = description.replace(new RegExp(" ", "g"), "");
+                description = description.replace(new RegExp("\n", "g"), "");
+                
+                //If the description no longer have text
+                if(description.length === 0)
+                {
+                    return false;
+                }
+                
+                return true;
+            }));
+            
+            //Minions that are blank or only has keywords
+            this.addPool("keywords", this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
+            {
+                let description = typeof cardData.text === "undefined" ? "" : cardData.text;
+                
+                if(typeof cardData.mechanics !== "undefined")
+                {
+                    for(let [mechanicIndex, mechanic] of cardData.mechanics.entries())
+                    {
+                        description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
+                        
+                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR")
+                        {
+                            return false;
+                        }
+                    }
+                }
+                
+                //Remove everything a card with only keyworlds will have
+                
+                description = description.replace(new RegExp("<b>", "g"), "");
+                description = description.replace(new RegExp("</b>", "g"), "");
+                description = description.replace(new RegExp("\\.", "g"), "");
+                description = description.replace(new RegExp("\\,", "g"), "");
+                description = description.replace(new RegExp(" ", "g"), "");
+                description = description.replace(new RegExp("\n", "g"), "");
+                
+                
+                //If the description still have text
+                if(description.length > 0)
+                {
+                    return false;
+                }
+                
+                return true;
+            }));
+            
+            this.isPoolsLoaded = true;
+        }
+    }
+}
+
 class BuildAMechCardBuilder extends CardBuilder
 {
     constructor(buildACardApp)
@@ -385,9 +611,9 @@ class BuildAMechCardBuilder extends CardBuilder
                 break;
             
             case "BACS_DRBOOM_SPAREPART_MAGNETIC":
-                if(mechanics.indexOf("MAGNETIC") === -1) 
+                if(mechanics.indexOf("MODULAR") === -1) 
                 {
-                    mechanics.push("MAGNETIC");
+                    mechanics.push("MODULAR");
                 }
             
                 break;
@@ -398,7 +624,7 @@ class BuildAMechCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of textCard.mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MAGNETIC")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
             {
                 tempDescription = tempDescription.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), ""), "");
             }
@@ -406,7 +632,7 @@ class BuildAMechCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MAGNETIC")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -489,7 +715,7 @@ class BuildAMechCardBuilder extends CardBuilder
                 {
                     for(let [mechanicIndex, mechanic] of cardData.mechanics.entries())
                     {
-                        description = description.replace(new RegExp(mechanic.replace(new RegExp("_", "g"), " "), "ig"), "");
+                        description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
                     }
                 }
                 
@@ -542,9 +768,9 @@ class BuildAMechCardBuilder extends CardBuilder
                 {
                     for(let [mechanicIndex, mechanic] of cardData.mechanics.entries())
                     {
-                        description = description.replace(new RegExp(mechanic.replace(new RegExp("_", "g"), " "), "ig"), "");
+                        description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
                         
-                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MAGNETIC")
+                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR")
                         {
                             return false;
                         }
@@ -568,122 +794,6 @@ class BuildAMechCardBuilder extends CardBuilder
                 
                 return true;
             });
-            
-            //Extra mechs
-            keywordsPool.push(
-                new Card(
-                    this.buildACardApp,
-                    {
-                        id: "BACS_MECH_UPGRADEABLE_FRAMEBOT",
-                        name: "Upgradeable Framebot",
-                        text: "",
-                        attack: 1,
-                        cardClass: "NEUTRAL",
-                        collectible: true,
-                        cost: 2,
-                        elite: false,
-                        health: 5,
-                        mechanics: [],
-                        rarity: "COMMON",
-                        race: "MECHANICAL",
-                        type: "MINION"
-                    },
-                    {
-                        texture: "images/art_extra/mech_upgradeable_framebot.jpg",
-                        x: -62,
-                        y: -86,
-                        width: 380,
-                        height: 830
-                    }
-                ),
-                new Card(
-                    this.buildACardApp,
-                    {
-                        id: "BACS_MECH_WARGEAR",
-                        name: "Wargear",
-                        text: "<b>Magnetic.</b>",
-                        attack: 5,
-                        cardClass: "NEUTRAL",
-                        collectible: true,
-                        cost: 5,
-                        elite: false,
-                        health: 5,
-                        mechanics: [
-                            "MAGNETIC"
-                        ],
-                        rarity: "COMMON",
-                        race: "MECHANICAL",
-                        type: "MINION"
-                    },
-                    {
-                        texture: "images/art_extra/mech_wargear.jpg",
-                        x: -62,
-                        y: -86,
-                        width: 380,
-                        height: 830
-                    }
-                ),
-                new Card(
-                    this.buildACardApp,
-                    {
-                        id: "BACS_MECH_ZILLIAX",
-                        name: "Zilliax",
-                        text: "<b>Magnetic</b>\n<b>Divine Shield,</b> <b>Taunt,</b>\n<b>Lifesteal,</b> <b>Rush</b>",
-                        attack: 3,
-                        cardClass: "NEUTRAL",
-                        collectible: true,
-                        cost: 5,
-                        elite: true,
-                        health: 2,
-                        mechanics: [
-                            "MAGNETIC",
-                            "DIVINE_SHIELD",
-                            "TAUNT",
-                            "LIFESTEAL",
-                            "RUSH"
-                        ],
-                        rarity: "LEGENDARY",
-                        race: "MECHANICAL",
-                        type: "MINION"
-                    },
-                    {
-                        texture: "images/art_extra/mech_zilliax.jpg",
-                        x: -62,
-                        y: -86,
-                        width: 380,
-                        height: 830
-                    }
-                ),
-                new Card(
-                    this.buildACardApp,
-                    {
-                        id: "BACS_MECH_ANNOYOMODULE",
-                        name: "Annoy-o-Module",
-                        text: "<b>Magnetic</b>\n<b>Divine Shield</b>\n<b>Taunt</b>",
-                        attack: 2,
-                        cardClass: "PALADIN",
-                        collectible: true,
-                        cost: 4,
-                        elite: false,
-                        health: 4,
-                        mechanics: [
-                            "MAGNETIC",
-                            "DIVINE_SHIELD",
-                            "TAUNT"
-                        ],
-                        rarity: "RARE",
-                        race: "MECHANICAL",
-                        type: "MINION"
-                    },
-                    {
-                        texture: "images/art_extra/mech_annoy_o_module.jpg",
-                        x: -62,
-                        y: -86,
-                        width: 380,
-                        height: 830
-                    }
-                )
-            );
             
             this.addPool("keywords", keywordsPool);
             
@@ -808,12 +918,12 @@ class SpiritCardBuilder extends CardBuilder
         this.processors = [
             (triggerPool, onProcessed) =>
             {
-                this.buildACardApp.setPageInfo("Craft a Spirit", "Choose a trigger card:");
+                this.buildACardApp.setPageInfo(this.title, "Choose a trigger card:");
                 this.buildACardApp.setupRandomCardChoice(triggerPool, true, onProcessed);
             },
             (deathrattlePool, onProcessed) =>
             {
-                this.buildACardApp.setPageInfo("Craft a Spirit", "Choose a deathrattle card to replace the trigger effect:");
+                this.buildACardApp.setPageInfo(this.title, "Choose a deathrattle card to replace the trigger effect:");
                 this.buildACardApp.setupRandomCardChoice(deathrattlePool, true, onProcessed);
             }
         ];
@@ -850,7 +960,7 @@ class SpiritCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MAGNETIC")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -1023,12 +1133,12 @@ class BuildABeastCardBuilder extends CardBuilder
         this.processors = [
             (textPool, onProcessed) =>
             {
-                this.buildACardApp.setPageInfo("Deathstalker Rexxar", "Choose a Beast with text:");
+                this.buildACardApp.setPageInfo(this.title, "Choose a Beast with text:");
                 this.buildACardApp.setupRandomCardChoice(textPool, true, onProcessed);
             },
             (keywordsPool, onProcessed) =>
             {
-                this.buildACardApp.setPageInfo("Deathstalker Rexxar", "Choose a Beast with only keywords or no text:");
+                this.buildACardApp.setPageInfo(this.title, "Choose a Beast with only keywords or no text:");
                 this.buildACardApp.setupRandomCardChoice(keywordsPool, true, onProcessed);
             }
         ];
@@ -1065,7 +1175,7 @@ class BuildABeastCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MAGNETIC")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -1146,7 +1256,7 @@ class BuildABeastCardBuilder extends CardBuilder
                 {
                     for(let [mechanicIndex, mechanic] of cardData.mechanics.entries())
                     {
-                        if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MAGNETIC")
+                        if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
                         {
                             return false;
                         }
@@ -1180,9 +1290,9 @@ class BuildABeastCardBuilder extends CardBuilder
                 {
                     for(let [mechanicIndex, mechanic] of cardData.mechanics.entries())
                     {
-                        description = description.replace(new RegExp(mechanic.replace(new RegExp("_", "g"), " "), "ig"), "");
+                        description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
                         
-                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MAGNETIC")
+                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR")
                         {
                             return false;
                         }
@@ -1229,17 +1339,17 @@ class KazakusPotionCardBuilder extends CardBuilder
         this.processors = [
             (costPool, onProcessed) =>
             {
-                this.buildACardApp.setPageInfo("Kazakus Potion", "Choose a cost:");
+                this.buildACardApp.setPageInfo(this.title, "Choose a cost:");
                 this.buildACardApp.setupCardChoice(costPool[0], costPool[1], costPool[2], onProcessed);
             },
             (effect1Pool, onProcessed) =>
             {
-                this.buildACardApp.setPageInfo("Kazakus Potion", "Choose the first effect:");
+                this.buildACardApp.setPageInfo(this.title, "Choose the first effect:");
                 this.buildACardApp.setupRandomCardChoice(effect1Pool, true, onProcessed);
             },
             (effect2Pool, onProcessed) =>
             {
-                this.buildACardApp.setPageInfo("Kazakus Potion", "Choose the second effect:");
+                this.buildACardApp.setPageInfo(this.title, "Choose the second effect:");
                 this.buildACardApp.setupRandomCardChoice(effect2Pool, true, onProcessed);
             }
         ];
@@ -1422,6 +1532,7 @@ class BuildACardApp
         this.imageCache = {};
         this.sunwell = sunwell;
         this.cardBuilders = [
+            new DeathglitcherRexxarCardBuilder(this),
             new BuildAMechCardBuilder(this),
             new SpiritCardBuilder(this),
             new BuildABeastCardBuilder(this),
@@ -1607,6 +1718,12 @@ class BuildACardApp
     {
         description = description.replace(new RegExp("\\[x\\]", "g"), "");
         description = description.replace(new RegExp("\\[X\\]", "g"), "");
+        description = description.replace(new RegExp("\\{0\\}", "g"), "");
+        description = description.replace(new RegExp("\\{1\\}", "g"), "");
+        description = description.replace(new RegExp("\\{2\\}", "g"), "");
+        description = description.replace(new RegExp("\\{3\\}", "g"), "");
+        description = description.replace(new RegExp("\\{4\\}", "g"), "");
+        description = description.replace(new RegExp("\\{5\\}", "g"), "");
         //Reduce spaces to one space
         description = description.replace(/  +/g, ' ');
         description = description.replace(new RegExp("\n\n", "g"), "\n");
@@ -1650,6 +1767,13 @@ class BuildACardApp
     
     getMechanicName(mechanicEnum)
     {
+        console.log(mechanicEnum)
+        if(mechanicEnum === "MODULAR")
+        {
+            console.log("mag")
+            return "Magnetic";
+        }
+        
         let mechanic = mechanicEnum
         mechanic = mechanic.replace(new RegExp("_", "g"), " ");
         mechanic = this.toTitleCase(mechanic);
