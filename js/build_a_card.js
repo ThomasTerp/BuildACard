@@ -375,11 +375,6 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
             {
                 tempDescription = tempDescription.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), ""), "");
             }
-            
-            if(mechanic === "SPELLPOWER")
-            {
-                tempDescription = tempDescription.replace(new RegExp("Spell Damage \\+\\d+", ""), "");
-            }
         }
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
@@ -387,17 +382,6 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
             if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
             {
                 displayedMechanics.push(mechanic);
-            }
-        }
-        
-        //TODO: Fix spell damage
-        if(spellDamage > 0)
-        {
-            const spellDamageText = "<b>Spell Damage +" + spellDamage + "</b>\n";
-            
-            if(description.indexOf("\n") === -1)
-            {
-                description += spellDamageText + "\n";
             }
         }
         
