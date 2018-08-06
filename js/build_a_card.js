@@ -404,7 +404,6 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
             elite: textCard.isElite,
             health: health,
             mechanics: mechanics,
-            rarity: textCard.rarity,
             set: textCard.set,
             race: textCard.race,
             type: "MINION"
@@ -666,7 +665,6 @@ class BuildAMechCardBuilder extends CardBuilder
             elite: textCard.isElite,
             health: health,
             mechanics: mechanics,
-            rarity: textCard.rarity,
             set: textCard.set,
             race: textCard.race,
             type: "MINION"
@@ -1015,7 +1013,6 @@ class SpiritCardBuilder extends CardBuilder
             elite: triggerCard.isElite,
             health: triggerCard.health + deathrattleCard.health,
             mechanics: mechanics,
-            rarity: triggerCard.rarity,
             set: triggerCard.set,
             race: triggerCard.race,
             type: "MINION"
@@ -1209,7 +1206,6 @@ class BuildABeastCardBuilder extends CardBuilder
             elite: textCard.isElite,
             health: textCard.health + keywordsCard.health,
             mechanics: mechanics,
-            rarity: textCard.rarity,
             set: textCard.set,
             race: textCard.race,
             type: "MINION"
