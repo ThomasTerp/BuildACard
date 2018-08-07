@@ -336,15 +336,15 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
     {
         super.start();
         
-        this.buildACardApp.setPageInfo("Deathglitcher Rexxar", "Choose a minion with text:");
+        this.buildACardApp.setPageInfo(this.title, "Choose a minion with text:");
         this.buildACardApp.setupRandomCardChoice(this.getPool("text"), true, (textCard) =>
         {
             
-            this.buildACardApp.setPageInfo("Deathglitcher Rexxar", "Choose a minion with only keywords or no text:");
+            this.buildACardApp.setPageInfo(this.title, "Choose a minion with only keywords or no text:");
             this.buildACardApp.setupRandomCardChoice(this.getPool("keywords"), true, (keywordsCard) =>
             {
                 this.buildACardApp.setPageState("page-state-result");
-                this.buildACardApp.setPageInfo("Deathglitcher Rexxar", "Result:");
+                this.buildACardApp.setPageInfo(this.title, "Result:");
                 
                 this.showResultCard([
                     textCard,
