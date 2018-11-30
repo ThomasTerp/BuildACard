@@ -129,7 +129,7 @@ class CardBuilder
     createHTML()
     {
         this.html = $(`
-            <div class="col-md-4 bottom-margin">
+            <div class="col-md-6 bottom-margin">
                 <div class="card border border-secondary">
                     <img class="card-img-top clickable" src="` + this.imageSrc + `" alt="Kazakus">
                     <div class="card-body">
@@ -1523,11 +1523,11 @@ class BuildACardApp
         this.imageCache = {};
         this.sunwell = sunwell;
         this.cardBuilders = [
-            new DeathglitcherRexxarCardBuilder(this),
-            new BuildAMechCardBuilder(this),
-            new SpiritCardBuilder(this),
             new BuildABeastCardBuilder(this),
-            new KazakusPotionCardBuilder(this)
+            new KazakusPotionCardBuilder(this),
+            new SpiritCardBuilder(this),
+            new BuildAMechCardBuilder(this),
+            new DeathglitcherRexxarCardBuilder(this)
         ];
         
         this.setupCache();
@@ -1758,7 +1758,6 @@ class BuildACardApp
     
     getMechanicName(mechanicEnum)
     {
-        console.log(mechanicEnum)
         if(mechanicEnum === "MODULAR")
         {
             console.log("mag")
