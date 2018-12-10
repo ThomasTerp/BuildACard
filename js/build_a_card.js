@@ -1516,18 +1516,18 @@ class KazakusPotionCardBuilder extends CardBuilder
 
 class BuildACardApp
 {
-    constructor(sunwell, cardBuilders)
+    constructor(sunwell)
     {
         this.cache = {};
         this.pools = {};
         this.imageCache = {};
         this.sunwell = sunwell;
         this.cardBuilders = [
-            new BuildABeastCardBuilder(this),
-            new KazakusPotionCardBuilder(this),
             new SpiritCardBuilder(this),
             new BuildAMechCardBuilder(this),
-            new DeathglitcherRexxarCardBuilder(this)
+            new BuildABeastCardBuilder(this),
+            new DeathglitcherRexxarCardBuilder(this),
+            new KazakusPotionCardBuilder(this),
         ];
         
         this.setupCache();
