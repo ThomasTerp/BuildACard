@@ -16,6 +16,7 @@ class Card
         this.isElite = cardData.elite;
         this.health = cardData.health;
         this.mechanics = typeof cardData.mechanics === "undefined" ? [] : cardData.mechanics;
+        this.playRequirements = typeof cardData.playRequirements === "undefined" ? {} : cardData.playRequirements;
         this.rarity = cardData.rarity;
         this.set = cardData.set;
         this.race = cardData.race;
@@ -1514,6 +1515,174 @@ class KazakusPotionCardBuilder extends CardBuilder
     }
 }
 
+class SwampqueenHagathaCardBuilder extends CardBuilder
+{
+    constructor(buildACardApp)
+    {
+        super(buildACardApp)
+        
+        this.isPoolsLoaded = false;
+        
+        this.hash = "hagatha";
+        this.title = "Swampqueen Hagatha";
+        this.description = `Legendary minion from the game.`;
+        this.imageSrc = "images/hagatha.png";
+        this.downloadPrefix = "Swampqueen_Hagatha";
+        this.processors = [
+            (spellPool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo(this.title, "Choose the first spell:");
+                this.buildACardApp.setupRandomCardChoice(spellPool, true, onProcessed);
+            },
+            (spellPool, onProcessed) =>
+            {
+                this.buildACardApp.setPageInfo(this.title, "Choose the second spell:");
+                this.buildACardApp.setupRandomCardChoice(spellPool, true, onProcessed);
+            }
+        ];
+    }
+    
+    processPools(processors, onProcessed)
+    {
+        super.processPools(processors, onProcessed);
+        
+        const spell1Processor = processors[0];
+        const spell2Processor = processors[1];
+        
+        spell1Processor(this.getPool("spells"), (spell1Card) =>
+        {
+            let secondPool;
+            console.log(spell1Card.playRequirements)
+            if("REQ_TARGET_TO_PLAY" in spell1Card.playRequirements || "REQ_TARGET_IF_AVAILABLE" in spell1Card.playRequirements)
+            {
+                secondPool = this.getPool("untargetableSpells").slice();
+            }
+            else
+            {
+                secondPool = this.getPool("spells").slice();
+            }
+            
+            secondPool = secondPool.filter(cardData => cardData.id !== spell1Card.id);
+            
+            spell2Processor(secondPool, (spell2Card) =>
+            {
+                onProcessed([
+                    spell1Card,
+                    spell2Card
+                ]);
+            });
+        });
+    }
+    
+    createResultCard(cards)
+    {
+        const spell1Card = cards[0];
+        const spell2Card = cards[1];
+        
+        const drustvarHorrorCard = new Card(
+            this.buildACardApp,
+            {
+                id: "ROS_DRUSTVAR_HORROR",
+                name: "Drustvar Horror",
+                text: "<b>Battlecry:</b> Cast " + spell1Card.name + " and " + spell2Card.name,
+                attack: 5,
+                cardClass: "SHAMAN",
+                collectible: false,
+                cost: 5,
+                elite: false,
+                health: 5,
+                mechanics: [],
+                set: "CLASSIC",
+                race: "",
+                type: "MINION"
+            },
+            {
+                texture: "images/art_extra/horror.png",
+                x: 32,
+                y: 0,
+                width: 200,
+                height: 390
+            }
+        );
+        
+        return drustvarHorrorCard;
+    }
+    
+    loadPools()
+    {
+        super.loadPools();
+        
+        if(!this.isPoolsLoaded)
+        {
+            //Shaman spells
+            this.addPool("spells", this.buildACardApp.pools.allCards.filter((cardData) =>
+            {
+                //Exclude the Shaman quest
+                if(cardData.id === "UNG_942")
+                {
+                    return false;
+                }
+                
+                if(!cardData.collectible)
+                {
+                    return false;
+                }
+                
+                if(cardData.type !== "SPELL")
+                {
+                    return false;
+                }
+                
+                if(cardData.cardClass !== "SHAMAN")
+                {
+                    return false;
+                }
+                
+                return true;
+            }));
+            
+            //Shaman spells that cannot have a target
+            this.addPool("untargetableSpells", this.buildACardApp.pools.allCards.filter((cardData) =>
+            {
+                //Exclude the Shaman quest
+                if(cardData.id === "UNG_942")
+                {
+                    return false;
+                }
+                
+                if(!cardData.collectible)
+                {
+                    return false;
+                }
+                
+                if(cardData.type !== "SPELL")
+                {
+                    return false;
+                }
+                
+                if(cardData.cardClass !== "SHAMAN")
+                {
+                    return false;
+                }
+                
+                if(typeof cardData.playRequirements === "undefined")
+                {
+                    return false
+                }
+                
+                if("REQ_TARGET_TO_PLAY" in cardData.playRequirements || "REQ_TARGET_IF_AVAILABLE" in cardData.playRequirements)
+                {
+                    return false;
+                }
+                
+                return true;
+            }));
+            
+            this.isPoolsLoaded = true;
+        }
+    }
+}
+
 class BuildACardApp
 {
     constructor(sunwell)
@@ -1523,11 +1692,12 @@ class BuildACardApp
         this.imageCache = {};
         this.sunwell = sunwell;
         this.cardBuilders = [
+            new SwampqueenHagathaCardBuilder(this),
             new SpiritCardBuilder(this),
+            new KazakusPotionCardBuilder(this),
             new BuildAMechCardBuilder(this),
             new BuildABeastCardBuilder(this),
             new DeathglitcherRexxarCardBuilder(this),
-            new KazakusPotionCardBuilder(this),
         ];
         
         this.setupCache();
