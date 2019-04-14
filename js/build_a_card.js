@@ -2,13 +2,26 @@ class Card
 {
     constructor(buildACardApp, cardData, artData)
     {
+        let description = cardData.collectionText;
+        
+        if(typeof description === "undefined")
+        {
+            description = cardData.text;
+        }
+        
+        if(typeof description === "undefined")
+        {
+            description = "";
+        }
+        
+        description = buildACardApp.fixCardDescription(description)
+        
         this.buildACardApp = buildACardApp;
         this.artData = artData;
         
         this.id = cardData.id;
         this.name = cardData.name;
-        this.description = typeof cardData.text === "undefined" ? "" : cardData.text;
-        this.description = this.buildACardApp.fixCardDescription(this.description);
+        this.description = description;
         this.attack = cardData.attack;
         this.cardClass = cardData.cardClass;
         this.isCollectible = cardData.collectible
@@ -372,7 +385,7 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of textCard.mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
             {
                 tempDescription = tempDescription.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), ""), "");
             }
@@ -380,7 +393,7 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -466,7 +479,7 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
                     {
                         description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
                         
-                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR")
+                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR" && mechanic !== "TWINSPELL")
                         {
                             return false;
                         }
@@ -619,7 +632,7 @@ class BuildAMechCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of textCard.mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
             {
                 tempDescription = tempDescription.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), ""), "");
             }
@@ -627,7 +640,7 @@ class BuildAMechCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -764,7 +777,7 @@ class BuildAMechCardBuilder extends CardBuilder
                     {
                         description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
                         
-                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR")
+                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR" && mechanic !== "TWINSPELL")
                         {
                             return false;
                         }
@@ -954,7 +967,7 @@ class SpiritCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -1168,7 +1181,7 @@ class BuildABeastCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -1248,7 +1261,7 @@ class BuildABeastCardBuilder extends CardBuilder
                 {
                     for(let [mechanicIndex, mechanic] of cardData.mechanics.entries())
                     {
-                        if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR")
+                        if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
                         {
                             return false;
                         }
@@ -1284,7 +1297,7 @@ class BuildABeastCardBuilder extends CardBuilder
                     {
                         description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
                         
-                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR")
+                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR" && mechanic !== "TWINSPELL")
                         {
                             return false;
                         }
@@ -1552,10 +1565,10 @@ class SwampqueenHagathaCardBuilder extends CardBuilder
         spell1Processor(this.getPool("spells"), (spell1Card) =>
         {
             let secondPool;
-            console.log(spell1Card.playRequirements)
+            
             if("REQ_TARGET_TO_PLAY" in spell1Card.playRequirements || "REQ_TARGET_IF_AVAILABLE" in spell1Card.playRequirements)
             {
-                secondPool = this.getPool("untargetableSpells").slice();
+                secondPool = this.getPool("noTargetSpells").slice();
             }
             else
             {
@@ -1579,10 +1592,12 @@ class SwampqueenHagathaCardBuilder extends CardBuilder
         const spell1Card = cards[0];
         const spell2Card = cards[1];
         
+        const id = "DAL_431t";
+        
         const drustvarHorrorCard = new Card(
             this.buildACardApp,
             {
-                id: "ROS_DRUSTVAR_HORROR",
+                id: id,
                 name: "Drustvar Horror",
                 text: "<b>Battlecry:</b> Cast " + spell1Card.name + " and " + spell2Card.name,
                 attack: 5,
@@ -1591,18 +1606,23 @@ class SwampqueenHagathaCardBuilder extends CardBuilder
                 cost: 5,
                 elite: false,
                 health: 5,
-                mechanics: [],
-                set: "CLASSIC",
+                mechanics: [
+                    "BATTLECRY"
+                ],
+                targetingArrowText: "Cast {0}.",
+                set: "DALARAN",
                 race: "",
-                type: "MINION"
+                type: "MINION",
+                artist: "Alex Horley"
             },
-            {
+            this.buildACardApp.getArtDataForCardID(id, "MINION")
+            /*{
                 texture: "images/art_extra/horror.png",
                 x: 32,
                 y: 0,
                 width: 200,
                 height: 390
-            }
+            }*/
         );
         
         return drustvarHorrorCard;
@@ -1642,7 +1662,7 @@ class SwampqueenHagathaCardBuilder extends CardBuilder
             }));
             
             //Shaman spells that cannot have a target
-            this.addPool("untargetableSpells", this.buildACardApp.pools.allCards.filter((cardData) =>
+            this.addPool("noTargetSpells", this.buildACardApp.pools.allCards.filter((cardData) =>
             {
                 //Exclude the Shaman quest
                 if(cardData.id === "UNG_942")
@@ -1665,14 +1685,12 @@ class SwampqueenHagathaCardBuilder extends CardBuilder
                     return false;
                 }
                 
-                if(typeof cardData.playRequirements === "undefined")
+                if(typeof cardData.playRequirements !== "undefined")
                 {
-                    return false
-                }
-                
-                if("REQ_TARGET_TO_PLAY" in cardData.playRequirements || "REQ_TARGET_IF_AVAILABLE" in cardData.playRequirements)
-                {
-                    return false;
+                    if("REQ_TARGET_TO_PLAY" in cardData.playRequirements || "REQ_TARGET_IF_AVAILABLE" in cardData.playRequirements)
+                    {
+                        return false;
+                    }
                 }
                 
                 return true;
@@ -1930,7 +1948,6 @@ class BuildACardApp
     {
         if(mechanicEnum === "MODULAR")
         {
-            console.log("mag")
             return "Magnetic";
         }
         

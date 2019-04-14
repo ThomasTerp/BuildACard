@@ -1,3 +1,4 @@
+const set = "DALARAN";
 const cardsData = [
   {
     "attack": 0,
@@ -361,7 +362,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Sean O'Danield",
+    "artist": "Sean O’Daniels",
     "cardClass": "PRIEST",
     "collectible": true,
     "cost": 2,
@@ -765,6 +766,15 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
+    "cardClass": "ROGUE",
+    "dbfId": 51452,
+    "id": "AT_032e_copy",
+    "name": "Shady Deals Copy",
+    "set": "TGT",
+    "text": "+1/+1.",
+    "type": "ENCHANTMENT"
+  },
+  {
     "artist": "Matt Dixon",
     "cardClass": "ROGUE",
     "collectible": true,
@@ -886,7 +896,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 2789,
     "id": "AT_037a",
-    "name": "Living Roots",
+    "name": "Grasping Roots",
     "playRequirements": {
       "REQ_TARGET_TO_PLAY": 0
     },
@@ -899,7 +909,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 2791,
     "id": "AT_037b",
-    "name": "Living Roots",
+    "name": "One, Two, Trees!",
     "set": "TGT",
     "text": "Summon two 1/1 Saplings.",
     "type": "SPELL"
@@ -1074,7 +1084,7 @@ const cardsData = [
     "race": "BEAST",
     "rarity": "COMMON",
     "set": "TGT",
-    "text": "<b>Stealth</b>.",
+    "text": "<b>Stealth</b>",
     "type": "MINION"
   },
   {
@@ -1737,8 +1747,7 @@ const cardsData = [
     "health": 2,
     "id": "AT_069",
     "mechanics": [
-      "BATTLECRY",
-      "TAUNT"
+      "BATTLECRY"
     ],
     "name": "Sparring Partner",
     "playRequirements": {
@@ -1746,6 +1755,9 @@ const cardsData = [
       "REQ_TARGET_IF_AVAILABLE": 0
     },
     "rarity": "RARE",
+    "referencedTags": [
+      "TAUNT"
+    ],
     "set": "TGT",
     "targetingArrowText": "Grant <b>Taunt</b>.",
     "text": "<b>Taunt</b>\n<b>Battlecry:</b> Give a\nminion <b>Taunt</b>.",
@@ -1782,7 +1794,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Evgeniy Zagumennyy",
+    "artist": "Evgeniy Zaqumyenny",
     "attack": 2,
     "cardClass": "WARRIOR",
     "collectible": true,
@@ -2198,7 +2210,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Evgeniy Zagumennyy",
+    "artist": "Evgeniy Zaqumyenny",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -2657,7 +2669,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Benjamin Zhang",
+    "artist": "Ben Zhang",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -3058,7 +3070,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Marcleo Vignali",
+    "artist": "Marcelo Vignali",
     "attack": 4,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -3117,7 +3129,7 @@ const cardsData = [
       "DIVINE_SHIELD"
     ],
     "set": "TGT",
-    "text": "Whenever <b>you</b> target this minion with a spell, gain <b>Divine Shield.</b>",
+    "text": "Whenever <b>you</b> target this minion with a spell, gain <b><b>Divine Shield</b>.</b>",
     "type": "MINION"
   },
   {
@@ -3323,7 +3335,7 @@ const cardsData = [
   {
     "attack": 0,
     "cardClass": "SHAMAN",
-    "cost": 0,
+    "cost": 1,
     "dbfId": 16221,
     "health": 2,
     "id": "AT_132_SHAMANa",
@@ -3335,7 +3347,7 @@ const cardsData = [
   {
     "attack": 1,
     "cardClass": "SHAMAN",
-    "cost": 0,
+    "cost": 1,
     "dbfId": 16222,
     "health": 1,
     "id": "AT_132_SHAMANb",
@@ -3346,7 +3358,7 @@ const cardsData = [
   {
     "attack": 0,
     "cardClass": "SHAMAN",
-    "cost": 0,
+    "cost": 1,
     "dbfId": 16223,
     "health": 2,
     "id": "AT_132_SHAMANc",
@@ -3358,7 +3370,7 @@ const cardsData = [
   {
     "attack": 0,
     "cardClass": "SHAMAN",
-    "cost": 0,
+    "cost": 1,
     "dbfId": 16225,
     "health": 2,
     "id": "AT_132_SHAMANd",
@@ -3625,7 +3637,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Ursula dorada",
+    "artist": "Ursula Dorada",
     "attack": 1,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -4109,10 +4121,6 @@ const cardsData = [
     "flavor": "It's just a Tempest Tantrum.",
     "id": "BOT_093",
     "name": "Elementary Reaction",
-    "playRequirements": {
-      "REQ_FRIENDLY_TARGET": 0,
-      "REQ_TARGET_WITH_DEATHRATTLE": 0
-    },
     "rarity": "COMMON",
     "set": "BOOMSDAY",
     "text": "Draw a card. Copy it if you played an Elemental last turn.",
@@ -4153,7 +4161,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "MAGE",
     "collectible": true,
     "cost": 2,
@@ -4329,7 +4337,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Sam Nielsen",
+    "artist": "Sam Nielson",
     "attack": 2,
     "cardClass": "WARRIOR",
     "cost": 2,
@@ -5563,7 +5571,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -5602,7 +5610,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Max Greck",
+    "artist": "Max Grecke",
     "attack": 3,
     "cardClass": "DRUID",
     "collectible": true,
@@ -5707,6 +5715,7 @@ const cardsData = [
     "dbfId": 48769,
     "id": "BOT_437e",
     "mechanics": [
+      "TAG_ONE_TURN_EFFECT",
       "TRIGGER_VISUAL"
     ],
     "name": "Slimed",
@@ -6708,6 +6717,7 @@ const cardsData = [
     "dbfId": 52688,
     "id": "BOT_566e",
     "mechanics": [
+      "TAG_ONE_TURN_EFFECT",
       "TRIGGER_VISUAL"
     ],
     "name": "Reckless Experiment",
@@ -6797,7 +6807,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Max Greck",
+    "artist": "Max Grecke",
     "attack": 4,
     "cardClass": "ROGUE",
     "collectible": true,
@@ -6905,7 +6915,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -8932,7 +8942,7 @@ const cardsData = [
     "type": "HERO"
   },
   {
-    "artist": "Max Greck",
+    "artist": "Max Grecke",
     "cardClass": "NEUTRAL",
     "dbfId": 50936,
     "health": 30,
@@ -9205,7 +9215,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "NEUTRAL",
     "cost": 0,
     "dbfId": 52192,
@@ -9487,11 +9497,11 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "attack": 2,
+    "attack": 5,
     "cardClass": "DRUID",
     "cost": 3,
     "dbfId": 2293,
-    "health": 5,
+    "health": 2,
     "id": "BRM_010a",
     "name": "Firecat Form",
     "race": "BEAST",
@@ -9500,11 +9510,11 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "attack": 5,
+    "attack": 2,
     "cardClass": "DRUID",
     "cost": 3,
     "dbfId": 2294,
-    "health": 2,
+    "health": 5,
     "id": "BRM_010b",
     "name": "Fire Hawk Form",
     "race": "BEAST",
@@ -9513,7 +9523,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Benjamin Zhang",
+    "artist": "Ben Zhang",
     "attack": 5,
     "cardClass": "DRUID",
     "cost": 3,
@@ -12752,6 +12762,7 @@ const cardsData = [
       "TAUNT"
     ],
     "name": "Rock Elemental",
+    "race": "ELEMENTAL",
     "set": "TB",
     "text": "<b>Taunt</b>",
     "type": "MINION"
@@ -12891,7 +12902,7 @@ const cardsData = [
     "name": "Red Mana Wyrm",
     "rarity": "COMMON",
     "set": "GANGS",
-    "text": "Whenever  you cast a spell, gain +2 Attack.",
+    "text": "Whenever you cast a spell, gain +2 Attack.",
     "type": "MINION"
   },
   {
@@ -13052,7 +13063,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Sam Nielsen",
+    "artist": "Sam Nielson",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -13110,7 +13121,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -13214,7 +13225,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Mike Saas",
+    "artist": "Mike Sass",
     "cardClass": "SHAMAN",
     "collectible": true,
     "cost": 4,
@@ -13231,7 +13242,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Mike Saas",
+    "artist": "Mike Sass",
     "attack": 1,
     "cardClass": "SHAMAN",
     "cost": 1,
@@ -13244,7 +13255,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 5,
     "cardClass": "SHAMAN",
     "collectible": true,
@@ -13268,7 +13279,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Benjamin Zhang",
+    "artist": "Ben Zhang",
     "cardClass": "SHAMAN",
     "collectible": true,
     "cost": 1,
@@ -13467,7 +13478,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Sam Nielsen",
+    "artist": "Sam Nielson",
     "attack": 3,
     "cardClass": "HUNTER",
     "collectible": true,
@@ -13749,7 +13760,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 41409,
     "id": "CFM_602a",
-    "name": "Jade Idol",
+    "name": "Cut from Jade",
     "referencedTags": [
       "JADE_GOLEM"
     ],
@@ -13763,7 +13774,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 41408,
     "id": "CFM_602b",
-    "name": "Jade Idol",
+    "name": "Jade Stash",
     "set": "GANGS",
     "text": "Shuffle 3 Jade Idols into your deck.",
     "type": "SPELL"
@@ -13800,7 +13811,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "PRIEST",
     "collectible": true,
     "cost": 4,
@@ -13841,7 +13852,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 2,
     "cardClass": "PRIEST",
     "collectible": true,
@@ -13861,7 +13872,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "J. Cranford & A.J. Nazzaro",
+    "artist": "J. Cranford & A. J. Nazzaro",
     "attack": 2,
     "cardClass": "PRIEST",
     "cost": 2,
@@ -14699,7 +14710,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Anton Magdalina",
+    "artist": "Anton Kagounkina",
     "attack": 2,
     "cardClass": "WARRIOR",
     "collectible": true,
@@ -14718,7 +14729,7 @@ const cardsData = [
     "type": "WEAPON"
   },
   {
-    "artist": "Anton Magdalina",
+    "artist": "Anton Kagounkina",
     "cardClass": "NEUTRAL",
     "dbfId": 41528,
     "id": "CFM_631e",
@@ -14738,11 +14749,13 @@ const cardsData = [
     "health": 5,
     "id": "CFM_634",
     "mechanics": [
-      "STEALTH",
       "TRIGGER_VISUAL"
     ],
     "name": "Lotus Assassin",
     "rarity": "EPIC",
+    "referencedTags": [
+      "STEALTH"
+    ],
     "set": "GANGS",
     "text": "<b>Stealth</b>. Whenever this attacks and kills a minion, gain <b>Stealth</b>.",
     "type": "MINION"
@@ -14814,7 +14827,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 2,
     "cardClass": "WARRIOR",
     "collectible": true,
@@ -14834,7 +14847,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARRIOR",
     "dbfId": 40481,
     "id": "CFM_643e",
@@ -14872,7 +14885,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -14896,7 +14909,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 1,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -14915,7 +14928,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 6,
     "cardClass": "NEUTRAL",
     "cost": 6,
@@ -15073,7 +15086,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Anton Magdalina",
+    "artist": "Anton Kagounkina",
     "attack": 4,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -15171,7 +15184,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Eva Wildermann",
+    "artist": "Eva Widermann",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -15431,7 +15444,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "attack": 5,
     "cardClass": "MAGE",
     "collectible": true,
@@ -15453,7 +15466,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "NEUTRAL",
     "dbfId": 40987,
     "id": "CFM_671e",
@@ -15702,9 +15715,6 @@ const cardsData = [
     "flavor": "Ragnaros looked down. He looked like some kind of War Golem. \"WHAT HAVE YOU DONE TO ME,\" he yelled. But all that came out was a deep grinding sound. He began to cry.",
     "id": "CFM_696",
     "name": "Devolve",
-    "playRequirements": {
-      "REQ_HERO_TARGET": 0
-    },
     "rarity": "RARE",
     "set": "GANGS",
     "text": "Transform all enemy minions into random ones that cost (1) less.",
@@ -16297,7 +16307,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 2,
     "cardClass": "SHAMAN",
     "collectible": true,
@@ -16976,7 +16986,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Kan Lui",
+    "artist": "Kan Liu",
     "cardClass": "WARRIOR",
     "collectible": true,
     "cost": 1,
@@ -18807,6 +18817,33 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
+    "cardClass": "PRIEST",
+    "cost": 2,
+    "dbfId": 54817,
+    "id": "CS1h_001_H2",
+    "name": "Lesser Heal",
+    "playRequirements": {
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "EPIC",
+    "set": "HERO_SKINS",
+    "text": "<b>Hero Power</b>\nRestore #2 Health.",
+    "type": "HERO_POWER"
+  },
+  {
+    "cardClass": "PRIEST",
+    "cost": 2,
+    "dbfId": 54818,
+    "id": "CS1h_001_H2_AT_132",
+    "name": "Heal",
+    "playRequirements": {
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "set": "HERO_SKINS",
+    "text": "<b>Hero Power</b>\nRestore #4 Health.",
+    "type": "HERO_POWER"
+  },
+  {
     "artist": "Michael Komarck",
     "cardClass": "PRIEST",
     "collectible": true,
@@ -19001,7 +19038,7 @@ const cardsData = [
     "artist": "James Ryman",
     "cardClass": "DRUID",
     "collectible": true,
-    "cost": 2,
+    "cost": 3,
     "dbfId": 1124,
     "flavor": "Grow your own mana crystals with this Mana Crystal Growth Kit, only 39.99!",
     "howToEarn": "Unlocked at Level 1.",
@@ -19923,7 +19960,7 @@ const cardsData = [
     "artist": "Alex Horley Orlandelli",
     "cardClass": "ROGUE",
     "collectible": true,
-    "cost": 1,
+    "cost": 2,
     "dbfId": 268,
     "flavor": "\"I'm cold blooded, check it and see!\"",
     "id": "CS2_073",
@@ -20118,7 +20155,7 @@ const cardsData = [
     "artist": "Jimmy Lo",
     "cardClass": "HUNTER",
     "collectible": true,
-    "cost": 1,
+    "cost": 2,
     "dbfId": 141,
     "flavor": "Never play 'Hide and Go Seek' with a Hunter.",
     "howToEarn": "Unlocked at Level 6.",
@@ -20173,7 +20210,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "E.M. Gist",
+    "artist": "E. M. Gist",
     "attack": 5,
     "cardClass": "PALADIN",
     "collectible": true,
@@ -21019,7 +21056,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "E.M. Gist",
+    "artist": "E. M. Gist",
     "attack": 6,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -21363,7 +21400,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "E.M. Gist",
+    "artist": "E. M. Gist",
     "attack": 9,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -21739,6 +21776,3614 @@ const cardsData = [
     "type": "MINION"
   },
   {
+    "artist": "Jim Nelson",
+    "cardClass": "WARLOCK",
+    "collectible": true,
+    "collectionText": "Summon 1 1/1 |4(Imp, Imps). <i>(Upgrades each turn!)</i>",
+    "cost": 3,
+    "dbfId": 51371,
+    "flavor": "\"When your first plan fails... imp-rovise.\"",
+    "id": "DAL_007",
+    "name": "Rafaam's Scheme",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "Summon @ 1/1 |4(Imp, Imps). <i>(Upgrades each turn!)</i>",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Konstantin Turovec",
+    "cardClass": "WARRIOR",
+    "collectible": true,
+    "collectionText": "Gain 1 Armor.\n<i>(Upgrades each turn!)</i>",
+    "cost": 4,
+    "dbfId": 51372,
+    "flavor": "“We did it! We blew up the vault!”\n“You mean the vault door?”\n“Oh. The doooor…”",
+    "id": "DAL_008",
+    "name": "Dr. Boom's Scheme",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "Gain @ Armor.\n<i>(Upgrades each turn!)</i>",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Arthur Gimaldinov",
+    "cardClass": "SHAMAN",
+    "collectible": true,
+    "collectionText": "Deal $1 damage\nto all minions.\n<i>(Upgrades each turn!)</i>",
+    "cost": 5,
+    "dbfId": 51373,
+    "flavor": "\"All shall suffer!\"\n\"But Hagatha, those are your minions...\"\n\"I said ALL!!!\"",
+    "id": "DAL_009",
+    "name": "Hagatha's Scheme",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Deal $@ damage\nto all minions.\n<i>(Upgrades each turn!)</i>",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Konstantin Turovec",
+    "cardClass": "ROGUE",
+    "collectible": true,
+    "collectionText": "Choose a minion. Shuffle 1 |4(copy, copies) of it into your deck.\n<i>(Upgrades each turn!)</i>",
+    "cost": 1,
+    "dbfId": 51375,
+    "flavor": "\"Many minions equals many treasures for king. Kobold arithmetic!\"",
+    "id": "DAL_010",
+    "name": "Togwaggle's Scheme",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Choose a minion. Shuffle @ |4(copy, copies) of it into your deck.\n<i>(Upgrades each turn!)</i>",
+    "type": "SPELL"
+  },
+  {
+    "artist": "J. Axer",
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "collectionText": "Reduce the Attack of an enemy minion by\n1 until your next turn. <i>(Upgrades each turn!)</i>",
+    "cost": 0,
+    "dbfId": 51376,
+    "flavor": "\"What's that you're dreaming?\nYou're weak and you're screaming!\nIt must be my scheming...\"",
+    "id": "DAL_011",
+    "name": "Lazul's Scheme",
+    "playRequirements": {
+      "REQ_ENEMY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "Reduce the Attack of an enemy minion by\n@ until your next turn. <i>(Upgrades each turn!)</i>",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 53987,
+    "id": "DAL_011e",
+    "name": "Lazul's Curse",
+    "set": "DALARAN",
+    "text": "Reduced Attack.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Konstantin Turovec",
+    "attack": 2,
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 51567,
+    "flavor": "Terrible at shadow puppets: “This is… a tentacle! And this is… two tentacles!”",
+    "health": 2,
+    "id": "DAL_030",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Shadowy Figure",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_IF_AVAILABLE": 0,
+      "REQ_TARGET_WITH_DEATHRATTLE": 0
+    },
+    "rarity": "EPIC",
+    "referencedTags": [
+      "DEATHRATTLE"
+    ],
+    "set": "DALARAN",
+    "targetingArrowText": "Transform into a 2/2 copy.",
+    "text": "<b>Battlecry:</b> Transform into a 2/2 copy of a friendly <b>Deathrattle</b> minion.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "PRIEST",
+    "dbfId": 54190,
+    "id": "DAL_030e",
+    "name": "Shade",
+    "set": "DALARAN",
+    "text": "2/2.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Zoltan Boros",
+    "attack": 2,
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "cost": 5,
+    "dbfId": 51714,
+    "flavor": "It’s always nice to steal a familiar face.",
+    "health": 6,
+    "id": "DAL_039",
+    "mechanics": [
+      "DEATHRATTLE",
+      "TAUNT"
+    ],
+    "name": "Convincing Infiltrator",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "[x]<b><b>Taunt</b></b>\n<b>Deathrattle:</b> Destroy a\n random enemy minion.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Paul Mafayon",
+    "attack": 4,
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 51715,
+    "flavor": "The Hench-Clan has a point.",
+    "health": 7,
+    "id": "DAL_040",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Hench-Clan Shadequill",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Deathrattle:</b> Restore 5 Health to the enemy hero.",
+    "type": "MINION"
+  },
+  {
+    "artist": "James Ryman",
+    "attack": 4,
+    "cardClass": "SHAMAN",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 51722,
+    "flavor": "The weirdest part is that it doesn't have legs.",
+    "health": 8,
+    "id": "DAL_047",
+    "mechanics": [
+      "LIFESTEAL",
+      "RUSH",
+      "WINDFURY"
+    ],
+    "name": "Walking Fountain",
+    "race": "ELEMENTAL",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Lifesteal</b>, <b>Rush</b>, <b>Windfury</b>",
+    "type": "MINION"
+  },
+  {
+    "artist": "Jim Nelson",
+    "attack": 2,
+    "cardClass": "SHAMAN",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 51724,
+    "flavor": "Attracts murlocs… and moths.",
+    "health": 3,
+    "id": "DAL_049",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Underbelly Angler",
+    "race": "MURLOC",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "After you play a Murloc, add a random Murloc to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Matt Dixon",
+    "attack": 4,
+    "cardClass": "SHAMAN",
+    "collectible": true,
+    "cost": 5,
+    "dbfId": 51727,
+    "flavor": "Fan favorite in the muck morphin' sewer strangers.",
+    "health": 4,
+    "id": "DAL_052",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Muckmorpher",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> Transform into\na 4/4 copy of a different\nminion in your deck.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 53003,
+    "id": "DAL_052e",
+    "name": "Muckmorphing",
+    "set": "DALARAN",
+    "text": "4/4.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Matt Dixon",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 51733,
+    "flavor": "Built by goblins, designed by a troll.",
+    "health": 8,
+    "id": "DAL_058",
+    "mechanics": [
+      "BATTLECRY",
+      "TAUNT"
+    ],
+    "name": "Hecklebot",
+    "race": "MECHANICAL",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "<b>Taunt</b>\n<b>Battlecry:</b> Your opponent summons a minion from their deck.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Daria Tuzova",
+    "cardClass": "WARRIOR",
+    "collectible": true,
+    "cost": 10,
+    "dbfId": 51734,
+    "flavor": "The first dimensional ripper had a point.\nThe second fell flat.\nThe THIRD one really started to take shape!",
+    "id": "DAL_059",
+    "name": "Dimensional Ripper",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Summon 2 copies of a minion in your deck.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "A.J. Nazzaro",
+    "attack": 3,
+    "cardClass": "WARRIOR",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 51735,
+    "flavor": "They always wind up bombing.",
+    "health": 3,
+    "id": "DAL_060",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Clockwork Goblin",
+    "race": "MECHANICAL",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> Shuffle a Bomb\ninto your opponent's deck.\nWhen drawn, it explodes\nfor 5 damage.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Ivan Fomin",
+    "cardClass": "WARRIOR",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 51737,
+    "flavor": "Infinitely preferable to mopping strikes.",
+    "id": "DAL_062",
+    "name": "Sweeping Strikes",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Give a minion \"Also damages minions next to whomever this attacks.\"",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "WARRIOR",
+    "dbfId": 51748,
+    "id": "DAL_062e",
+    "name": "Sweeping Strikes",
+    "set": "DALARAN",
+    "text": "Damages minions adjacent to defender.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Akkapoj T.",
+    "attack": 3,
+    "cardClass": "WARRIOR",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 51738,
+    "durability": 2,
+    "flavor": "Whoso pulleth out this wrench from the toolbox is rightwise king of the lab.",
+    "id": "DAL_063",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Wrenchcalibur",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "After your hero attacks, shuffle a Bomb into your [x]opponent's deck.",
+    "type": "WEAPON"
+  },
+  {
+    "artist": "Matt Dixon",
+    "attack": 7,
+    "cardClass": "WARRIOR",
+    "collectible": true,
+    "cost": 7,
+    "dbfId": 51739,
+    "elite": true,
+    "flavor": "He's gonna fly through the air with the greatest of grease.",
+    "health": 7,
+    "id": "DAL_064",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Blastmaster Boom",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> Summon two 1/1\nBoom Bots for each Bomb\nin your opponent's deck.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Matt Dixon",
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 51847,
+    "flavor": "It's 3 am. Do you know where your soul is?",
+    "id": "DAL_065",
+    "name": "Unsleeping Soul",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "referencedTags": [
+      "SILENCE"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Silence</b> a friendly minion, then summon a copy of it.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Jerry Mascho",
+    "attack": 7,
+    "cardClass": "WARRIOR",
+    "collectible": true,
+    "cost": 10,
+    "dbfId": 52086,
+    "elite": true,
+    "flavor": "“What’s better than reaving? BOOM reaving!”",
+    "health": 9,
+    "id": "DAL_070",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "The Boom Reaver",
+    "race": "MECHANICAL",
+    "rarity": "LEGENDARY",
+    "referencedTags": [
+      "RUSH"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Summon a copy of a minion in your deck. Give it <b>Rush</b>.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "WARRIOR",
+    "dbfId": 53357,
+    "id": "DAL_070e",
+    "name": "Reaving",
+    "set": "DALARAN",
+    "text": "Has <b>Rush</b>.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Andrew Hou",
+    "cardClass": "SHAMAN",
+    "collectible": true,
+    "cost": 0,
+    "dbfId": 52148,
+    "flavor": "You'll get the transformation you want when murlocs fly.",
+    "id": "DAL_071",
+    "name": "Mutate",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "Transform a friendly minion into a random one that costs (1) more.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Anton Zemskov",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 52277,
+    "flavor": "I'm addicted to him, but I know that he's Toxfin.",
+    "health": 2,
+    "id": "DAL_077",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Toxfin",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_IF_AVAILABLE": 0,
+      "REQ_TARGET_WITH_RACE": 14
+    },
+    "race": "MURLOC",
+    "rarity": "COMMON",
+    "referencedTags": [
+      "POISONOUS"
+    ],
+    "set": "DALARAN",
+    "targetingArrowText": "Give a friendly Murloc Poisonous.",
+    "text": "<b>Battlecry:</b> Give a friendly Murloc <b>Poisonous</b>.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 52297,
+    "id": "DAL_077e",
+    "name": "Toxic Fin",
+    "set": "DALARAN",
+    "text": "<b>Poisonous</b>",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Tod Harris",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52278,
+    "flavor": "Some heroes have soft hearts and hard shells.",
+    "health": 2,
+    "id": "DAL_078",
+    "mechanics": [
+      "BATTLECRY",
+      "DIVINE_SHIELD"
+    ],
+    "name": "Travelling Healer",
+    "playRequirements": {
+      "REQ_TARGET_IF_AVAILABLE": 0
+    },
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "targetingArrowText": "Restore 3 Health.",
+    "text": "[x]<b>Divine Shield</b>\n<b>Battlecry:</b> Restore #3 Health.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Adam Byrne",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52281,
+    "flavor": "The fanciest possible way of distracting enemies with shiny things.",
+    "health": 4,
+    "id": "DAL_081",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Spellward Jeweler",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> Your hero can't\nbe targeted by spells or\nHero Powers until your\nnext turn.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 52298,
+    "id": "DAL_081e",
+    "mechanics": [
+      "CANT_BE_TARGETED_BY_SPELLS",
+      "CANT_BE_TARGETED_BY_HERO_POWERS"
+    ],
+    "name": "Sparkly",
+    "set": "DALARAN",
+    "text": "Can't be targeted by spells or Hero Powers.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "James Ryman",
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 5,
+    "dbfId": 52285,
+    "flavor": "Stops for nothing—except donuts.",
+    "health": 4,
+    "id": "DAL_085",
+    "mechanics": [
+      "DIVINE_SHIELD"
+    ],
+    "name": "Dalaran Crusader",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Divine Shield</b>",
+    "type": "MINION"
+  },
+  {
+    "artist": "L. Lullabi & K. Turovec",
+    "attack": 2,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52286,
+    "flavor": "She's watching. Always watching.",
+    "health": 3,
+    "id": "DAL_086",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Sunreaver Spy",
+    "rarity": "COMMON",
+    "referencedTags": [
+      "SECRET"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> If you control a <b>Secret</b>, gain +1/+1.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 53023,
+    "id": "DAL_086e",
+    "name": "Stolen Secrets",
+    "set": "DALARAN",
+    "text": "+1/+1",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Christopher Hayes",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52287,
+    "flavor": "The Hench Clan is an equal opportunity employer, no matter which parts of you came from where.",
+    "health": 3,
+    "id": "DAL_087",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Hench-Clan Hag",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Summon two 1/1 Amalgams with all minion types.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Chris Hayes",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 1,
+    "dbfId": 53019,
+    "health": 1,
+    "id": "DAL_087t",
+    "name": "Amalgam",
+    "race": "ALL",
+    "set": "DALARAN",
+    "text": "[x]<i>This is an Elemental, Mech,\nDemon, Murloc, Dragon,\nBeast, Pirate and Totem.</i>",
+    "type": "MINION"
+  },
+  {
+    "artist": "L. Lullabi & K. Turovec",
+    "attack": 4,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 52288,
+    "flavor": "Keep it secret. Keep it safeguarded!",
+    "health": 5,
+    "id": "DAL_088",
+    "mechanics": [
+      "DEATHRATTLE",
+      "TAUNT"
+    ],
+    "name": "Safeguard",
+    "race": "MECHANICAL",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Summon a 0/5\nVault Safe with <b>Taunt</b>.",
+    "type": "MINION"
+  },
+  {
+    "attack": 0,
+    "cardClass": "NEUTRAL",
+    "cost": 2,
+    "dbfId": 53013,
+    "health": 5,
+    "id": "DAL_088t2",
+    "mechanics": [
+      "TAUNT"
+    ],
+    "name": "Vault Safe",
+    "race": "MECHANICAL",
+    "set": "DALARAN",
+    "text": "<b>Taunt</b>",
+    "type": "MINION"
+  },
+  {
+    "artist": "Ivan Fomin",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52289,
+    "flavor": "You're bound to love his work!",
+    "health": 2,
+    "id": "DAL_089",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Spellbook Binder",
+    "rarity": "COMMON",
+    "referencedTags": [
+      "SPELLPOWER"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> If you have <b>Spell Damage</b>, draw a card.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Andrew Hou",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52290,
+    "flavor": "He’d be a lot sneakier if he wasn’t trailing 300 yards of power cable…",
+    "health": 3,
+    "id": "DAL_090",
+    "mechanics": [
+      "STEALTH"
+    ],
+    "name": "Hench-Clan Sneak",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Stealth</b>",
+    "type": "MINION"
+  },
+  {
+    "artist": "Wayne Wu",
+    "attack": 2,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52292,
+    "flavor": "\"Would sir like me to punch something?\"",
+    "health": 3,
+    "id": "DAL_092",
+    "name": "Arcane Servant",
+    "race": "ELEMENTAL",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "type": "MINION"
+  },
+  {
+    "artist": "Luke Mancini",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52295,
+    "flavor": "If you have to wield a spell and a sword, then neither is performing to expectation.",
+    "health": 6,
+    "id": "DAL_095",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Violet Spellsword",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> Gain +1 Attack\nfor each spell in your hand.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 53010,
+    "id": "DAL_095e",
+    "name": "Pizzazz",
+    "set": "DALARAN",
+    "text": "Increased Attack.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Evgeniy Dlinnov",
+    "attack": 4,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 52296,
+    "flavor": "He's got magic, a shield, and an unwavering obsession with the color purple.",
+    "health": 7,
+    "id": "DAL_096",
+    "mechanics": [
+      "SPELLPOWER",
+      "TAUNT"
+    ],
+    "name": "Violet Warden",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "spellDamage": 1,
+    "text": "<b>Taunt</b>\n<b>Spell Damage +1</b>",
+    "type": "MINION"
+  },
+  {
+    "artist": "James Ryman",
+    "cardClass": "PALADIN",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 51705,
+    "flavor": "Desperate times call for disparate secrets.",
+    "id": "DAL_141",
+    "mechanics": [
+      "TWINSPELL"
+    ],
+    "name": "Desperate Measures",
+    "playRequirements": {
+      "REQ_SECRET_ZONE_CAP_FOR_NON_SECRET": 0
+    },
+    "rarity": "RARE",
+    "referencedTags": [
+      "SECRET"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Twinspell</b>\nCast a random Paladin <b>Secret</b>.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "PALADIN",
+    "cost": 1,
+    "dbfId": 54129,
+    "id": "DAL_141ts",
+    "name": "Desperate Measures",
+    "playRequirements": {
+      "REQ_SECRET_ZONE_CAP_FOR_NON_SECRET": 0
+    },
+    "rarity": "RARE",
+    "referencedTags": [
+      "SECRET"
+    ],
+    "set": "DALARAN",
+    "text": "Cast a random Paladin <b>Secret</b>.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Alex Horley",
+    "attack": 3,
+    "cardClass": "PALADIN",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 51757,
+    "flavor": "This is why you shouldn’t shoot the messenger.",
+    "health": 2,
+    "id": "DAL_146",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Bronze Herald",
+    "race": "DRAGON",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Deathrattle:</b> Add two 4/4 Dragons to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Alex Horley",
+    "attack": 4,
+    "cardClass": "PALADIN",
+    "cost": 4,
+    "dbfId": 51758,
+    "health": 4,
+    "id": "DAL_146t",
+    "name": "Bronze Dragon",
+    "race": "DRAGON",
+    "set": "DALARAN",
+    "type": "MINION"
+  },
+  {
+    "artist": "Arthur Bozonnet",
+    "attack": 3,
+    "cardClass": "PALADIN",
+    "collectible": true,
+    "cost": 5,
+    "dbfId": 51761,
+    "flavor": "All of his speeches really drag on.",
+    "health": 5,
+    "id": "DAL_147",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Dragon Speaker",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Give all Dragons in your hand +3/+3.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 51762,
+    "id": "DAL_147e",
+    "name": "Dragon Shout",
+    "set": "DALARAN",
+    "text": "+3/+3.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Grace Liu",
+    "attack": 3,
+    "cardClass": "MAGE",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 51943,
+    "flavor": "You can make a collect CAW!",
+    "health": 2,
+    "id": "DAL_163",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Messenger Raven",
+    "race": "BEAST",
+    "rarity": "COMMON",
+    "referencedTags": [
+      "DISCOVER"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> <b>Discover</b> a\nMage minion.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Slawomir Maniak",
+    "cardClass": "WARLOCK",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 51966,
+    "flavor": "It's always darkest just before you find the light switch.",
+    "id": "DAL_173",
+    "name": "Darkest Hour",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "Destroy all friendly minions. For each one, summon a random minion from your deck.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Jakub Kasper",
+    "cardClass": "MAGE",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 51971,
+    "flavor": "If only you’d let it go to voicemail…",
+    "id": "DAL_177",
+    "mechanics": [
+      "TWINSPELL"
+    ],
+    "name": "Conjurer's Calling",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "<b>Twinspell</b>\nDestroy a minion. Summon 2 minions of the same Cost to replace it.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "MAGE",
+    "cost": 3,
+    "dbfId": 52637,
+    "id": "DAL_177ts",
+    "name": "Conjurer's Calling",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Destroy a minion. Summon 2 minions of the same Cost to replace it.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Patrik Bjorkstrom",
+    "attack": 1,
+    "cardClass": "MAGE",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 51977,
+    "flavor": "There's a powerful throat in this frog.",
+    "health": 3,
+    "id": "DAL_182",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Magic Dart Frog",
+    "race": "BEAST",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "After you cast a spell, deal 1 damage to a random enemy minion.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Slawomir Maniak",
+    "attack": 4,
+    "cardClass": "WARLOCK",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 52058,
+    "flavor": "She's got a big brood and a big mood.",
+    "health": 6,
+    "id": "DAL_185",
+    "mechanics": [
+      "TAUNT",
+      "TOPDECK"
+    ],
+    "name": "Aranasi Broodmother",
+    "race": "DEMON",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "[x]<b>Taunt</b>\nWhen you draw this, restore\n4 Health to your hero.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Vladimir Kafanov",
+    "cardClass": "DRUID",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 52819,
+    "flavor": "Delicious Forest’s Aid! Made from real forests.",
+    "id": "DAL_256",
+    "mechanics": [
+      "TWINSPELL"
+    ],
+    "name": "The Forest's Aid",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "<b>Twinspell</b>\nSummon five 2/2 Treants.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Vladimir Kafanov",
+    "attack": 2,
+    "cardClass": "DRUID",
+    "cost": 2,
+    "dbfId": 53302,
+    "health": 2,
+    "id": "DAL_256t2",
+    "name": "Treant",
+    "set": "DALARAN",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "DRUID",
+    "cost": 8,
+    "dbfId": 52821,
+    "id": "DAL_256ts",
+    "name": "The Forest's Aid",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Summon five 2/2 Treants.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Arthur Bozonnet",
+    "cardClass": "DRUID",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 51769,
+    "flavor": "Often used as healing crystals, but also good for throwing at people.",
+    "id": "DAL_350",
+    "mechanics": [
+      "CHOOSE_ONE"
+    ],
+    "name": "Crystal Power",
+    "playRequirements": {
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Choose One -</b> Deal $2 damage to a minion; or Restore #5 Health.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Arthur Bozonnet",
+    "cardClass": "DRUID",
+    "cost": 1,
+    "dbfId": 51773,
+    "id": "DAL_350a",
+    "name": "Piercing Thorns",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "set": "DALARAN",
+    "text": "Deal $2 damage to a minion.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Arthur Bozonnet",
+    "cardClass": "DRUID",
+    "cost": 1,
+    "dbfId": 51775,
+    "id": "DAL_350b",
+    "name": "Healing Blossom",
+    "playRequirements": {
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "set": "DALARAN",
+    "text": "Restore #5 Health.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Steven Prescott",
+    "cardClass": "DRUID",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 51779,
+    "flavor": "Arguably the cutest blessing.",
+    "id": "DAL_351",
+    "mechanics": [
+      "TWINSPELL"
+    ],
+    "name": "Blessing of the Ancients",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0
+    },
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Twinspell</b>\nGive your minions +1/+1.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 52820,
+    "id": "DAL_351e",
+    "name": "Ancient Blessings",
+    "set": "DALARAN",
+    "text": "+1/+1.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "DRUID",
+    "cost": 3,
+    "dbfId": 54128,
+    "id": "DAL_351ts",
+    "name": "Blessing of the Ancients",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0
+    },
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "Give your minions +1/+1.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Arthur Bozonnet",
+    "cardClass": "DRUID",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 51781,
+    "flavor": "Experience the draw of the wild!",
+    "id": "DAL_352",
+    "name": "Crystalsong Portal",
+    "rarity": "EPIC",
+    "referencedTags": [
+      "DISCOVER"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Discover</b> a Druid minion. If your hand has no minions, keep all 3.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Steven Prescott",
+    "attack": 2,
+    "cardClass": "DRUID",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 51790,
+    "flavor": "You’d be nuts to mess with the squirrel squad.",
+    "health": 1,
+    "id": "DAL_354",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Acornbearer",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Deathrattle:</b> Add two 1/1 Squirrels to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Steven Prescott",
+    "attack": 1,
+    "cardClass": "DRUID",
+    "cost": 1,
+    "dbfId": 54315,
+    "health": 1,
+    "id": "DAL_354t",
+    "name": "Squirrel",
+    "race": "BEAST",
+    "set": "DALARAN",
+    "type": "MINION"
+  },
+  {
+    "artist": "Vladimir Kafanov",
+    "attack": 2,
+    "cardClass": "DRUID",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 51791,
+    "flavor": "Lifeweaving is all well and good until it's time to cut the thread.",
+    "health": 5,
+    "id": "DAL_355",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Lifeweaver",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Whenever you restore Health, add a random Druid spell to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Steven Prescott",
+    "attack": 4,
+    "cardClass": "DRUID",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 51795,
+    "elite": true,
+    "flavor": "Always feels refreshed after a little dirt nap.",
+    "health": 8,
+    "id": "DAL_357",
+    "mechanics": [
+      "DEATHRATTLE",
+      "TAUNT"
+    ],
+    "name": "Lucentbark",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "<b>Taunt</b>\n<b>Deathrattle:</b> Go dormant. Restore 5 Health to awaken this minion.",
+    "type": "MINION"
+  },
+  {
+    "attack": 0,
+    "cardClass": "DRUID",
+    "collectionText": " left!)</i>",
+    "cost": 11,
+    "dbfId": 51796,
+    "health": 1,
+    "hideStats": true,
+    "id": "DAL_357t",
+    "mechanics": [
+      "TRIGGER_VISUAL",
+      "UNTOUCHABLE"
+    ],
+    "name": "Spirit of Lucentbark",
+    "set": "DALARAN",
+    "text": "When you restore 5 Health, awaken this minion.\n<i>(",
+    "type": "MINION"
+  },
+  {
+    "artist": "Akkapoj T.",
+    "cardClass": "ROGUE",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 51827,
+    "entourage": [
+      "DAL_366t1",
+      "DAL_366t2",
+      "DAL_366t3",
+      "DAL_366t4"
+    ],
+    "flavor": "The terms of service are constantly changing.",
+    "id": "DAL_366",
+    "name": "Unidentified Contract",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "Destroy a minion. Gains a bonus effect in your hand.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Akkapoj T.",
+    "cardClass": "ROGUE",
+    "cost": 6,
+    "dbfId": 53241,
+    "id": "DAL_366t1",
+    "name": "Assassin's Contract",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "Destroy a minion. Summon a 1/1 Patient Assassin.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Akkapoj T.",
+    "cardClass": "ROGUE",
+    "cost": 6,
+    "dbfId": 52875,
+    "id": "DAL_366t2",
+    "name": "Recruitment Contract",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "Destroy a minion. Add a copy of it to your hand.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Akkapoj T.",
+    "cardClass": "ROGUE",
+    "cost": 6,
+    "dbfId": 53244,
+    "id": "DAL_366t3",
+    "name": "Lucrative Contract",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "Destroy a minion. Add 2 Coins to your hand.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Akkapoj T.",
+    "cardClass": "ROGUE",
+    "cost": 6,
+    "dbfId": 53246,
+    "id": "DAL_366t4",
+    "name": "Turncoat Contract",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "Destroy a minion. It deals its damage to adjacent minions.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Alex Garner",
+    "cardClass": "HUNTER",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52070,
+    "flavor": "Obviously it's marked for greatness.",
+    "id": "DAL_371",
+    "name": "Marked Shot",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "referencedTags": [
+      "DISCOVER"
+    ],
+    "set": "DALARAN",
+    "text": "Deal $4 damage to a minion. <b>Discover</b> a spell.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Rafael Zanchetin",
+    "attack": 3,
+    "cardClass": "HUNTER",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52072,
+    "flavor": "Stop trying to make fletch happen. It's not going to happen.",
+    "health": 3,
+    "id": "DAL_372",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Arcane Fletcher",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "[x]Whenever you play a\n1-Cost minion, draw a\nspell from your deck.",
+    "type": "MINION"
+  },
+  {
+    "artist": "L. Lullabi & K. Turovec",
+    "cardClass": "HUNTER",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 52076,
+    "flavor": "Pew! Pew!",
+    "id": "DAL_373",
+    "mechanics": [
+      "TWINSPELL"
+    ],
+    "name": "Rapid Fire",
+    "playRequirements": {
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Twinspell</b>\nDeal $1 damage.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "HUNTER",
+    "cost": 1,
+    "dbfId": 54143,
+    "id": "DAL_373ts",
+    "name": "Rapid Fire",
+    "playRequirements": {
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "Deal $1 damage.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Zoltan Boros",
+    "attack": 3,
+    "cardClass": "HUNTER",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 52081,
+    "elite": true,
+    "flavor": "Reduce, reuse, re-rattle!",
+    "health": 4,
+    "id": "DAL_376",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Oblivitron",
+    "race": "MECHANICAL",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "[x]<b>Deathrattle:</b> Summon a\nMech from your hand and\ntrigger its <b>Deathrattle</b>.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Anton Zemskov",
+    "cardClass": "HUNTER",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52082,
+    "flavor": "Beware the night of the living pets!",
+    "id": "DAL_377",
+    "name": "Nine Lives",
+    "playRequirements": {
+      "REQ_FRIENDLY_DEATHRATTLE_MINION_DIED_THIS_GAME": 0
+    },
+    "rarity": "EPIC",
+    "referencedTags": [
+      "DEATHRATTLE",
+      "DISCOVER"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Discover</b> a friendly <b>Deathrattle</b> minion that died this game. Also trigger its <b>Deathrattle</b>.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "L. Lullabi & K. Turovec",
+    "cardClass": "HUNTER",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 52089,
+    "flavor": "The Kirin Tor have always been lax in enforcing leash laws.",
+    "id": "DAL_378",
+    "mechanics": [
+      "TWINSPELL"
+    ],
+    "name": "Unleash the Beast",
+    "playRequirements": {
+      "REQ_NUM_MINION_SLOTS": 1
+    },
+    "rarity": "RARE",
+    "referencedTags": [
+      "RUSH"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Twinspell</b>\nSummon a 5/5 Wyvern with <b>Rush</b>.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "L. Lullabi & K. Turovec",
+    "attack": 5,
+    "cardClass": "HUNTER",
+    "cost": 5,
+    "dbfId": 54146,
+    "health": 5,
+    "id": "DAL_378t1",
+    "mechanics": [
+      "RUSH"
+    ],
+    "name": "Wyvern",
+    "race": "BEAST",
+    "set": "DALARAN",
+    "text": "<b>Rush</b>",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "HUNTER",
+    "cost": 6,
+    "dbfId": 54145,
+    "id": "DAL_378ts",
+    "name": "Unleash the Beast",
+    "playRequirements": {
+      "REQ_NUM_MINION_SLOTS": 1
+    },
+    "rarity": "RARE",
+    "referencedTags": [
+      "RUSH"
+    ],
+    "set": "DALARAN",
+    "text": "Summon a 5/5 Wyvern with <b>Rush</b>.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "James Ryman",
+    "attack": 5,
+    "cardClass": "HUNTER",
+    "collectible": true,
+    "cost": 7,
+    "dbfId": 52091,
+    "elite": true,
+    "flavor": "Good things come in threes: Windrunner sisters and arrows of Thori'dal.",
+    "health": 6,
+    "id": "DAL_379",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Vereesa Windrunner",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Equip Thori'dal, the Stars' Fury.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "HUNTER",
+    "dbfId": 52093,
+    "id": "DAL_379e",
+    "mechanics": [
+      "TAG_ONE_TURN_EFFECT"
+    ],
+    "name": "Stars' Fury",
+    "set": "DALARAN",
+    "text": "You have <b>Spell Damage +2</b> this turn.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "James Ryman",
+    "attack": 2,
+    "cardClass": "HUNTER",
+    "cost": 3,
+    "dbfId": 54157,
+    "durability": 3,
+    "elite": true,
+    "id": "DAL_379t",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Thori'dal, the Stars' Fury",
+    "referencedTags": [
+      "SPELLPOWER"
+    ],
+    "set": "DALARAN",
+    "text": "After your hero attacks, gain <b>Spell Damage +2</b> this turn.",
+    "type": "WEAPON"
+  },
+  {
+    "artist": "Jim Nelson",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 51380,
+    "flavor": "Gradually driven to darkness by the promise of unobtainable cheese.",
+    "health": 1,
+    "id": "DAL_400",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "EVIL Cable Rat",
+    "race": "BEAST",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Add a <b>Lackey</b> to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Tooth",
+    "attack": 2,
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52109,
+    "flavor": "Kobold! There’s a place you can handle\nI said kobold! When you’re short in the candle\nCast a spell with the E! V! I! L!",
+    "health": 2,
+    "id": "DAL_413",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "EVIL Conscripter",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Deathrattle:</b> Add a <b>Lackey</b> to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Mike Sass",
+    "attack": 1,
+    "cardClass": "ROGUE",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52111,
+    "flavor": "Because there are no G.O.O.D. Miscreants.",
+    "health": 5,
+    "id": "DAL_415",
+    "mechanics": [
+      "COMBO"
+    ],
+    "name": "EVIL Miscreant",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Combo:</b> Add two random <b>Lackeys</b> to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Anton Zemskov",
+    "attack": 4,
+    "cardClass": "ROGUE",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52112,
+    "flavor": "She’s more of a rat burglar.",
+    "health": 3,
+    "id": "DAL_416",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Hench-Clan Burglar",
+    "race": "PIRATE",
+    "rarity": "COMMON",
+    "referencedTags": [
+      "DISCOVER"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> <b>Discover</b> a spell from another class.",
+    "type": "MINION"
+  },
+  {
+    "artist": "L. Lullabi & K. Turovec",
+    "attack": 5,
+    "cardClass": "ROGUE",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 52114,
+    "elite": true,
+    "entourage": [
+      "LOOT_998h",
+      "LOOT_998j",
+      "LOOT_998l",
+      "LOOT_998k"
+    ],
+    "flavor": "A staunch ally of Rafaam, at least while the shinies keep flowing.",
+    "health": 5,
+    "id": "DAL_417",
+    "mechanics": [
+      "BATTLECRY",
+      "MULTIPLY_BUFF_VALUE"
+    ],
+    "name": "Heistbaron Togwaggle",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> If you control a <b>Lackey</b>, choose a fantastic treasure.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Alex Horley",
+    "attack": 7,
+    "cardClass": "WARLOCK",
+    "collectible": true,
+    "cost": 7,
+    "dbfId": 52119,
+    "elite": true,
+    "flavor": "Minions must wash hands before being LIQUIDATED AND REPLACED BY SOMEONE BETTER.",
+    "health": 8,
+    "id": "DAL_422",
+    "mechanics": [
+      "BATTLECRY",
+      "TAUNT"
+    ],
+    "name": "Arch-Villain Rafaam",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "<b><b>Taunt</b>\nBattlecry:</b> Replace your hand and deck with <b>Legendary</b> minions.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Alex Horley",
+    "attack": 5,
+    "cardClass": "SHAMAN",
+    "collectible": true,
+    "cost": 7,
+    "dbfId": 52409,
+    "elite": true,
+    "entourage": [
+      "DAL_431t"
+    ],
+    "flavor": "Rafaam mainly enjoys working with Hagatha because she never laughs at Dr. Boom's jokes.",
+    "health": 5,
+    "id": "DAL_431",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Swampqueen Hagatha",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> Add a 5/5\nHorror to your hand. Teach\nit two Shaman spells.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Alex Horley",
+    "attack": 5,
+    "cardClass": "SHAMAN",
+    "cost": 5,
+    "dbfId": 52812,
+    "health": 5,
+    "id": "DAL_431t",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Drustvar Horror",
+    "set": "DALARAN",
+    "targetingArrowText": "Cast {0}.",
+    "text": "<b>Battlecry:</b> Cast {0} and {1}.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Jakub Kasper",
+    "cardClass": "SHAMAN",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52421,
+    "flavor": "The swill has eyes!",
+    "id": "DAL_432",
+    "name": "Witch's Brew",
+    "playRequirements": {
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "Restore #4 Health. Repeatable this turn.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Rudy Siswanto",
+    "attack": 2,
+    "cardClass": "SHAMAN",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 52422,
+    "flavor": "You can't stop slurping this delicious sludge!",
+    "health": 1,
+    "id": "DAL_433",
+    "mechanics": [
+      "BATTLECRY",
+      "OVERLOAD"
+    ],
+    "name": "Sludge Slurper",
+    "overload": 1,
+    "race": "MURLOC",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Add a <b>Lackey</b> to your hand. <b>Overload:</b> (1)",
+    "type": "MINION"
+  },
+  {
+    "artist": "Jakub Kasper",
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52654,
+    "flavor": "Now his watch has ended… until you have Spell Damage.",
+    "health": 6,
+    "id": "DAL_434",
+    "name": "Arcane Watcher",
+    "rarity": "RARE",
+    "referencedTags": [
+      "SPELLPOWER"
+    ],
+    "set": "DALARAN",
+    "text": "Can't attack unless you have <b>Spell Damage</b>.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Dave Allsop",
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 52306,
+    "flavor": "Far more effective than the flamboyant saboteur.",
+    "health": 6,
+    "id": "DAL_538",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Unseen Saboteur",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Your opponent casts a random spell from their hand <i>(targets chosen randomly)</i>.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Zoltan Boros",
+    "attack": 4,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 5,
+    "dbfId": 52307,
+    "flavor": "What, did you expect the Sunreavers to be coldages?",
+    "health": 4,
+    "id": "DAL_539",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Sunreaver Warmage",
+    "playRequirements": {
+      "REQ_DRAG_TO_PLAY": 0
+    },
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "targetingArrowText": "Deal 4 damage.",
+    "text": "<b>Battlecry:</b> If you're holding a spell that costs (5) or more, deal 4 damage.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Rafael Zanchetin",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 52312,
+    "flavor": "Everyone gets two because that’s all she can hold.",
+    "health": 1,
+    "id": "DAL_544",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Potion Vendor",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Restore #2 Health to all friendly characters.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Zoltan Boros",
+    "attack": 4,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 5,
+    "dbfId": 52413,
+    "elite": true,
+    "flavor": "\"Thanks a latte!\"",
+    "health": 5,
+    "id": "DAL_546",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Barista Lynchen",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Add a copy of each of your other <b>Battlecry</b> minions to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Luca Zontini",
+    "attack": 2,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 5,
+    "dbfId": 52415,
+    "flavor": "This is some bad blood.",
+    "health": 7,
+    "id": "DAL_548",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Azerite Elemental",
+    "race": "ELEMENTAL",
+    "rarity": "EPIC",
+    "referencedTags": [
+      "SPELLPOWER"
+    ],
+    "set": "DALARAN",
+    "text": "At the start of your turn, gain <b>Spell Damage +2</b>.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 52427,
+    "id": "DAL_548e",
+    "name": "Arcane Expansion",
+    "set": "DALARAN",
+    "text": "Increased <b>Spell Damage</b>.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Danny Dai",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 7,
+    "dbfId": 52417,
+    "flavor": "It's always accepting of the less successful adventurers.",
+    "health": 5,
+    "id": "DAL_550",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Underbelly Ooze",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "After this minion survives damage, summon a copy of it.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Arthur Bozonnet",
+    "attack": 2,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52418,
+    "flavor": "It'll take a humble offender to defeat him.",
+    "health": 6,
+    "id": "DAL_551",
+    "mechanics": [
+      "TAUNT"
+    ],
+    "name": "Proud Defender",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Taunt</b>\nHas +2 Attack while you [x]have no other minions.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Mauricio Herrera",
+    "attack": 6,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 10,
+    "dbfId": 52420,
+    "flavor": "\"My, my, what big minions I have!\"",
+    "health": 6,
+    "id": "DAL_553",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Big Bad Archmage",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "At the end of your turn, summon a random\n6-Cost minion.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Sean McNally",
+    "attack": 6,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 7,
+    "dbfId": 52434,
+    "elite": true,
+    "flavor": "His cooking is always very well done.",
+    "health": 6,
+    "id": "DAL_554",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Chef Nomi",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> If your deck is empty, summon six 6/6 Greasefire Elementals.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Sean McNally",
+    "attack": 6,
+    "cardClass": "NEUTRAL",
+    "cost": 6,
+    "dbfId": 53310,
+    "health": 6,
+    "id": "DAL_554t",
+    "name": "Greasefire Elemental",
+    "race": "ELEMENTAL",
+    "set": "DALARAN",
+    "type": "MINION"
+  },
+  {
+    "artist": "James Ryman",
+    "attack": 2,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52438,
+    "elite": true,
+    "flavor": "He's an archmage, but he might want to brush up on the basics... like aiming.",
+    "health": 6,
+    "id": "DAL_558",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Archmage Vargoth",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "[x]At the end of your turn, cast\na spell you've cast this turn\n<i>(targets are random)</i>.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Maria Trepalina",
+    "attack": 4,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 52479,
+    "flavor": "We reserve the right to refuse service to any 1/1.",
+    "health": 4,
+    "id": "DAL_560",
+    "mechanics": [
+      "BATTLECRY",
+      "TAUNT"
+    ],
+    "name": "Heroic Innkeeper",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Taunt.</b> <b>Battlecry:</b> Gain +2/+2 for each other friendly minion.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 53014,
+    "id": "DAL_560e2",
+    "name": "Protect the Brews!",
+    "set": "DALARAN",
+    "text": "Increased stats.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "James Ryman",
+    "attack": 8,
+    "cardClass": "WARLOCK",
+    "collectible": true,
+    "cost": 10,
+    "dbfId": 52480,
+    "flavor": "Jumbo in size! Huge in E.V.I.L.!",
+    "health": 8,
+    "id": "DAL_561",
+    "name": "Jumbo Imp",
+    "race": "DEMON",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "Costs (1) less whenever a friendly Demon dies while this is in your hand.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55877,
+    "id": "DAL_561e",
+    "name": "Imp-onomical",
+    "set": "DALARAN",
+    "text": "Costs (1) less.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Jim Nelson",
+    "attack": 2,
+    "cardClass": "WARLOCK",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52482,
+    "flavor": "Eager to please, even if it kills him.",
+    "health": 2,
+    "id": "DAL_563",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Eager Underling",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "<b>Deathrattle:</b> Give two random friendly minions +2/+2.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 56204,
+    "id": "DAL_563e",
+    "name": "Power of EVIL",
+    "set": "DALARAN",
+    "text": "+2/+2.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Nicola Saviori",
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 52486,
+    "flavor": "It’s like an interdimensional game of demon tag.",
+    "health": 6,
+    "id": "DAL_565",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Portal Overfiend",
+    "race": "DEMON",
+    "rarity": "EPIC",
+    "referencedTags": [
+      "RUSH"
+    ],
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> Shuffle 3 Portals\ninto your deck. When drawn,\nsummon a 2/2 Demon\nwith <b>Rush</b>.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Charlene LeScanff",
+    "attack": 6,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 52487,
+    "flavor": "Them’s fightin’ words!",
+    "health": 4,
+    "id": "DAL_566",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Eccentric Scribe",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Deathrattle:</b> Summon\nfour 1/1 Vengeful Scrolls.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Charlene LeScanff",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 1,
+    "dbfId": 52827,
+    "health": 1,
+    "id": "DAL_566t",
+    "name": "Vengeful Scroll",
+    "set": "DALARAN",
+    "type": "MINION"
+  },
+  {
+    "artist": "Vladimir Kafanov",
+    "cardClass": "PALADIN",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52490,
+    "flavor": "Some might call this a lightforgery.",
+    "id": "DAL_568",
+    "mechanics": [
+      "TWINSPELL"
+    ],
+    "name": "Lightforged Blessing",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "referencedTags": [
+      "LIFESTEAL"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Twinspell</b>\nGive a friendly minion <b>Lifesteal</b>.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "PALADIN",
+    "dbfId": 55982,
+    "id": "DAL_568e",
+    "name": "Lightforged Blessing",
+    "set": "DALARAN",
+    "text": "<b>Lifesteal</b>",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "PALADIN",
+    "cost": 2,
+    "dbfId": 54189,
+    "id": "DAL_568ts",
+    "name": "Lightforged Blessing",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "referencedTags": [
+      "LIFESTEAL"
+    ],
+    "set": "DALARAN",
+    "text": "Give a friendly minion <b>Lifesteal</b>.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Mauricio Herrera",
+    "cardClass": "PALADIN",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 52494,
+    "flavor": "But sometimes concede.",
+    "id": "DAL_570",
+    "mechanics": [
+      "SECRET"
+    ],
+    "name": "Never Surrender!",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Secret:</b> When your opponent casts a spell, give your minions +2 Health.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 52495,
+    "id": "DAL_570e",
+    "name": "Never Surrender!",
+    "set": "DALARAN",
+    "text": "+2 Health.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Vlad Botos",
+    "attack": 2,
+    "cardClass": "PALADIN",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52496,
+    "durability": 2,
+    "flavor": "It knows every secret you have left.",
+    "id": "DAL_571",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Mysterious Blade",
+    "rarity": "RARE",
+    "referencedTags": [
+      "SECRET"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> If you control a\n<b>Secret</b>, gain +1 Attack.",
+    "type": "WEAPON"
+  },
+  {
+    "cardClass": "PALADIN",
+    "dbfId": 55876,
+    "id": "DAL_571e",
+    "name": "Mysterious",
+    "set": "DALARAN",
+    "text": "+1 Attack.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Luke Mancini",
+    "attack": 4,
+    "cardClass": "PALADIN",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52500,
+    "elite": true,
+    "flavor": "Two people can keep a secret as long as neither of them are Commander Rhyssa.",
+    "health": 3,
+    "id": "DAL_573",
+    "mechanics": [
+      "AURA",
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Commander Rhyssa",
+    "rarity": "LEGENDARY",
+    "referencedTags": [
+      "SECRET"
+    ],
+    "set": "DALARAN",
+    "text": "Your <b>Secrets</b> trigger twice.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Evgeniy Zagumyenny",
+    "attack": 2,
+    "cardClass": "MAGE",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52502,
+    "elite": true,
+    "flavor": "\"What do you call two minions summoned at once? Twinions, haha! Wait... where are you going?\"",
+    "health": 2,
+    "id": "DAL_575",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Khadgar",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "Your cards that summon minions summon twice as many.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Zoltan Boros",
+    "attack": 3,
+    "cardClass": "MAGE",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52638,
+    "flavor": "The math checks out!",
+    "health": 3,
+    "id": "DAL_576",
+    "mechanics": [
+      "AURA",
+      "SPELLPOWER"
+    ],
+    "name": "Kirin Tor Tricaster",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "spellDamage": 3,
+    "text": "<b>Spell Damage +3</b>\nYour spells cost (1) more.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 53937,
+    "id": "DAL_576e",
+    "name": "Kirin Tor's Curse",
+    "set": "DALARAN",
+    "text": "Costs (1) more.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Alex Garner",
+    "cardClass": "MAGE",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 52639,
+    "flavor": "If you have zero chill, this can help.",
+    "id": "DAL_577",
+    "mechanics": [
+      "TWINSPELL"
+    ],
+    "name": "Ray of Frost",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "referencedTags": [
+      "FREEZE"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Twinspell</b>\n<b>Freeze</b> a minion.\nIf it's already <b>Frozen</b>,\ndeal $2 damage to it.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "MAGE",
+    "cost": 1,
+    "dbfId": 54193,
+    "id": "DAL_577ts",
+    "name": "Ray of Frost",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "referencedTags": [
+      "FREEZE"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Freeze</b> a minion.\nIf it's already <b>Frozen</b>,\ndeal $2 damage to it.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Zoltan Boros",
+    "cardClass": "MAGE",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 52640,
+    "flavor": "Mostly used for party tricks, to be honest.",
+    "id": "DAL_578",
+    "name": "Power of Creation",
+    "playRequirements": {
+      "REQ_NUM_MINION_SLOTS": 1
+    },
+    "rarity": "EPIC",
+    "referencedTags": [
+      "DISCOVER"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Discover</b> a 6-Cost minion. Summon two copies of it.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Arthur Gimaldinov",
+    "attack": 4,
+    "cardClass": "PALADIN",
+    "collectible": true,
+    "cost": 10,
+    "dbfId": 52685,
+    "elite": true,
+    "flavor": "In another timeline, she was called Yeszari.",
+    "health": 12,
+    "id": "DAL_581",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Nozari",
+    "race": "DRAGON",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Restore both heroes to full Health.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Nicola Saviori",
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52707,
+    "flavor": "No longer allowed to be “it” when playing demon tag.",
+    "health": 2,
+    "id": "DAL_582",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Portal Keeper",
+    "race": "DEMON",
+    "rarity": "RARE",
+    "referencedTags": [
+      "RUSH"
+    ],
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> Shuffle 3 Portals\ninto your deck. When drawn,\nsummon a 2/2 Demon\nwith <b>Rush</b>.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Zoltan Boros",
+    "cardClass": "NEUTRAL",
+    "cost": 2,
+    "dbfId": 52709,
+    "id": "DAL_582t",
+    "mechanics": [
+      "TOPDECK"
+    ],
+    "name": "Felhound Portal",
+    "referencedTags": [
+      "RUSH"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Casts When Drawn</b>\nSummon a 2/2 Felhound with <b>Rush</b>.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Zoltan Boros",
+    "attack": 2,
+    "cardClass": "NEUTRAL",
+    "cost": 2,
+    "dbfId": 52710,
+    "health": 2,
+    "id": "DAL_582t2",
+    "mechanics": [
+      "RUSH"
+    ],
+    "name": "Felhound",
+    "race": "DEMON",
+    "set": "DALARAN",
+    "text": "<b>Rush</b>",
+    "type": "MINION"
+  },
+  {
+    "artist": "Cecile He",
+    "attack": 1,
+    "cardClass": "HUNTER",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 52894,
+    "entourage": [
+      "NEW1_032",
+      "NEW1_033",
+      "NEW1_034"
+    ],
+    "flavor": "Plenty of buzz around this card.",
+    "health": 1,
+    "id": "DAL_587",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Shimmerfly",
+    "race": "BEAST",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "<b>Deathrattle:</b> Add a random Hunter spell to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Jim Nelson",
+    "cardClass": "HUNTER",
+    "collectible": true,
+    "cost": 5,
+    "dbfId": 53099,
+    "flavor": "Not sure I’d call it a good party if everyone ends up beside themselves.",
+    "id": "DAL_589",
+    "name": "Hunting Party",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Copy all Beasts in your hand.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 53100,
+    "id": "DAL_589e",
+    "name": "Hunting Party",
+    "set": "DALARAN",
+    "text": "+3/+3.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "MAR Studio",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 53251,
+    "flavor": "When it comes to problem-solving, he always uses his head.",
+    "health": 12,
+    "id": "DAL_592",
+    "mechanics": [
+      "RUSH",
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Batterhead",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "<b>Rush</b>. After this attacks and kills a minion, it may attack again.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Arthur Gimaldinov",
+    "cardClass": "WARLOCK",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52698,
+    "flavor": "It’s coming from inside the deck!",
+    "id": "DAL_602",
+    "name": "Plot Twist",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Shuffle your hand\ninto your deck.\nDraw that many cards.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Ware Li",
+    "attack": 2,
+    "cardClass": "MAGE",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52706,
+    "flavor": "It'll put a good spin on your spells.",
+    "health": 2,
+    "id": "DAL_603",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Mana Cyclone",
+    "race": "ELEMENTAL",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> For each spell\nyou've cast this turn, add\na random Mage spell\nto your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Zoltan Boros",
+    "attack": 3,
+    "cardClass": "HUNTER",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52790,
+    "flavor": "It's been programmed to include all the bear necessities.",
+    "health": 3,
+    "id": "DAL_604",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Ursatron",
+    "race": "MECHANICAL",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Deathrattle:</b> Draw a Mech from your deck.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Chris Hayes",
+    "cardClass": "WARLOCK",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52871,
+    "flavor": "Imps don't get mad when you set them on fire. They think it's cozy.",
+    "id": "DAL_605",
+    "name": "Impferno",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_WITH_RACE": 15
+    },
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Give your Demons +1 Attack. Deal $1 damage to all enemy minions.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "WARLOCK",
+    "cost": 2,
+    "dbfId": 52874,
+    "id": "DAL_605e",
+    "name": "Imptastic",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "+1 Attack.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Rudy Siswanto",
+    "attack": 2,
+    "cardClass": "WARLOCK",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52872,
+    "flavor": "You do not want to be on the business end of this intellect!",
+    "health": 2,
+    "id": "DAL_606",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "EVIL Genius",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_IF_AVAILABLE": 0
+    },
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "targetingArrowText": "Destroy a friendly minion.",
+    "text": "<b>Battlecry:</b> Destroy a friendly minion to add 2 random <b>Lackeys</b> to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Nicola Saviori",
+    "attack": 5,
+    "cardClass": "WARLOCK",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 52873,
+    "elite": true,
+    "flavor": "Nobody else likes rush hour.",
+    "health": 7,
+    "id": "DAL_607",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Fel Lord Betrug",
+    "race": "DEMON",
+    "rarity": "LEGENDARY",
+    "referencedTags": [
+      "RUSH"
+    ],
+    "set": "DALARAN",
+    "text": "[x]Whenever you draw a\nminion, summon a copy\n with <b>Rush</b> that dies at\nend of turn.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 52657,
+    "id": "DAL_607e",
+    "name": "Fleeting Fel",
+    "set": "DALARAN",
+    "text": "<b>Rush</b>. Dies at end of turn.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Ivan Fomin",
+    "cardClass": "MAGE",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 52991,
+    "flavor": "The world is not ready for an illusion of this depth and intricacy!",
+    "id": "DAL_608",
+    "name": "Magic Trick",
+    "rarity": "RARE",
+    "referencedTags": [
+      "DISCOVER"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Discover</b> a spell that costs (3) or less.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Chris Rahn",
+    "attack": 4,
+    "cardClass": "MAGE",
+    "collectible": true,
+    "cost": 10,
+    "dbfId": 53002,
+    "elite": true,
+    "flavor": "He was once the Aspect of Magic but gave it up to focus on cheap tricks.",
+    "health": 12,
+    "id": "DAL_609",
+    "mechanics": [
+      "AURA",
+      "BATTLECRY",
+      "DISCOVER"
+    ],
+    "name": "Kalecgos",
+    "race": "DRAGON",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "Your first spell each\nturn costs (0).\n<b>Battlecry:</b> <b>Discover</b>\na spell.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Slawomir Maniak",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 1,
+    "dbfId": 53160,
+    "health": 1,
+    "id": "DAL_613",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Faceless Lackey",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Summon a random 2-Cost minion.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Ivan Fomin",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 1,
+    "dbfId": 53161,
+    "health": 1,
+    "id": "DAL_614",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Kobold Lackey",
+    "playRequirements": {
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "set": "DALARAN",
+    "targetingArrowText": "Deal 2 damage.",
+    "text": "<b>Battlecry:</b> Deal 2 damage.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Jeremy Cranford",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 1,
+    "dbfId": 53162,
+    "health": 1,
+    "id": "DAL_615",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Witchy Lackey",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_IF_AVAILABLE": 0
+    },
+    "set": "DALARAN",
+    "targetingArrowText": "Transform a minion.",
+    "text": "<b>Battlecry:</b> Transform a friendly minion into one that costs (1) more.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Jason Kang",
+    "cardClass": "SHAMAN",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52468,
+    "flavor": "Previously thought nonexistent.",
+    "id": "DAL_710",
+    "name": "Soul of the Murloc",
+    "rarity": "COMMON",
+    "referencedTags": [
+      "DEATHRATTLE"
+    ],
+    "set": "DALARAN",
+    "text": "Give your minions \"<b>Deathrattle:</b> Summon a 1/1 Murloc.\"",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "SHAMAN",
+    "dbfId": 52549,
+    "id": "DAL_710e",
+    "name": "Soul of the Murloc",
+    "set": "DALARAN",
+    "text": "<b>Deathrattle:</b> Summon a 1/1 Murloc.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Arthur Bozonnet",
+    "attack": 2,
+    "cardClass": "ROGUE",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52603,
+    "flavor": "She’ll take anything you have—except scruples and a good work ethic.",
+    "health": 3,
+    "id": "DAL_714",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Underbelly Fence",
+    "rarity": "RARE",
+    "referencedTags": [
+      "RUSH"
+    ],
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> If you're holding\na card from another class,\n gain +1/+1 and <b><b>Rush</b>.</b>",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 52646,
+    "id": "DAL_714e",
+    "name": "Street Smarts",
+    "set": "DALARAN",
+    "text": "+1/+1.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Jim Nelson",
+    "cardClass": "ROGUE",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52606,
+    "flavor": "A vengeful and vicarious vanguard against violent villains or vexed victims.",
+    "id": "DAL_716",
+    "name": "Vendetta",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Deal $4 damage to a minion. Costs (0) if you're holding a card from another class.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Rafael Zanchetin",
+    "attack": 6,
+    "cardClass": "ROGUE",
+    "collectible": true,
+    "cost": 7,
+    "dbfId": 52616,
+    "elite": true,
+    "flavor": "\"One for me and one for future me!\"",
+    "health": 6,
+    "id": "DAL_719",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Tak Nozwhisker",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "[x]Whenever you shuffle a\ncard into your deck, add\na copy to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Jason Kang",
+    "attack": 4,
+    "cardClass": "ROGUE",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52617,
+    "durability": 2,
+    "flavor": "Kobolds informally refer to its effect as a deathwaggle.",
+    "id": "DAL_720",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Waggle Pick",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "[x]<b>Deathrattle:</b> Return\na random friendly\nminion to your hand.\nIt costs (2) less.",
+    "type": "WEAPON"
+  },
+  {
+    "artist": "Mike Sass",
+    "attack": 6,
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 52627,
+    "elite": true,
+    "flavor": "She always manages to lift your spirits.",
+    "health": 8,
+    "id": "DAL_721",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Catrina Muerte",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "[x]At the end of your turn,\nsummon a friendly minion\nthat died this game.",
+    "type": "MINION"
+  },
+  {
+    "artist": "J. Axer",
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "cost": 0,
+    "dbfId": 52632,
+    "flavor": "Please confirm your age before reading this flavor text.",
+    "id": "DAL_723",
+    "name": "Forbidden Words",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "[x]Spend all your Mana.\nDestroy a minion with that\nmuch Attack or less.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Arthur Bozonnet",
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "cost": 9,
+    "dbfId": 52633,
+    "flavor": "One's company, two's a crowd, and three's a “mass” resurrection, apparently.",
+    "id": "DAL_724",
+    "name": "Mass Resurrection",
+    "playRequirements": {
+      "REQ_FRIENDLY_MINION_DIED_THIS_GAME": 0,
+      "REQ_NUM_MINION_SLOTS": 1
+    },
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Summon 3 friendly minions that died\nthis game.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Alex Horley",
+    "attack": 4,
+    "cardClass": "SHAMAN",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 52636,
+    "elite": true,
+    "flavor": "Wanna know how he got those scars? So does he.",
+    "health": 4,
+    "id": "DAL_726",
+    "mechanics": [
+      "AURA"
+    ],
+    "name": "Scargil",
+    "race": "MURLOC",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "Your Murlocs cost (1).",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 56229,
+    "id": "DAL_726e",
+    "name": "Scargil's Blessing",
+    "set": "DALARAN",
+    "text": "Costs (1).",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Eva Widermann",
+    "cardClass": "PALADIN",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52660,
+    "flavor": "Even the smallest minion can change the outcome of the game.",
+    "id": "DAL_727",
+    "name": "Call to Adventure",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Draw the lowest Cost minion from your deck. Give it +2/+2.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 52661,
+    "id": "DAL_727e",
+    "name": "Heroic",
+    "set": "DALARAN",
+    "text": "+2/+2.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "L. Lullabi & K. Turovec",
+    "cardClass": "ROGUE",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 52679,
+    "flavor": "Impossible to cast without cackling evilly.",
+    "id": "DAL_728",
+    "name": "Daring Escape",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "Return all friendly minions to your hand.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "J. Axer",
+    "attack": 3,
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52715,
+    "elite": true,
+    "flavor": "Of course she knows the future, she’s been looking at your cards the WHOLE TIME!",
+    "health": 2,
+    "id": "DAL_729",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Madame Lazul",
+    "rarity": "LEGENDARY",
+    "referencedTags": [
+      "DISCOVER"
+    ],
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> <b>Discover</b> a\ncopy of a card in your\nopponent's hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Konstantin Turovec",
+    "cardClass": "PALADIN",
+    "collectible": true,
+    "cost": 5,
+    "dbfId": 52742,
+    "flavor": "If you don’t fight to the death, it’s Duel Yielding.",
+    "id": "DAL_731",
+    "name": "Duel!",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "Summon a minion from each player's deck.\nThey fight!",
+    "type": "SPELL"
+  },
+  {
+    "artist": "James Ryman",
+    "attack": 2,
+    "cardClass": "DRUID",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52809,
+    "elite": true,
+    "flavor": "Keeps your choices handy.",
+    "health": 3,
+    "id": "DAL_732",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Keeper Stalladris",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "After you cast a <b>Choose One</b> spell, add copies of both choices to your hand.",
+    "type": "MINION"
+  },
+  {
+    "artist": "L. Lullabi & K. Turovec",
+    "cardClass": "DRUID",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52810,
+    "flavor": "They're a nightmare to deal with.",
+    "id": "DAL_733",
+    "name": "Dreamway Guardians",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0
+    },
+    "rarity": "RARE",
+    "referencedTags": [
+      "LIFESTEAL"
+    ],
+    "set": "DALARAN",
+    "text": "Summon two 1/2 Dryads with <b>Lifesteal</b>.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "L. Lullabi & K. Turovec",
+    "attack": 1,
+    "cardClass": "DRUID",
+    "cost": 1,
+    "dbfId": 52839,
+    "health": 2,
+    "id": "DAL_733t",
+    "mechanics": [
+      "LIFESTEAL"
+    ],
+    "name": "Crystal Dryad",
+    "set": "DALARAN",
+    "text": "<b>Lifesteal</b>",
+    "type": "MINION"
+  },
+  {
+    "artist": "Sean McNally",
+    "attack": 2,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52866,
+    "flavor": "Don't make her raise her \"shush\"!",
+    "health": 3,
+    "id": "DAL_735",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Dalaran Librarian",
+    "rarity": "COMMON",
+    "referencedTags": [
+      "SILENCE"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> <b>Silence</b>\nadjacent minions.",
+    "type": "MINION"
+  },
+  {
+    "artist": "James Ryman",
+    "attack": 7,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 52870,
+    "elite": true,
+    "flavor": "Your deck is just another organizational challenge to her.",
+    "health": 7,
+    "id": "DAL_736",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Archivist Elysiana",
+    "rarity": "LEGENDARY",
+    "referencedTags": [
+      "DISCOVER"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> <b>Discover</b> 5 cards. Replace your deck with 2 copies of each.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Ivan Fomin",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 1,
+    "dbfId": 52897,
+    "health": 1,
+    "id": "DAL_739",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Goblin Lackey",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_IF_AVAILABLE": 0
+    },
+    "referencedTags": [
+      "RUSH"
+    ],
+    "set": "DALARAN",
+    "targetingArrowText": "Give +1 Attack and <b>Rush</b>.",
+    "text": "<b>Battlecry:</b> Give a friendly minion +1 Attack and <b>Rush</b>.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 52898,
+    "id": "DAL_739e",
+    "name": "Short Fuse",
+    "set": "DALARAN",
+    "text": "+1 Attack and <b>Rush</b>.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Rafael Zanchetin",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 1,
+    "dbfId": 52900,
+    "health": 1,
+    "id": "DAL_741",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Ethereal Lackey",
+    "referencedTags": [
+      "DISCOVER"
+    ],
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> <b>Discover</b> a spell.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Wayne Wu",
+    "attack": 6,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 52902,
+    "flavor": "And your minions with mega-windfury get... dizzy.",
+    "health": 6,
+    "id": "DAL_742",
+    "mechanics": [
+      "AURA"
+    ],
+    "name": "Whirlwind Tempest",
+    "race": "ELEMENTAL",
+    "rarity": "EPIC",
+    "referencedTags": [
+      "WINDFURY"
+    ],
+    "set": "DALARAN",
+    "text": "Your minions with <b>Windfury</b> have <b>Mega-Windfury</b>.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "WARRIOR",
+    "dbfId": 52903,
+    "id": "DAL_742e",
+    "name": "Whirling",
+    "set": "DALARAN",
+    "text": "<b>Mega-Windfury</b>",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Matt Dixon",
+    "attack": 2,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52935,
+    "flavor": "This is CLEARLY their first rodeo.",
+    "health": 1,
+    "id": "DAL_743",
+    "mechanics": [
+      "DEATHRATTLE",
+      "RUSH"
+    ],
+    "name": "Hench-Clan Hogsteed",
+    "race": "BEAST",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Rush</b>\n<b>Deathrattle:</b> Summon a 1/1 Murloc.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Matt Dixon",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 1,
+    "dbfId": 53202,
+    "health": 1,
+    "id": "DAL_743t",
+    "name": "Hench-Clan Squire",
+    "race": "MURLOC",
+    "set": "DALARAN",
+    "type": "MINION"
+  },
+  {
+    "artist": "Anton Zemskov",
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52936,
+    "flavor": "When you need to rage anonymously.",
+    "health": 1,
+    "id": "DAL_744",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Faceless Rager",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_IF_AVAILABLE": 0
+    },
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "targetingArrowText": "Copy a friendly minion's Health.",
+    "text": "<b>Battlecry:</b> Copy a friendly minion's Health.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 52937,
+    "id": "DAL_744e",
+    "name": "Familiar Faces",
+    "set": "DALARAN",
+    "text": "Copied health.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Evgeniy Dlinnov",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 52940,
+    "faction": "ALLIANCE",
+    "flavor": "Your gryphon will be summoned following a brief safety demonstration.",
+    "health": 4,
+    "id": "DAL_747",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Flight Master",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Summon a 2/2 Gryphon for each player.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Evgeniy Dlinnov",
+    "attack": 2,
+    "cardClass": "NEUTRAL",
+    "cost": 2,
+    "dbfId": 52941,
+    "faction": "ALLIANCE",
+    "health": 2,
+    "id": "DAL_747t",
+    "name": "Gryphon",
+    "race": "BEAST",
+    "set": "DALARAN",
+    "type": "MINION"
+  },
+  {
+    "artist": "Jakub Kasper",
+    "attack": 0,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 52942,
+    "flavor": "If it soaks too long, it becomes a reservoir hog.",
+    "health": 6,
+    "id": "DAL_748",
+    "mechanics": [
+      "SPELLPOWER"
+    ],
+    "name": "Mana Reservoir",
+    "race": "ELEMENTAL",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "spellDamage": 1,
+    "text": "<b>Spell Damage +1</b>",
+    "type": "MINION"
+  },
+  {
+    "artist": "Matt Dixon",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 5,
+    "dbfId": 52943,
+    "flavor": "Mwahahaha! You'll never catch him this time!",
+    "health": 6,
+    "id": "DAL_749",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Recurring Villain",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "<b>Deathrattle:</b> If this minion has 4 or more Attack, resummon it.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Konstantin Turovec",
+    "attack": 4,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 6,
+    "dbfId": 52950,
+    "faction": "ALLIANCE",
+    "flavor": "Does he summon because of his madness, or is he mad from all the summoning?",
+    "health": 4,
+    "id": "DAL_751",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Mad Summoner",
+    "race": "DEMON",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "[x]<b>Battlecry:</b> Fill each player's\nboard with 1/1 Imps.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Konstantin Turovec",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 1,
+    "dbfId": 53305,
+    "health": 1,
+    "id": "DAL_751t",
+    "name": "Imp",
+    "race": "DEMON",
+    "set": "DALARAN",
+    "type": "MINION"
+  },
+  {
+    "artist": "Anton Zemskov",
+    "attack": 6,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 8,
+    "dbfId": 52954,
+    "elite": true,
+    "flavor": "“I’m a real toy now!”",
+    "health": 6,
+    "id": "DAL_752",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Jepetto Joybuzz",
+    "rarity": "LEGENDARY",
+    "set": "DALARAN",
+    "text": "<b>Battlecry:</b> Draw 2 minions from your deck. Set their Attack, Health, and Cost to 1.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 53177,
+    "id": "DAL_752e",
+    "name": "Toy-sized",
+    "set": "DALARAN",
+    "text": "Jepetto Joybuzz made this 1/1.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 53304,
+    "id": "DAL_752e2",
+    "name": "On Sale",
+    "set": "DALARAN",
+    "text": "Costs (1).",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Dave Allsop",
+    "attack": 2,
+    "cardClass": "WARRIOR",
+    "collectible": true,
+    "cost": 2,
+    "dbfId": 53104,
+    "flavor": "It begs for scraps.",
+    "health": 2,
+    "id": "DAL_759",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Vicious Scraphound",
+    "race": "MECHANICAL",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "Whenever this minion\ndeals damage, gain that much Armor.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Matt Dixon",
+    "attack": 9,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 9,
+    "dbfId": 53024,
+    "flavor": "Shovel beats paper and rock!",
+    "health": 9,
+    "id": "DAL_760",
+    "mechanics": [
+      "RUSH"
+    ],
+    "name": "Burly Shovelfist",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "<b>Rush</b>",
+    "type": "MINION"
+  },
+  {
+    "artist": "Matt Dixon",
+    "cardClass": "WARRIOR",
+    "collectible": true,
+    "cost": 1,
+    "dbfId": 53124,
+    "flavor": "\"The beatings will continue until MY morale improves.\"",
+    "id": "DAL_769",
+    "name": "Improve Morale",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "[x]Deal $1 damage\nto a minion.\nIf it survives, add a\n<b>Lackey</b> to your hand.",
+    "type": "SPELL"
+  },
+  {
+    "artist": "Jim Nelson",
+    "attack": 4,
+    "cardClass": "WARRIOR",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 53138,
+    "flavor": "The Alpha Devastator didn’t devastate enough. The Beta Devastator devastated too much. But the Omega was just right!",
+    "health": 5,
+    "id": "DAL_770",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Omega Devastator",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0
+    },
+    "race": "MECHANICAL",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "targetingArrowText": "Deal 10 damage.",
+    "text": "[x]<b>Battlecry:</b> If you have 10\nMana Crystals, deal 10\ndamage to a minion.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Rafael Zanchetin",
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 4,
+    "dbfId": 53171,
+    "flavor": "His allies call him invaluable.",
+    "health": 6,
+    "id": "DAL_771",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Soldier of Fortune",
+    "race": "ELEMENTAL",
+    "rarity": "COMMON",
+    "set": "DALARAN",
+    "text": "Whenever this minion attacks, give your opponent a Coin.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Tod Harris",
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 3,
+    "dbfId": 53173,
+    "flavor": "Its small yet fierce riders are affectionately known as rug rats.",
+    "health": 6,
+    "id": "DAL_773",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Magic Carpet",
+    "rarity": "EPIC",
+    "referencedTags": [
+      "RUSH"
+    ],
+    "set": "DALARAN",
+    "text": "After you play a 1-Cost minion, give it +1 Attack and <b>Rush</b>.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 53176,
+    "id": "DAL_773e",
+    "name": "Flying High",
+    "set": "DALARAN",
+    "text": "+1 Attack and <b>Rush</b>.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "artist": "Maria Trepalina",
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 7,
+    "dbfId": 53218,
+    "flavor": "*Taps roof of mammoth* “You can fit so many squirrels in this thing!”",
+    "health": 8,
+    "id": "DAL_774",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Exotic Mountseller",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "Whenever you cast a spell, summon a random\n3-Cost Beast.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Ivan Fomin",
+    "attack": 3,
+    "cardClass": "NEUTRAL",
+    "collectible": true,
+    "cost": 7,
+    "dbfId": 53249,
+    "flavor": "And you always thought they wore the candles just for fun.",
+    "health": 7,
+    "id": "DAL_775",
+    "mechanics": [
+      "DEATHRATTLE",
+      "TAUNT"
+    ],
+    "name": "Tunnel Blaster",
+    "rarity": "RARE",
+    "set": "DALARAN",
+    "text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Deal 3 damage\nto all minions.",
+    "type": "MINION"
+  },
+  {
+    "artist": "Patrik Bjorkstrom",
+    "attack": 4,
+    "cardClass": "DRUID",
+    "collectible": true,
+    "collectionText": "<b>Rush</b>. <b>Battlecry:</b> If you've restored 5 Health this game, summon a copy of this.",
+    "cost": 5,
+    "dbfId": 53179,
+    "flavor": "Arrives alone, but usually leaves with a friend just like him.",
+    "health": 4,
+    "id": "DAL_799",
+    "mechanics": [
+      "BATTLECRY",
+      "RUSH"
+    ],
+    "name": "Crystal Stag",
+    "race": "BEAST",
+    "rarity": "EPIC",
+    "set": "DALARAN",
+    "text": "<b>Rush</b>. <b>Battlecry:</b> If you've restored 5 Health this game, summon a copy of this.@ <i>({0} left!)</i>@ <i>(Ready!)</i>",
+    "type": "MINION"
+  },
+  {
     "attack": 3,
     "cardClass": "DREAM",
     "cost": 3,
@@ -21941,7 +25586,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Benjamin Zhang",
+    "artist": "Ben Zhang",
     "cardClass": "HUNTER",
     "collectible": true,
     "cost": 4,
@@ -23794,6 +27439,15 @@ const cardsData = [
     "type": "SPELL"
   },
   {
+    "cardClass": "NEUTRAL",
+    "dbfId": 56309,
+    "id": "EX1_145e",
+    "name": "Preparation",
+    "set": "EXPERT1",
+    "text": "The next spell you cast this turn costs (3) less.",
+    "type": "ENCHANTMENT"
+  },
+  {
     "cardClass": "ROGUE",
     "dbfId": 1760,
     "id": "EX1_145o",
@@ -23831,7 +27485,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 253,
     "id": "EX1_154a",
-    "name": "Wrath",
+    "name": "Solar Wrath",
     "playRequirements": {
       "REQ_MINION_TARGET": 0,
       "REQ_TARGET_TO_PLAY": 0
@@ -23845,7 +27499,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 137,
     "id": "EX1_154b",
-    "name": "Wrath",
+    "name": "Nature's Wrath",
     "playRequirements": {
       "REQ_MINION_TARGET": 0,
       "REQ_TARGET_TO_PLAY": 0
@@ -23883,7 +27537,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 468,
     "id": "EX1_155a",
-    "name": "Mark of Nature",
+    "name": "Tiger's Fury",
     "playRequirements": {
       "REQ_MINION_TARGET": 0,
       "REQ_TARGET_TO_PLAY": 0
@@ -23906,7 +27560,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 690,
     "id": "EX1_155b",
-    "name": "Mark of Nature",
+    "name": "Thick Hide",
     "playRequirements": {
       "REQ_MINION_TARGET": 0,
       "REQ_TARGET_TO_PLAY": 0
@@ -24036,7 +27690,7 @@ const cardsData = [
       "REQ_TARGET_TO_PLAY": 0
     },
     "rarity": "COMMON",
-    "set": "EXPERT1",
+    "set": "HOF",
     "text": "Destroy a minion.\nYour opponent draws 2 cards.",
     "type": "SPELL"
   },
@@ -24074,7 +27728,7 @@ const cardsData = [
     "artist": "Terese Nielsen",
     "cardClass": "DRUID",
     "collectible": true,
-    "cost": 5,
+    "cost": 6,
     "dbfId": 95,
     "flavor": "Druids take nourishment from many things: the power of nature, the songbird's chirp, a chocolate cake.",
     "id": "EX1_164",
@@ -24092,7 +27746,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 451,
     "id": "EX1_164a",
-    "name": "Nourish",
+    "name": "Rampant Growth",
     "set": "EXPERT1",
     "text": "Gain 2 Mana Crystals.",
     "type": "SPELL"
@@ -24102,7 +27756,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 325,
     "id": "EX1_164b",
-    "name": "Nourish",
+    "name": "Enrich",
     "set": "EXPERT1",
     "text": "Draw 3 cards.",
     "type": "SPELL"
@@ -24515,7 +28169,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Kevin Chin",
+    "artist": "Kevin Chen",
     "cardClass": "SHAMAN",
     "collectible": true,
     "cost": 1,
@@ -24861,7 +28515,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Benjamin Zhang",
+    "artist": "Ben Zhang",
     "attack": 4,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -25054,7 +28708,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Alexander Alexandrov",
+    "artist": "Alex Alexandrov",
     "attack": 3,
     "cardClass": "WARLOCK",
     "collectible": true,
@@ -25158,7 +28812,7 @@ const cardsData = [
     "name": "Doomguard",
     "race": "DEMON",
     "rarity": "RARE",
-    "set": "EXPERT1",
+    "set": "HOF",
     "text": "<b>Charge</b>. <b>Battlecry:</b> Discard two random cards.",
     "type": "MINION"
   },
@@ -25248,6 +28902,7 @@ const cardsData = [
     "dbfId": 953,
     "id": "EX1_316e",
     "mechanics": [
+      "TAG_ONE_TURN_EFFECT",
       "TRIGGER_VISUAL"
     ],
     "name": "Power Overwhelming",
@@ -25504,7 +29159,7 @@ const cardsData = [
     "id": "EX1_349",
     "name": "Divine Favor",
     "rarity": "RARE",
-    "set": "EXPERT1",
+    "set": "HOF",
     "text": "Draw cards until you have as many in hand as your opponent.",
     "type": "SPELL"
   },
@@ -25884,7 +29539,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "E.M. Gist",
+    "artist": "E. M. Gist",
     "cardClass": "WARRIOR",
     "collectible": true,
     "cost": 2,
@@ -26899,7 +30554,7 @@ const cardsData = [
     "attack": 0,
     "cardClass": "SHAMAN",
     "collectible": true,
-    "cost": 2,
+    "cost": 3,
     "dbfId": 1008,
     "flavor": "Totemsmiths like to use the rarest woods for their totems.  There are even rumors of totems made of Ironbark Protectors.",
     "health": 3,
@@ -27327,9 +30982,6 @@ const cardsData = [
     "flavor": "The Auchenai know the end is coming, but they're not sure when.",
     "health": 5,
     "id": "EX1_591",
-    "mechanics": [
-      "AURA"
-    ],
     "name": "Auchenai Soulpriest",
     "rarity": "RARE",
     "set": "EXPERT1",
@@ -27798,7 +31450,7 @@ const cardsData = [
     "artist": "Michal Ivan",
     "cardClass": "PALADIN",
     "collectible": true,
-    "cost": 2,
+    "cost": 4,
     "dbfId": 756,
     "flavor": "We are all special unique snowflakes... with 1 Health.",
     "id": "EX1_619",
@@ -27961,7 +31613,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "Sean O'Daniels",
+    "artist": "Sean O’Daniels",
     "cardClass": "PRIEST",
     "collectible": true,
     "cost": 4,
@@ -28381,6 +32033,120 @@ const cardsData = [
     "type": "SPELL"
   },
   {
+    "attack": 5,
+    "cardClass": "DRUID",
+    "cost": 9,
+    "dbfId": 55131,
+    "elite": true,
+    "health": 5,
+    "id": "FB_Champs_AT_045",
+    "mechanics": [
+      "AURA"
+    ],
+    "name": "Aviana",
+    "rarity": "LEGENDARY",
+    "set": "TB",
+    "text": "Your minions cost (1).",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55132,
+    "id": "FB_Champs_AT_045eee",
+    "name": "Aviana's Blessing",
+    "set": "TB",
+    "text": "Costs (1).",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "attack": 5,
+    "cardClass": "PRIEST",
+    "cost": 5,
+    "dbfId": 55119,
+    "elite": true,
+    "health": 5,
+    "id": "FB_Champs_CFM_020",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Raza the Chained",
+    "rarity": "LEGENDARY",
+    "set": "TB",
+    "text": "[x]  <b>Battlecry:</b> If your deck has  \nno duplicates, your Hero\n Power costs (0) this game.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55120,
+    "id": "FB_Champs_CFM_020e",
+    "name": "Raza Enchant",
+    "set": "TB",
+    "text": "Your <b>Hero Power</b> costs (0).",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 1,
+    "dbfId": 55118,
+    "elite": true,
+    "health": 1,
+    "id": "FB_Champs_CFM_637",
+    "mechanics": [
+      "CHARGE"
+    ],
+    "name": "Patches the Pirate",
+    "race": "PIRATE",
+    "rarity": "LEGENDARY",
+    "set": "TB",
+    "text": "[x]<b>Charge</b>. After you play a Pirate,\nsummon this minion\nfrom your deck.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "DRUID",
+    "cost": 2,
+    "dbfId": 55779,
+    "id": "FB_Champs_CS2_013",
+    "name": "Wild Growth",
+    "rarity": "FREE",
+    "set": "TB",
+    "text": "Gain an empty Mana Crystal.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "ROGUE",
+    "cost": 1,
+    "dbfId": 55785,
+    "id": "FB_Champs_CS2_073",
+    "mechanics": [
+      "COMBO"
+    ],
+    "name": "Cold Blood",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "set": "TB",
+    "text": "Give a minion +2 Attack. <b>Combo:</b> +4 Attack instead.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "HUNTER",
+    "cost": 1,
+    "dbfId": 55788,
+    "id": "FB_Champs_CS2_084",
+    "name": "Hunter's Mark",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "FREE",
+    "set": "TB",
+    "text": "Change a minion's Health to 1.",
+    "type": "SPELL"
+  },
+  {
     "attack": 3,
     "cardClass": "WARRIOR",
     "cost": 2,
@@ -28501,6 +32267,20 @@ const cardsData = [
     "set": "TB",
     "text": "Whenever you cast a spell, draw a card.",
     "type": "MINION"
+  },
+  {
+    "cardClass": "DRUID",
+    "cost": 5,
+    "dbfId": 55780,
+    "id": "FB_Champs_EX1_164",
+    "mechanics": [
+      "CHOOSE_ONE"
+    ],
+    "name": "Nourish",
+    "rarity": "RARE",
+    "set": "TB",
+    "text": "<b>Choose One -</b> Gain 2 Mana Crystals; or Draw 3 cards.",
+    "type": "SPELL"
   },
   {
     "attack": 4,
@@ -28656,6 +32436,24 @@ const cardsData = [
     "type": "MINION"
   },
   {
+    "attack": 0,
+    "cardClass": "SHAMAN",
+    "cost": 2,
+    "dbfId": 55786,
+    "health": 3,
+    "id": "FB_Champs_EX1_565",
+    "mechanics": [
+      "ADJACENT_BUFF",
+      "AURA"
+    ],
+    "name": "Flametongue Totem",
+    "race": "TOTEM",
+    "rarity": "FREE",
+    "set": "TB",
+    "text": "Adjacent minions have +2 Attack.",
+    "type": "MINION"
+  },
+  {
     "cardClass": "DRUID",
     "cost": 6,
     "dbfId": 48860,
@@ -28667,6 +32465,17 @@ const cardsData = [
     "rarity": "EPIC",
     "set": "TB",
     "text": "Summon three 2/2 Treants with\n<b>Charge</b> that die at the end of the turn.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "PALADIN",
+    "cost": 2,
+    "dbfId": 55787,
+    "id": "FB_Champs_EX1_619",
+    "name": "Equality",
+    "rarity": "RARE",
+    "set": "TB",
+    "text": "Change the Health of ALL minions to 1.",
     "type": "SPELL"
   },
   {
@@ -28714,6 +32523,76 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
+    "cardClass": "ROGUE",
+    "cost": 2,
+    "dbfId": 55784,
+    "id": "FB_Champs_ICC_221",
+    "name": "Leeching Poison",
+    "playRequirements": {
+      "REQ_WEAPON_EQUIPPED": 0
+    },
+    "rarity": "COMMON",
+    "referencedTags": [
+      "LIFESTEAL"
+    ],
+    "set": "TB",
+    "text": "Give your weapon <b>Lifesteal</b>.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "ROGUE",
+    "dbfId": 55783,
+    "id": "FB_Champs_ICC_221e",
+    "mechanics": [
+      "LIFESTEAL"
+    ],
+    "name": "Leeching Poison",
+    "set": "TB",
+    "text": "Has <b>Lifesteal</b>.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "attack": 2,
+    "cardClass": "NEUTRAL",
+    "cost": 4,
+    "dbfId": 55782,
+    "health": 3,
+    "id": "FB_Champs_ICC_466",
+    "mechanics": [
+      "BATTLECRY",
+      "TAUNT"
+    ],
+    "name": "Saronite Chain Gang",
+    "rarity": "RARE",
+    "set": "TB",
+    "text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Summon a\ncopy of this minion.",
+    "type": "MINION"
+  },
+  {
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "cost": 7,
+    "dbfId": 55116,
+    "health": 5,
+    "id": "FB_Champs_ICC_705",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Bonemare",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_IF_AVAILABLE": 0
+    },
+    "rarity": "COMMON",
+    "referencedTags": [
+      "TAUNT"
+    ],
+    "set": "TB",
+    "text": "<b>Battlecry:</b> Give a friendly minion +4/+4 and <b>Taunt</b>.",
+    "type": "MINION"
+  },
+  {
     "attack": 1,
     "cardClass": "SHAMAN",
     "cost": 1,
@@ -28728,6 +32607,155 @@ const cardsData = [
     "set": "TB",
     "text": "[x]Has +2 Attack while you\nhave <b>Spell Damage</b>.",
     "type": "WEAPON"
+  },
+  {
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "cost": 5,
+    "dbfId": 55124,
+    "health": 5,
+    "id": "FB_Champs_LOE_038",
+    "mechanics": [
+      "AURA"
+    ],
+    "name": "Naga Sea Witch",
+    "rarity": "EPIC",
+    "set": "TB",
+    "text": "Your cards cost (5).",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "WARLOCK",
+    "cost": 1,
+    "dbfId": 55125,
+    "faction": "ALLIANCE",
+    "id": "FB_Champs_LOOT_017",
+    "name": "Dark Pact",
+    "playRequirements": {
+      "REQ_FRIENDLY_TARGET": 0,
+      "REQ_MINION_TARGET": 0,
+      "REQ_TARGET_TO_PLAY": 0
+    },
+    "rarity": "COMMON",
+    "set": "TB",
+    "text": "Destroy a friendly minion. Restore #8 Health to your hero.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "HUNTER",
+    "cost": 5,
+    "dbfId": 55789,
+    "id": "FB_Champs_LOOT_080",
+    "name": "Lesser Emerald Spellstone",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0
+    },
+    "rarity": "RARE",
+    "set": "TB",
+    "text": "Summon two 3/3 Wolves. <i>(Play a <b>Secret</b> to upgrade.)</i>",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "HUNTER",
+    "cost": 5,
+    "dbfId": 55791,
+    "id": "FB_Champs_LOOT_080t2",
+    "name": "Emerald Spellstone",
+    "playRequirements": {
+      "REQ_MINION_TARGET": 0
+    },
+    "rarity": "RARE",
+    "set": "TB",
+    "text": "Summon three 3/3 Wolves. <i>(Play a <b>Secret</b> to upgrade.)</i>",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "HUNTER",
+    "cost": 5,
+    "dbfId": 55790,
+    "id": "FB_Champs_LOOT_080t3",
+    "name": "Greater Emerald Spellstone",
+    "rarity": "RARE",
+    "set": "TB",
+    "text": "Summon four 3/3 Wolves.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "PALADIN",
+    "cost": 4,
+    "dbfId": 55130,
+    "id": "FB_Champs_LOOT_093",
+    "name": "Call to Arms",
+    "rarity": "EPIC",
+    "referencedTags": [
+      "RECRUIT"
+    ],
+    "set": "TB",
+    "text": "[x]<b>Recruit</b> 3 minions that\n cost (2) or less.",
+    "type": "SPELL"
+  },
+  {
+    "attack": 5,
+    "cardClass": "NEUTRAL",
+    "cost": 7,
+    "dbfId": 55117,
+    "health": 5,
+    "id": "FB_Champs_LOOT_149",
+    "name": "Corridor Creeper",
+    "race": "BEAST",
+    "rarity": "EPIC",
+    "set": "TB",
+    "text": "Costs (1) less whenever a minion dies while this is in your hand.",
+    "type": "MINION"
+  },
+  {
+    "attack": 2,
+    "cardClass": "WARLOCK",
+    "cost": 5,
+    "dbfId": 55123,
+    "health": 2,
+    "id": "FB_Champs_LOOT_306",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Possessed Lackey",
+    "rarity": "RARE",
+    "referencedTags": [
+      "RECRUIT"
+    ],
+    "set": "TB",
+    "text": "<b>Deathrattle:</b> <b>Recruit</b> a Demon.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "PALADIN",
+    "cost": 5,
+    "dbfId": 55781,
+    "id": "FB_Champs_LOOT_333",
+    "name": "Level Up!",
+    "rarity": "EPIC",
+    "referencedTags": [
+      "TAUNT"
+    ],
+    "set": "TB",
+    "text": "Give your Silver Hand Recruits +2/+2 and <b>Taunt</b>.",
+    "type": "SPELL"
+  },
+  {
+    "attack": 4,
+    "cardClass": "NEUTRAL",
+    "cost": 6,
+    "dbfId": 55122,
+    "health": 4,
+    "id": "FB_Champs_LOOT_539",
+    "mechanics": [
+      "BATTLECRY"
+    ],
+    "name": "Spiteful Summoner",
+    "rarity": "EPIC",
+    "set": "TB",
+    "text": "[x]<b>Battlecry:</b> Reveal a spell\nfrom your deck. Summon\n a random minion with\nthe same Cost.",
+    "type": "MINION"
   },
   {
     "attack": 5,
@@ -28770,6 +32798,22 @@ const cardsData = [
     "set": "TB",
     "text": "Restore 5 Health.",
     "type": "SPELL"
+  },
+  {
+    "attack": 1,
+    "cardClass": "MAGE",
+    "cost": 1,
+    "dbfId": 55133,
+    "health": 3,
+    "id": "FB_Champs_NEW1_012",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Mana Wyrm",
+    "rarity": "COMMON",
+    "set": "TB",
+    "text": "Whenever you cast a spell, gain +1 Attack.",
+    "type": "MINION"
   },
   {
     "attack": 3,
@@ -28850,6 +32894,53 @@ const cardsData = [
     "name": "Damaged Golem",
     "set": "TB",
     "type": "MINION"
+  },
+  {
+    "cardClass": "ROGUE",
+    "cost": 1,
+    "dbfId": 55126,
+    "elite": true,
+    "id": "FB_Champs_UNG_067",
+    "mechanics": [
+      "QUEST"
+    ],
+    "name": "The Caverns Below",
+    "rarity": "LEGENDARY",
+    "set": "TB",
+    "text": "[x]<b>Quest:</b> Play four minions\nwith the same name.\n<b>Reward:</b> Crystal Core.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "ROGUE",
+    "cost": 5,
+    "dbfId": 55127,
+    "elite": true,
+    "id": "FB_Champs_UNG_067t1",
+    "mechanics": [
+      "RITUAL"
+    ],
+    "name": "Crystal Core",
+    "set": "TB",
+    "text": "For the rest of the game, your minions are 5/5.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55128,
+    "id": "FB_Champs_UNG_067t1e",
+    "name": "Crystallized",
+    "set": "TB",
+    "text": "Your minions are 5/5.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55129,
+    "id": "FB_Champs_UNG_067t1e2",
+    "name": "Crystallized",
+    "set": "TB",
+    "text": "5/5.",
+    "type": "ENCHANTMENT"
   },
   {
     "cardClass": "NEUTRAL",
@@ -30535,6 +34626,26 @@ const cardsData = [
     "type": "SPELL"
   },
   {
+    "cardClass": "NEUTRAL",
+    "dbfId": 54768,
+    "id": "FB_TopX_Ban",
+    "name": "Ban Opponent's Card",
+    "set": "TB",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "cost": 0,
+    "dbfId": 54934,
+    "hideStats": true,
+    "id": "FB_TopX_Mystery",
+    "name": "The Mystery Card",
+    "rarity": "COMMON",
+    "set": "TB",
+    "text": "Choose your opponent's hidden fourth card.",
+    "type": "SPELL"
+  },
+  {
     "artist": "E. M. Gist",
     "attack": 2,
     "cardClass": "NEUTRAL",
@@ -31776,7 +35887,7 @@ const cardsData = [
     "name": "Gloom Stag",
     "race": "BEAST",
     "rarity": "EPIC",
-    "set": "GILNEAS",
+    "set": "HOF",
     "text": "<b>Taunt</b>\n<b>Battlecry:</b> If your deck has only odd-Cost cards, gain +2/+2.",
     "type": "MINION"
   },
@@ -31856,7 +35967,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Milvoj Ceran",
+    "artist": "Milivoj Ceran",
     "cardClass": "PALADIN",
     "collectible": true,
     "cost": 2,
@@ -32730,11 +36841,11 @@ const cardsData = [
     ],
     "name": "Murkspark Eel",
     "playRequirements": {
-      "REQ_DRAG_TO_PLAY": 0
+      "REQ_DRAG_TO_PLAY_PRE29933": 0
     },
     "race": "BEAST",
     "rarity": "RARE",
-    "set": "GILNEAS",
+    "set": "HOF",
     "targetingArrowText": "Deal 2 damage.",
     "text": "<b>Battlecry:</b> If your deck has only even-Cost cards, deal 2 damage.",
     "type": "MINION"
@@ -32761,7 +36872,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -33994,7 +38105,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 3,
     "cardClass": "MAGE",
     "collectible": true,
@@ -34310,7 +38421,7 @@ const cardsData = [
     ],
     "name": "Genn Greymane",
     "rarity": "LEGENDARY",
-    "set": "GILNEAS",
+    "set": "HOF",
     "text": "[x]<b>Start of Game:</b>\nIf your deck has only even-\nCost cards, your starting\nHero Power costs (1).",
     "type": "MINION"
   },
@@ -34682,12 +38793,12 @@ const cardsData = [
     "name": "Baku the Mooneater",
     "race": "BEAST",
     "rarity": "LEGENDARY",
-    "set": "GILNEAS",
+    "set": "HOF",
     "text": "[x]<b>Start of Game:</b>\nIf your deck has only odd-\nCost cards, upgrade\nyour Hero Power.",
     "type": "MINION"
   },
   {
-    "artist": "Eva Wildermann",
+    "artist": "Eva Widermannn",
     "attack": 3,
     "cardClass": "ROGUE",
     "collectible": true,
@@ -34810,7 +38921,7 @@ const cardsData = [
     "name": "Glitter Moth",
     "race": "BEAST",
     "rarity": "EPIC",
-    "set": "GILNEAS",
+    "set": "HOF",
     "text": "<b>Battlecry:</b> If your deck has only odd-Cost cards, double the Health of your other minions.",
     "type": "MINION"
   },
@@ -34824,7 +38935,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 3,
     "cardClass": "MAGE",
     "collectible": true,
@@ -34840,7 +38951,7 @@ const cardsData = [
     "name": "Black Cat",
     "race": "BEAST",
     "rarity": "COMMON",
-    "set": "GILNEAS",
+    "set": "HOF",
     "spellDamage": 1,
     "text": "<b>Spell Damage +1</b>\n <b>Battlecry:</b> If your deck has only odd-Cost cards, draw a card.",
     "type": "MINION"
@@ -35030,7 +39141,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Max Greck",
+    "artist": "Max Grecke",
     "attack": 9,
     "cardClass": "NEUTRAL",
     "cost": 7,
@@ -35053,7 +39164,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Max Greck",
+    "artist": "Max Grecke",
     "attack": 5,
     "cardClass": "NEUTRAL",
     "cost": 5,
@@ -35071,7 +39182,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Max Greck",
+    "artist": "Max Grecke",
     "cardClass": "NEUTRAL",
     "cost": 5,
     "dbfId": 50524,
@@ -35528,7 +39639,7 @@ const cardsData = [
     "type": "WEAPON"
   },
   {
-    "artist": "Anton Kagoukin",
+    "artist": "Anton Kagounkin",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "cost": 1,
@@ -35660,7 +39771,7 @@ const cardsData = [
     "type": "WEAPON"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 5,
     "cardClass": "NEUTRAL",
     "cost": 5,
@@ -36373,7 +40484,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Anton Kagoukin",
+    "artist": "Anton Kagounkin",
     "cardClass": "NEUTRAL",
     "cost": 6,
     "dbfId": 48354,
@@ -36685,7 +40796,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 2,
     "dbfId": 48400,
@@ -36699,7 +40810,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 2,
     "dbfId": 48401,
@@ -36713,7 +40824,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 2,
     "dbfId": 48402,
@@ -37111,7 +41222,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 1,
     "cardClass": "NEUTRAL",
     "cost": 1,
@@ -37338,7 +41449,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 1,
     "cardClass": "NEUTRAL",
     "cost": 1,
@@ -37681,7 +41792,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "HUNTER",
     "dbfId": 48315,
     "entourage": [
@@ -38730,7 +42841,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "cardClass": "HUNTER",
     "dbfId": 48998,
     "health": 10,
@@ -39457,7 +43568,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Sean O'Daniels",
+    "artist": "Sean O’Daniels",
     "cardClass": "MAGE",
     "collectible": true,
     "cost": 2,
@@ -39760,7 +43871,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "E.M. Gist",
+    "artist": "E. M. Gist",
     "cardClass": "HUNTER",
     "collectible": true,
     "cost": 2,
@@ -39912,7 +44023,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Zolton Boros",
+    "artist": "Zoltan Boros",
     "attack": 3,
     "cardClass": "ROGUE",
     "collectible": true,
@@ -40393,7 +44504,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 2176,
     "id": "GVG_041a",
-    "name": "Dark Wispers",
+    "name": "Call the Guardians",
     "playRequirements": {
       "REQ_MINION_TARGET": 0,
       "REQ_TARGET_TO_PLAY": 0
@@ -40407,7 +44518,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 2177,
     "id": "GVG_041b",
-    "name": "Dark Wispers",
+    "name": "Nature's Defense",
     "playRequirements": {
       "REQ_MINION_TARGET": 0,
       "REQ_NUM_MINION_SLOTS": 1
@@ -41135,7 +45246,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Benjamin Zhang",
+    "artist": "Ben Zhang",
     "attack": 5,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -41482,7 +45593,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Zero Yue",
+    "artist": "Zero",
     "attack": 5,
     "cardClass": "WARRIOR",
     "collectible": true,
@@ -41589,7 +45700,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Zero Yue",
+    "artist": "Zero",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -41900,7 +46011,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Laurel D. Austin",
+    "artist": "Laurel Austin",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -42119,7 +46230,7 @@ const cardsData = [
     "name": "V-07-TR-0N",
     "race": "MECHANICAL",
     "set": "GVG",
-    "text": "<b>Charge</b>\n<b>Mega-Windfury</b> <i>(Can attack four times a turn.)</i>",
+    "text": "<b>Charge</b>\n<b>Mega-Windfury</b>",
     "type": "MINION"
   },
   {
@@ -42660,6 +46771,17 @@ const cardsData = [
     "type": "HERO"
   },
   {
+    "cardClass": "PRIEST",
+    "collectible": true,
+    "dbfId": 54816,
+    "health": 30,
+    "id": "HERO_09b",
+    "name": "Madame Lazul",
+    "rarity": "EPIC",
+    "set": "HERO_SKINS",
+    "type": "HERO"
+  },
+  {
     "cardClass": "NEUTRAL",
     "dbfId": 41513,
     "health": 30,
@@ -42856,7 +46978,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 5,
     "cardClass": "NEUTRAL",
     "cost": 5,
@@ -43062,7 +47184,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Arthur Gimalinov",
+    "artist": "Arthur Gimaldinov",
     "cardClass": "PALADIN",
     "collectible": true,
     "cost": 2,
@@ -43286,7 +47408,7 @@ const cardsData = [
     "race": "BEAST",
     "rarity": "RARE",
     "set": "ICECROWN",
-    "text": "<b>Taunt</b>.",
+    "text": "<b>Taunt</b>",
     "type": "MINION"
   },
   {
@@ -43407,7 +47529,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "SHAMAN",
     "collectible": true,
     "cost": 2,
@@ -44230,7 +48352,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 4,
     "cardClass": "PRIEST",
     "collectible": true,
@@ -44314,7 +48436,7 @@ const cardsData = [
     "artist": "Ben Thompson",
     "cardClass": "ROGUE",
     "collectible": true,
-    "cost": 2,
+    "cost": 1,
     "dbfId": 42665,
     "flavor": "No actual leeches were harmed in the creation of this card.",
     "id": "ICC_221",
@@ -44327,7 +48449,7 @@ const cardsData = [
       "LIFESTEAL"
     ],
     "set": "ICECROWN",
-    "text": "Give your weapon <b>Lifesteal</b>.",
+    "text": "Give your weapon <b>Lifesteal</b> this turn.",
     "type": "SPELL"
   },
   {
@@ -44335,11 +48457,12 @@ const cardsData = [
     "dbfId": 42664,
     "id": "ICC_221e",
     "mechanics": [
-      "LIFESTEAL"
+      "LIFESTEAL",
+      "TAG_ONE_TURN_EFFECT"
     ],
     "name": "Leeching Poison",
     "set": "ICECROWN",
-    "text": "<b>Lifesteal</b>",
+    "text": "Has <b>Lifesteal</b> this turn.",
     "type": "ENCHANTMENT"
   },
   {
@@ -44948,7 +49071,7 @@ const cardsData = [
     "name": "Saronite Chain Gang",
     "rarity": "RARE",
     "set": "ICECROWN",
-    "text": "<b>Taunt</b>\n<b>Battlecry:</b> Summon a copy of this minion.",
+    "text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Summon another\nSaronite Chain Gang.",
     "type": "MINION"
   },
   {
@@ -45127,7 +49250,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Ralph Horsely",
+    "artist": "Ralph Horsley",
     "attack": 5,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -45274,7 +49397,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Konstanin Turovec",
+    "artist": "Konstantin Turovec",
     "attack": 1,
     "cardClass": "DRUID",
     "collectible": true,
@@ -46268,7 +50391,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "PRIEST",
     "collectible": true,
     "cost": 6,
@@ -46677,7 +50800,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Sam Nielsen",
+    "artist": "Sam Nielson",
     "attack": 5,
     "cardClass": "ROGUE",
     "collectible": true,
@@ -46700,7 +50823,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jesper Esjing",
+    "artist": "Jesper Ejsing",
     "attack": 5,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -46744,7 +50867,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jesper Esjing",
+    "artist": "Jesper Ejsing",
     "attack": 1,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -47694,7 +51817,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 1,
     "cardClass": "MAGE",
     "collectible": true,
@@ -47858,7 +51981,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Sam Nielsen",
+    "artist": "Sam Nielson",
     "attack": 3,
     "cardClass": "WARLOCK",
     "cost": 3,
@@ -47926,7 +52049,7 @@ const cardsData = [
     "type": "WEAPON"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 0,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -48033,7 +52156,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Alex Aleksandrov",
+    "artist": "Alex Alexandrov",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -48819,7 +52942,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "dbfId": 39633,
     "health": 30,
@@ -48838,7 +52961,7 @@ const cardsData = [
     "type": "HERO"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 0,
     "dbfId": 39632,
@@ -50056,7 +54179,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Alex Aleksandrov",
+    "artist": "Alex Alexandrov",
     "cardClass": "NEUTRAL",
     "cost": 3,
     "dbfId": 39637,
@@ -50994,7 +55117,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Benjamin Zhang",
+    "artist": "Ben Zhang",
     "attack": 6,
     "cardClass": "MAGE",
     "collectible": true,
@@ -51372,7 +55495,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 6,
     "cardClass": "NEUTRAL",
     "cost": 4,
@@ -51561,7 +55684,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Benjamin Zhang",
+    "artist": "Ben Zhang",
     "attack": 5,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -51663,7 +55786,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Benjamin Zhang",
+    "artist": "Ben Zhang",
     "attack": 3,
     "cardClass": "DRUID",
     "collectible": true,
@@ -52129,7 +56252,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "DRUID",
     "collectible": true,
     "cost": 1,
@@ -52151,23 +56274,23 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "DRUID",
     "cost": 0,
     "dbfId": 38112,
     "id": "LOE_115a",
-    "name": "Raven Idol",
+    "name": "Break Free",
     "set": "LOE",
     "text": "<b>Discover</b> a minion.",
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "DRUID",
     "cost": 0,
     "dbfId": 38113,
     "id": "LOE_115b",
-    "name": "Raven Idol",
+    "name": "Awakened",
     "set": "LOE",
     "text": "<b>Discover</b> a spell.",
     "type": "SPELL"
@@ -54630,7 +58753,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 4,
     "cardClass": "WARLOCK",
     "collectible": true,
@@ -54653,7 +58776,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "dbfId": 43132,
     "id": "LOOT_018e",
@@ -54663,7 +58786,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "attack": 4,
     "cardClass": "ROGUE",
     "collectible": true,
@@ -54682,7 +58805,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "ROGUE",
     "cost": 4,
     "dbfId": 45870,
@@ -54696,7 +58819,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "attack": 4,
     "cardClass": "ROGUE",
     "cost": 4,
@@ -54982,7 +59105,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "attack": 3,
     "cardClass": "DRUID",
     "collectible": true,
@@ -55211,7 +59334,7 @@ const cardsData = [
     "artist": "Joe Wilson",
     "cardClass": "HUNTER",
     "collectible": true,
-    "cost": 5,
+    "cost": 6,
     "dbfId": 43363,
     "flavor": "An emerald stone for Tauren hands\nWho sought its strength to save their lands\nTheir tribes now lost, their rage released\nWho’s hunting now? And who’s the beast?",
     "id": "LOOT_080",
@@ -55227,7 +59350,7 @@ const cardsData = [
   {
     "artist": "Joe Wilson",
     "cardClass": "HUNTER",
-    "cost": 5,
+    "cost": 6,
     "dbfId": 43362,
     "id": "LOOT_080t2",
     "name": "Emerald Spellstone",
@@ -55242,7 +59365,7 @@ const cardsData = [
   {
     "artist": "Joe Wilson",
     "cardClass": "HUNTER",
-    "cost": 5,
+    "cost": 6,
     "dbfId": 43361,
     "id": "LOOT_080t3",
     "name": "Greater Emerald Spellstone",
@@ -55717,7 +59840,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Anton Kagoukin",
+    "artist": "Anton Kagounkin",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -55739,7 +59862,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Anton Kagoukin",
+    "artist": "Anton Kagounkin",
     "attack": 1,
     "cardClass": "NEUTRAL",
     "cost": 2,
@@ -55779,7 +59902,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 0,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -55798,7 +59921,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "cardClass": "NEUTRAL",
     "dbfId": 47513,
     "id": "LOOT_134e",
@@ -56122,7 +60245,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Eva Wildermann",
+    "artist": "Eva Widermannn",
     "attack": 2,
     "cardClass": "MAGE",
     "collectible": true,
@@ -56211,7 +60334,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Eva Wildermann",
+    "artist": "Eva Widermannn",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -56228,7 +60351,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARRIOR",
     "collectible": true,
     "cost": 7,
@@ -56242,7 +60365,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARRIOR",
     "cost": 7,
     "dbfId": 46063,
@@ -56254,7 +60377,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARRIOR",
     "cost": 7,
     "dbfId": 46064,
@@ -56266,7 +60389,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 5,
     "cardClass": "WARRIOR",
     "cost": 5,
@@ -56405,7 +60528,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "attack": 1,
     "cardClass": "PALADIN",
     "collectible": true,
@@ -56425,7 +60548,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "NEUTRAL",
     "dbfId": 45538,
     "id": "LOOT_216e",
@@ -56477,7 +60600,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Anton Magdalin",
+    "artist": "Anton Kagounkin",
     "attack": 1,
     "cardClass": "HUNTER",
     "collectible": true,
@@ -57065,7 +61188,7 @@ const cardsData = [
     "artist": "Wayne Reynolds",
     "cardClass": "PALADIN",
     "collectible": true,
-    "cost": 5,
+    "cost": 6,
     "dbfId": 45877,
     "flavor": "Ding!\nGrats.",
     "id": "LOOT_333",
@@ -57097,9 +61220,6 @@ const cardsData = [
     "flavor": "All that remained from the first kobold colony: a single talisman and the word \"Flamestrike.\"",
     "id": "LOOT_344",
     "name": "Primal Talismans",
-    "playRequirements": {
-      "REQ_MINION_TARGET": 0
-    },
     "rarity": "RARE",
     "referencedTags": [
       "DEATHRATTLE"
@@ -57419,7 +61539,7 @@ const cardsData = [
     "type": "WEAPON"
   },
   {
-    "artist": "Sam Nielsen",
+    "artist": "Sam Nielson",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -57455,7 +61575,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Max Greck",
+    "artist": "Max Grecke",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -57645,7 +61765,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 3,
     "cardClass": "WARLOCK",
     "collectible": true,
@@ -57666,7 +61786,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARLOCK",
     "cost": 5,
     "dbfId": 46039,
@@ -57693,7 +61813,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARLOCK",
     "cost": 5,
     "dbfId": 46038,
@@ -57720,7 +61840,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARLOCK",
     "cost": 5,
     "dbfId": 46037,
@@ -57747,7 +61867,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARLOCK",
     "cost": 5,
     "dbfId": 46035,
@@ -57774,7 +61894,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARLOCK",
     "cost": 5,
     "dbfId": 46034,
@@ -58015,7 +62135,7 @@ const cardsData = [
     "type": "WEAPON"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "PRIEST",
     "collectible": true,
     "collectionText": "Resurrect 2 different friendly minions. <i>(Cast 4 spells to upgrade.)</i>",
@@ -58030,7 +62150,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "PRIEST",
     "cost": 7,
     "dbfId": 46308,
@@ -58042,7 +62162,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "PRIEST",
     "cost": 7,
     "dbfId": 46306,
@@ -58182,7 +62302,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Anton Kagoukin",
+    "artist": "Anton Kagounkin",
     "attack": 5,
     "cardClass": "HUNTER",
     "collectible": true,
@@ -58204,7 +62324,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Anton Kagoukin",
+    "artist": "Anton Kagounkin",
     "cardClass": "NEUTRAL",
     "dbfId": 46444,
     "id": "LOOT_520e",
@@ -58378,7 +62498,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Erik Gist",
+    "artist": "E. M. Gist",
     "attack": 2,
     "cardClass": "PRIEST",
     "collectible": true,
@@ -58724,7 +62844,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Zero Yue",
+    "artist": "Zero",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "cost": 3,
@@ -59056,7 +63176,7 @@ const cardsData = [
     ],
     "name": "Vorpal Dagger",
     "set": "LOOTAPALOOZA",
-    "text": "<b>Poisonous</b>\n<b>Mega-Windfury</b>\n <i>(Can attack four times a turn.)</i>",
+    "text": "<b>Poisonous</b>\n<b>Mega-Windfury</b>",
     "type": "WEAPON"
   },
   {
@@ -59673,7 +63793,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "Eva Wildermann",
+    "artist": "Eva Widermannn",
     "cardClass": "PRIEST",
     "dbfId": 46310,
     "health": 20,
@@ -59684,7 +63804,7 @@ const cardsData = [
     "type": "HERO"
   },
   {
-    "artist": "Eva Wildermann",
+    "artist": "Eva Widermannn",
     "cardClass": "NEUTRAL",
     "cost": 0,
     "dbfId": 46161,
@@ -60013,7 +64133,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "HUNTER",
     "dbfId": 46340,
     "health": 20,
@@ -60144,7 +64264,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARLOCK",
     "dbfId": 47410,
     "health": 70,
@@ -60155,7 +64275,7 @@ const cardsData = [
     "type": "HERO"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 3,
     "dbfId": 47409,
@@ -60166,7 +64286,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 3,
     "dbfId": 47411,
@@ -60177,7 +64297,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 3,
     "dbfId": 47412,
@@ -60188,7 +64308,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 3,
     "dbfId": 47413,
@@ -60199,7 +64319,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 3,
     "dbfId": 47414,
@@ -60210,7 +64330,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 3,
     "dbfId": 47415,
@@ -60221,7 +64341,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "NEUTRAL",
     "cost": 0,
     "dbfId": 47428,
@@ -60539,7 +64659,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARRIOR",
     "dbfId": 47258,
     "health": 30,
@@ -60797,7 +64917,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "Sam Nielsen",
+    "artist": "Sam Nielson",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "cost": 3,
@@ -60859,7 +64979,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "PRIEST",
     "dbfId": 47361,
     "health": 40,
@@ -60889,7 +65009,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "Tyler West Studios",
+    "artist": "Tyler West Studio",
     "cardClass": "NEUTRAL",
     "cost": 1,
     "dbfId": 47362,
@@ -60957,7 +65077,7 @@ const cardsData = [
     "type": "HERO_POWER"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 0,
     "cardClass": "NEUTRAL",
     "cost": 1,
@@ -65219,7 +69339,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 1161,
     "id": "NEW1_007a",
-    "name": "Starfall",
+    "name": "Stellar Drift",
     "set": "EXPERT1",
     "text": "Deal $2 damage to all enemy minions.",
     "type": "SPELL"
@@ -65229,7 +69349,7 @@ const cardsData = [
     "cost": 0,
     "dbfId": 928,
     "id": "NEW1_007b",
-    "name": "Starfall",
+    "name": "Starlord",
     "playRequirements": {
       "REQ_MINION_TARGET": 0,
       "REQ_TARGET_TO_PLAY": 0
@@ -65886,7 +70006,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "E.M. Gist",
+    "artist": "E. M. Gist",
     "attack": 1,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -65943,7 +70063,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Laurel D. Austin",
+    "artist": "Laurel Austin",
     "attack": 4,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -66201,7 +70321,7 @@ const cardsData = [
     "type": "WEAPON"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -66438,7 +70558,7 @@ const cardsData = [
     "name": "Forbidden Ancient",
     "rarity": "EPIC",
     "set": "OG",
-    "text": "<b>Battlecry:</b> Spend all your Mana. Gain +1/+1 for each mana spent.",
+    "text": "<b>Battlecry:</b> Spend all your Mana. Gain +1/+1 for each Mana spent.",
     "type": "MINION"
   },
   {
@@ -66493,7 +70613,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 1,
     "cardClass": "ROGUE",
     "collectible": true,
@@ -66885,7 +71005,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "PRIEST",
     "collectible": true,
     "cost": 0,
@@ -66899,7 +71019,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Phroi Gardner",
+    "artist": "Phroilan Gardner",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -67007,7 +71127,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Evgeniy Zagumennyy",
+    "artist": "Evgeniy Zaqumyenny",
     "cardClass": "WARLOCK",
     "collectible": true,
     "cost": 0,
@@ -67319,7 +71439,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jesper Esjing",
+    "artist": "Jesper Ejsing",
     "attack": 6,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -67470,7 +71590,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Anton Magdalina",
+    "artist": "Anton Kagounkina",
     "attack": 1,
     "cardClass": "NEUTRAL",
     "cost": 1,
@@ -67769,7 +71889,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Dan Orizio",
+    "artist": "Dany Orizio",
     "attack": 0,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -67848,7 +71968,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Anton Magdalina",
+    "artist": "Anton Kagounkina",
     "attack": 2,
     "cardClass": "DRUID",
     "cost": 2,
@@ -67860,7 +71980,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Maurico Herrera",
+    "artist": "Mauricio Herrera",
     "cardClass": "SHAMAN",
     "collectible": true,
     "cost": 2,
@@ -68074,7 +72194,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Eva Wilderman",
+    "artist": "Eva Widermann",
     "cardClass": "PALADIN",
     "collectible": true,
     "cost": 1,
@@ -68245,7 +72365,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Anton Magdalina",
+    "artist": "Anton Kagounkina",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "cost": 2,
@@ -68288,7 +72408,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Benjamin Zhang",
+    "artist": "Ben Zhang",
     "attack": 7,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -68453,7 +72573,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "WARRIOR",
     "collectible": true,
     "cost": 3,
@@ -68503,7 +72623,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Eva Wilderman",
+    "artist": "Eva Widermann",
     "attack": 2,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -68571,7 +72691,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Jesper Esjing",
+    "artist": "Jesper Ejsing",
     "attack": 4,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -68953,7 +73073,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Phroi Gardner",
+    "artist": "Phroilan Gardner",
     "attack": 3,
     "cardClass": "PALADIN",
     "collectible": true,
@@ -69738,7 +73858,7 @@ const cardsData = [
     "id": "PlaceholderCard"
   },
   {
-    "artist": "Samwise Didier",
+    "artist": "Samwise",
     "attack": 5,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -71231,6 +75351,14 @@ const cardsData = [
   },
   {
     "cardClass": "NEUTRAL",
+    "dbfId": 55324,
+    "id": "TB_DeathrattleYog_ench",
+    "name": "Deathrattle Yog Enchant",
+    "set": "TB",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "NEUTRAL",
     "dbfId": 40427,
     "id": "TB_DeckRecipe_MyDeckID",
     "name": "My Deck ID",
@@ -72380,6 +76508,250 @@ const cardsData = [
     "set": "GANGS",
     "text": "Attack and Health have been swapped by Putricide",
     "type": "ENCHANTMENT"
+  },
+  {
+    "dbfId": 56284,
+    "id": "TB_Henchmania_BoomEnchantBan",
+    "name": "Boom o'clock!",
+    "set": "TB",
+    "text": "<b>Deathrattle</b>: Deal 1-2 damage to a random enemy.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "WARRIOR",
+    "cost": 1,
+    "dbfId": 55873,
+    "id": "TB_Henchmania_ChuH",
+    "name": "Undermine",
+    "set": "TB",
+    "text": "<b>Hero Power</b>\nShuffle an Explosive into your opponent's deck.",
+    "type": "HERO_POWER"
+  },
+  {
+    "cardClass": "WARRIOR",
+    "cost": 1,
+    "dbfId": 55939,
+    "id": "TB_Henchmania_ChuHt",
+    "mechanics": [
+      "TOPDECK",
+      "ImmuneToSpellpower"
+    ],
+    "name": "Improvised Explosive",
+    "set": "TB",
+    "text": "<b>Casts When Drawn</b>\nYou take 2 damage.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55310,
+    "entourage": [
+      "TB_Henchmania_DiscoverA",
+      "TB_Henchmania_DiscoverB",
+      "TB_Henchmania_DiscoverC",
+      "TB_Henchmania_DiscoverD"
+    ],
+    "id": "TB_Henchmania_Discover",
+    "name": "Henchmania Discover",
+    "set": "TB",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "cost": 0,
+    "dbfId": 55311,
+    "id": "TB_Henchmania_DiscoverA",
+    "name": "Work for Hagatha",
+    "set": "TB",
+    "text": "At the end of your turn transform a random friendly minion into\none that costs (1) more.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55339,
+    "id": "TB_Henchmania_DiscoverAe",
+    "name": "Work for Hagatha Enchantment",
+    "set": "TB",
+    "text": "At the end of your turn transform a random friendly minion into\none that costs (1) more.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "cost": 0,
+    "dbfId": 55312,
+    "id": "TB_Henchmania_DiscoverB",
+    "name": "Work for Dr. Boom",
+    "set": "TB",
+    "text": "Give all friendly minions <b>Deathrattle:</b> Deal 1-2 damage to a random enemy.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55340,
+    "id": "TB_Henchmania_DiscoverBe",
+    "name": "Work for Dr. Boom enchant",
+    "set": "TB",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "cost": 0,
+    "dbfId": 55313,
+    "id": "TB_Henchmania_DiscoverC",
+    "name": "Work for Togwaggle",
+    "set": "TB",
+    "text": "After you play a Minion add a Coin to your hand.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55635,
+    "id": "TB_Henchmania_DiscoverCe",
+    "name": "Work for Togwaggle enchant",
+    "set": "TB",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "cost": 0,
+    "dbfId": 55636,
+    "id": "TB_Henchmania_DiscoverD",
+    "name": "Work for Madame Lazul",
+    "set": "TB",
+    "text": "After you play a spell, gain a copy of a random card in your opponent's hand.",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55637,
+    "id": "TB_Henchmania_DiscoverDe",
+    "name": "Work for Madame Lazul enchant",
+    "set": "TB",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "cardClass": "PALADIN",
+    "dbfId": 55866,
+    "health": 30,
+    "id": "TB_Henchmania_George",
+    "name": "George The Fallen",
+    "set": "TB",
+    "type": "HERO"
+  },
+  {
+    "cardClass": "WARRIOR",
+    "dbfId": 55867,
+    "health": 30,
+    "id": "TB_Henchmania_MrChu",
+    "name": "Mr. Chu",
+    "set": "TB",
+    "type": "HERO"
+  },
+  {
+    "cardClass": "ROGUE",
+    "dbfId": 55904,
+    "health": 30,
+    "id": "TB_Henchmania_Myra",
+    "name": "Myra Rotspring",
+    "set": "TB",
+    "type": "HERO"
+  },
+  {
+    "cardClass": "ROGUE",
+    "cost": 2,
+    "dbfId": 55847,
+    "id": "TB_Henchmania_MyraH",
+    "name": "Necrium Infusion",
+    "set": "TB",
+    "text": "<b>Hero Power</b>\nTrigger a random friendly minion's <b>Deathrattle</b>.",
+    "type": "HERO_POWER"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 56045,
+    "id": "TB_Henchmania_VOController",
+    "name": "VO Controller - Not Player Facing",
+    "set": "TB",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 4,
+    "dbfId": 55853,
+    "health": 5,
+    "id": "TB_Ignoblegarden1",
+    "mechanics": [
+      "DEATHRATTLE"
+    ],
+    "name": "Bloom Bot",
+    "race": "MECHANICAL",
+    "set": "TB",
+    "text": "<b>Deathrattle:</b> Summon a Legendary minion.\nGive it <b>Rush</b>.",
+    "type": "MINION"
+  },
+  {
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 3,
+    "dbfId": 55885,
+    "health": 2,
+    "id": "TB_Ignoblegarden2",
+    "mechanics": [
+      "DEATHRATTLE",
+      "MODULAR",
+      "TAUNT"
+    ],
+    "name": "Room Bot",
+    "race": "MECHANICAL",
+    "set": "TB",
+    "text": "<b>Magnetic</b>. <b>Taunt</b>\n<b>Deathrattle:</b>Summon 3 1/1 Boom Bots.",
+    "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55903,
+    "id": "TB_Ignoblegarden2e",
+    "mechanics": [
+      "MODULAR"
+    ],
+    "name": "Room Bot",
+    "race": "MECHANICAL",
+    "set": "TB",
+    "text": "<b>Magnetic</b>. <b>Taunt</b>\n<b>Deathrattle:</b>Summon 3 1/1 Boom Bots.",
+    "type": "ENCHANTMENT"
+  },
+  {
+    "attack": 1,
+    "cardClass": "NEUTRAL",
+    "cost": 5,
+    "dbfId": 55908,
+    "health": 7,
+    "id": "TB_Ignoblegarden3",
+    "mechanics": [
+      "BATTLECRY",
+      "DEATHRATTLE"
+    ],
+    "name": "Doom Bot",
+    "race": "MECHANICAL",
+    "rarity": "RARE",
+    "set": "TB",
+    "text": "<b>Battlecry and Deathrattle</b>: Deal 5 damage to ALL minions.",
+    "type": "MINION"
+  },
+  {
+    "attack": 0,
+    "cardClass": "NEUTRAL",
+    "cost": 2,
+    "dbfId": 56055,
+    "health": 2,
+    "id": "TB_IgnoblegardenEgg",
+    "mechanics": [
+      "TRIGGER_VISUAL"
+    ],
+    "name": "Noblegarden Egg",
+    "set": "TB",
+    "text": "Start of next turn, hatch.",
+    "type": "MINION"
   },
   {
     "cardClass": "NEUTRAL",
@@ -74227,6 +78599,16 @@ const cardsData = [
   },
   {
     "cardClass": "NEUTRAL",
+    "cost": 0,
+    "dbfId": 55254,
+    "id": "TB_RandomDeckRecipeResetDecks",
+    "name": "Reset Decks",
+    "set": "TB",
+    "text": "Reset Both Player Decks",
+    "type": "SPELL"
+  },
+  {
+    "cardClass": "NEUTRAL",
     "dbfId": 28703,
     "id": "TB_RMC_001",
     "name": "TB_EnchRandomManaCost",
@@ -75219,6 +79601,14 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
+    "cardClass": "NEUTRAL",
+    "dbfId": 55323,
+    "id": "TB_Vargoth_ench",
+    "name": "Vargoth Enchant",
+    "set": "TB",
+    "type": "ENCHANTMENT"
+  },
+  {
     "attack": 1,
     "cardClass": "NEUTRAL",
     "dbfId": 47169,
@@ -76109,6 +80499,7 @@ const cardsData = [
     "health": 5,
     "id": "TRL_010",
     "mechanics": [
+      "OVERKILL",
       "STEALTH"
     ],
     "name": "Half-Time Scavenger",
@@ -76131,6 +80522,9 @@ const cardsData = [
     ],
     "flavor": "Trolls are the first group to have a totem survive atmospheric re-entry.",
     "id": "TRL_012",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Totemic Smash",
     "playRequirements": {
       "REQ_TARGET_TO_PLAY": 0
@@ -76150,6 +80544,9 @@ const cardsData = [
     "flavor": "Takes ten percent off the top.",
     "health": 3,
     "id": "TRL_015",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Ticket Scalper",
     "race": "PIRATE",
     "rarity": "COMMON",
@@ -76168,6 +80565,7 @@ const cardsData = [
     "health": 4,
     "id": "TRL_020",
     "mechanics": [
+      "OVERKILL",
       "RUSH"
     ],
     "name": "Sightless Ranger",
@@ -76464,7 +80862,7 @@ const cardsData = [
     "name": "Zentimo",
     "rarity": "LEGENDARY",
     "set": "TROLL",
-    "text": "[x]Whenever you target a\nminion with a spell, it also\ntargets adjacent ones.",
+    "text": "[x]Whenever you target a\nminion with a spell, cast it\nagain on its neighbors.",
     "type": "MINION"
   },
   {
@@ -76821,6 +81219,9 @@ const cardsData = [
     "flavor": "\"Boy! Bring me my masks and skull rams.\"",
     "health": 7,
     "id": "TRL_232",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Ironhide Direhorn",
     "race": "BEAST",
     "rarity": "COMMON",
@@ -77323,6 +81724,9 @@ const cardsData = [
     "durability": 3,
     "flavor": "Only two things in life are certain: death and axes.",
     "id": "TRL_304",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Farraki Battleaxe",
     "rarity": "RARE",
     "set": "TROLL",
@@ -77566,7 +81970,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 4,
     "cardClass": "MAGE",
     "collectible": true,
@@ -77614,6 +82018,9 @@ const cardsData = [
     "dbfId": 50086,
     "flavor": "If you’re burning and you know it, wave your hands!",
     "id": "TRL_317",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Blast Wave",
     "rarity": "EPIC",
     "set": "TROLL",
@@ -77641,7 +82048,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 0,
     "cardClass": "MAGE",
     "collectible": true,
@@ -77736,6 +82143,9 @@ const cardsData = [
     "durability": 4,
     "flavor": "“Griftah here with de Sul’chop. One chop, you get four damage. Two chops, eight damage - you gonna change de way you fight.\"",
     "id": "TRL_325",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Sul'thraze",
     "rarity": "EPIC",
     "set": "TROLL",
@@ -77836,6 +82246,7 @@ const cardsData = [
     "health": 5,
     "id": "TRL_329",
     "mechanics": [
+      "OVERKILL",
       "RUSH"
     ],
     "name": "Akali, the Rhino",
@@ -77946,6 +82357,7 @@ const cardsData = [
     "cardClass": "DRUID",
     "cost": 3,
     "dbfId": 54599,
+    "elite": true,
     "health": 6,
     "id": "TRL_343at2",
     "mechanics": [
@@ -77982,6 +82394,7 @@ const cardsData = [
     "cardClass": "DRUID",
     "cost": 3,
     "dbfId": 54600,
+    "elite": true,
     "health": 2,
     "id": "TRL_343bt2",
     "mechanics": [
@@ -78019,12 +82432,17 @@ const cardsData = [
     "cardClass": "DRUID",
     "cost": 3,
     "dbfId": 54601,
+    "elite": true,
     "health": 4,
     "id": "TRL_343ct2",
+    "mechanics": [
+      "SPELLPOWER"
+    ],
     "name": "Wardruid Loti",
     "race": "BEAST",
     "rarity": "LEGENDARY",
     "set": "TROLL",
+    "spellDamage": 1,
     "text": "<b>Spell Damage +1</b>",
     "type": "MINION"
   },
@@ -78053,6 +82471,7 @@ const cardsData = [
     "cardClass": "DRUID",
     "cost": 3,
     "dbfId": 54602,
+    "elite": true,
     "health": 2,
     "id": "TRL_343dt2",
     "mechanics": [
@@ -78119,6 +82538,9 @@ const cardsData = [
     "dbfId": 50466,
     "flavor": "The card is common, but the steak is rare.",
     "id": "TRL_347",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Baited Arrow",
     "playRequirements": {
       "REQ_TARGET_TO_PLAY": 0
@@ -78243,7 +82665,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 1,
     "cardClass": "SHAMAN",
     "collectible": true,
@@ -78710,6 +83132,9 @@ const cardsData = [
     "flavor": "“Ya hold it by da feet, mon. Den ya THROW.”",
     "health": 1,
     "id": "TRL_506",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Gurubashi Chicken",
     "race": "BEAST",
     "rarity": "COMMON",
@@ -78747,7 +83172,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Max Greck",
+    "artist": "Max Grecke",
     "attack": 1,
     "cardClass": "NEUTRAL",
     "cost": 1,
@@ -78858,7 +83283,7 @@ const cardsData = [
       "DIVINE_SHIELD",
       "TAUNT"
     ],
-    "name": "Mosh'ogg Enforcer",
+    "name": "Mosh'Ogg Enforcer",
     "rarity": "COMMON",
     "set": "TROLL",
     "text": "<b>Taunt</b>\n<b>Divine Shield</b>",
@@ -78989,6 +83414,9 @@ const cardsData = [
     "flavor": "Everybody with a ticket get in here!",
     "health": 3,
     "id": "TRL_521",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Arena Patron",
     "rarity": "RARE",
     "set": "TROLL",
@@ -79090,7 +83518,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Maurico Herrera",
+    "artist": "Mauricio Herrera",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -79138,6 +83566,9 @@ const cardsData = [
     "flavor": "\"Tell me if you’ve heard this one!\"",
     "health": 10,
     "id": "TRL_528",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Linecracker",
     "rarity": "EPIC",
     "set": "TROLL",
@@ -79172,11 +83603,11 @@ const cardsData = [
       "SECRET"
     ],
     "set": "TROLL",
-    "text": "<b>Battlecry:</b> If you control a <b>Secret</b>, play a <b>Secret</b> from your deck.",
+    "text": "<b>Battlecry:</b> If you control a <b>Secret</b>, cast a <b>Secret</b> from your deck.",
     "type": "MINION"
   },
   {
-    "artist": "Sam Nielsen",
+    "artist": "Sam Nielson",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -79195,7 +83626,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Sam Nielsen",
+    "artist": "Sam Nielson",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "cost": 2,
@@ -79324,7 +83755,8 @@ const cardsData = [
     "dbfId": 50455,
     "id": "TRL_541t",
     "mechanics": [
-      "TOPDECK"
+      "TOPDECK",
+      "ImmuneToSpellpower"
     ],
     "name": "Corrupted Blood",
     "set": "TROLL",
@@ -79343,6 +83775,7 @@ const cardsData = [
     "health": 7,
     "id": "TRL_542",
     "mechanics": [
+      "OVERKILL",
       "RUSH"
     ],
     "name": "Oondasta",
@@ -79780,7 +84213,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 0,
     "cardClass": "MAGE",
     "cost": 0,
@@ -80121,6 +84554,7 @@ const cardsData = [
     "health": 6,
     "id": "TRLA_122",
     "mechanics": [
+      "OVERKILL",
       "RUSH"
     ],
     "name": "Direhorn Stomper",
@@ -80179,6 +84613,9 @@ const cardsData = [
     "dbfId": 51228,
     "health": 10,
     "id": "TRLA_125",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "The Fan Favorite",
     "race": "BEAST",
     "set": "TROLL",
@@ -80206,6 +84643,7 @@ const cardsData = [
     "health": 3,
     "id": "TRLA_127",
     "mechanics": [
+      "OVERKILL",
       "RUSH"
     ],
     "name": "Astral Raptor",
@@ -80393,6 +84831,7 @@ const cardsData = [
     "health": 5,
     "id": "TRLA_134",
     "mechanics": [
+      "OVERKILL",
       "RUSH"
     ],
     "name": "Showstopping Conjurer",
@@ -80575,7 +85014,8 @@ const cardsData = [
     "health": 7,
     "id": "TRLA_144",
     "mechanics": [
-      "DIVINE_SHIELD"
+      "DIVINE_SHIELD",
+      "OVERKILL"
     ],
     "name": "Exactor of Justice",
     "set": "TROLL",
@@ -80631,6 +85071,15 @@ const cardsData = [
     "set": "TROLL",
     "text": "[x]<b>Shrine</b>\nHealing enemies\ndamages them instead.",
     "type": "MINION"
+  },
+  {
+    "cardClass": "NEUTRAL",
+    "dbfId": 56325,
+    "id": "TRLA_147e",
+    "name": "Bwonsamdi's Covenant",
+    "set": "TROLL",
+    "text": "Healing enemies damages them instead.",
+    "type": "ENCHANTMENT"
   },
   {
     "attack": 0,
@@ -80712,6 +85161,7 @@ const cardsData = [
     "health": 5,
     "id": "TRLA_150",
     "mechanics": [
+      "OVERKILL",
       "RUSH"
     ],
     "name": "Bloodwash Medic",
@@ -80949,6 +85399,7 @@ const cardsData = [
     "health": 5,
     "id": "TRLA_161",
     "mechanics": [
+      "OVERKILL",
       "RUSH"
     ],
     "name": "War Heralder",
@@ -80968,6 +85419,9 @@ const cardsData = [
       "InvisibleDeathrattle"
     ],
     "name": "Halazzi's Hunt",
+    "referencedTags": [
+      "OVERKILL"
+    ],
     "set": "TROLL",
     "text": "[x]<b>Shrine</b>\nYour minions have\n\"<b>Overkill</b>: Cards in your\nhand cost (1) less.\"",
     "type": "MINION"
@@ -80976,6 +85430,9 @@ const cardsData = [
     "cardClass": "HUNTER",
     "dbfId": 53256,
     "id": "TRLA_162e",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Halazzi's Hunt",
     "set": "TROLL",
     "text": "<b>Overkill:</b> Reduce the cost of cards in your hand by (1).",
@@ -81137,7 +85594,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 4,
     "cardClass": "HUNTER",
     "cost": 3,
@@ -81240,6 +85697,9 @@ const cardsData = [
       "InvisibleDeathrattle"
     ],
     "name": "Akali's Horn",
+    "referencedTags": [
+      "OVERKILL"
+    ],
     "set": "TROLL",
     "text": "[x]<b>Shrine</b>\nYour minions have\n\"<b>Overkill</b>: This can\nattack again.\"",
     "type": "MINION"
@@ -81248,6 +85708,9 @@ const cardsData = [
     "cardClass": "WARRIOR",
     "dbfId": 53000,
     "id": "TRLA_171e",
+    "mechanics": [
+      "OVERKILL"
+    ],
     "name": "Fury of the Rhino",
     "set": "TROLL",
     "text": "<b>Overkill:</b> This minion can attack again.",
@@ -81306,6 +85769,7 @@ const cardsData = [
     "health": 4,
     "id": "TRLA_173",
     "mechanics": [
+      "OVERKILL",
       "RUSH"
     ],
     "name": "Redcrest Rocker",
@@ -81508,6 +85972,7 @@ const cardsData = [
     "health": 4,
     "id": "TRLA_181",
     "mechanics": [
+      "OVERKILL",
       "RUSH"
     ],
     "name": "Ravenous Familiar",
@@ -81668,7 +86133,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 2,
     "cardClass": "ROGUE",
     "cost": 3,
@@ -85169,7 +89634,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 5,
     "cardClass": "MAGE",
     "collectible": true,
@@ -85402,7 +89867,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 2,
     "cardClass": "PRIEST",
     "collectible": true,
@@ -85612,7 +90077,7 @@ const cardsData = [
     "type": "WEAPON"
   },
   {
-    "artist": "Craig Elliot",
+    "artist": "Craig Elliott",
     "attack": 1,
     "cardClass": "ROGUE",
     "collectible": true,
@@ -85631,7 +90096,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Craig Elliot",
+    "artist": "Craig Elliott",
     "cardClass": "ROGUE",
     "dbfId": 41215,
     "id": "UNG_063e",
@@ -86253,7 +90718,7 @@ const cardsData = [
     "race": "BEAST",
     "rarity": "RARE",
     "set": "UNGORO",
-    "text": "<b>Taunt</b>.",
+    "text": "<b>Taunt</b>",
     "type": "MINION"
   },
   {
@@ -86500,7 +90965,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 0,
     "cardClass": "SHAMAN",
     "collectible": true,
@@ -86520,7 +90985,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "attack": 1,
     "cardClass": "NEUTRAL",
     "cost": 1,
@@ -86686,7 +91151,7 @@ const cardsData = [
     "id": "UNG_211b",
     "name": "Invocation of Water",
     "set": "UNGORO",
-    "text": "Restore #12 Health to your hero.",
+    "text": "Restore 12 Health to your hero.",
     "type": "SPELL"
   },
   {
@@ -87555,7 +92020,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "Anton Magdalina",
+    "artist": "Anton Kagounkina",
     "cardClass": "PRIEST",
     "collectible": true,
     "cost": 8,
@@ -87855,7 +92320,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "cardClass": "HUNTER",
     "collectible": true,
     "cost": 1,
@@ -87874,7 +92339,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 8,
     "cardClass": "HUNTER",
     "cost": 5,
@@ -87892,7 +92357,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 3,
     "cardClass": "HUNTER",
     "cost": 1,
@@ -88281,7 +92746,7 @@ const cardsData = [
     "type": "MINION"
   },
   {
-    "artist": "A.J. Nazzaro",
+    "artist": "A. J. Nazzaro",
     "attack": 3,
     "cardClass": "NEUTRAL",
     "collectible": true,
@@ -88773,7 +93238,7 @@ const cardsData = [
     "type": "ENCHANTMENT"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "cardClass": "NEUTRAL",
     "cost": 0,
     "dbfId": 41060,
@@ -88792,7 +93257,7 @@ const cardsData = [
     "type": "SPELL"
   },
   {
-    "artist": "Jakub Kasber",
+    "artist": "Jakub Kasper",
     "cardClass": "NEUTRAL",
     "dbfId": 41070,
     "id": "UNG_999t5e",
@@ -88880,7 +93345,7 @@ const cardsData = [
     "text": "<b>Divine Shield</b>",
     "type": "ENCHANTMENT"
   }
-]
+];
 
 function forceDownload(url, fileName)
 {
@@ -88906,8 +93371,8 @@ let index = 0;
 function nextIndex()
 {
     const cardData = cardsData[index];
-    console.log(index + ", " + cardData.set);
-    if(cardData.set === "TROLL")
+    
+    if(cardData.set === set)
     {
       const url = "https://art.hearthstonejson.com/v1/render/latest/enUS/256x/" + cardData.id + ".png";
       const fileName = cardData.id + ".png";
@@ -88915,13 +93380,22 @@ function nextIndex()
       console.log("Downloading \"" + url + "\" as \"" + fileName + "\"");
       
       forceDownload(url, fileName);
+      
+      if(index < cardsData.length)
+      {
+          index += 1;
+          
+          setTimeout(nextIndex, 100);
+      }
     }
-    
-    if(index < cardsData.length)
+    else
     {
-        index += 1;
-        
-        setTimeout(nextIndex, 100);
+      if(index < cardsData.length)
+      {
+          index += 1;
+          
+          setTimeout(nextIndex, 0);
+      }
     }
 }
 
