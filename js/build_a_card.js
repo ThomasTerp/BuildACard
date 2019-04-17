@@ -1,14 +1,24 @@
+class WebPage
+{
+    constructor()
+    {
+        
+    }
+}
+
 class Card
 {
     constructor(buildACardApp, cardData, artData)
     {
         let description = cardData.collectionText;
         
+        //If cardData.collectionText is undefined, use cardData.text
         if(typeof description === "undefined")
         {
             description = cardData.text;
         }
         
+        //If cardData.text is undefined, use an empty string
         if(typeof description === "undefined")
         {
             description = "";
@@ -120,6 +130,11 @@ class Card
                 return this.race.charAt(0).toUpperCase() + this.race.slice(1).toLowerCase();
         }
     }
+    
+    isStandard()
+    {
+        return this.buildACardApp.isStandardSet(this.set);
+    }
 }
 
 class CardBuilder
@@ -133,9 +148,11 @@ class CardBuilder
         
         this.buildACardApp = buildACardApp;
         this.pools = {};
+        this.isPoolsLoaded = false;
         this.hash = "";
         this.title = "";
         this.description = "";
+        this.craftButtonText = "";
         this.downloadPrefix = "";
         this.processors = [];
     }
@@ -143,15 +160,12 @@ class CardBuilder
     createHTML()
     {
         this.html = $(`
-            <div class="col-md-6 bottom-margin">
-                <div class="card border border-secondary">
-                    <img class="card-img-top clickable" src="` + this.imageSrc + `" alt="Kazakus">
+            <div class="col-md-4 bottom-margin">
+                <div class="card border border-secondary"> 
+                <img class="card-img-top clickable" src="` + this.imageSrc + `" alt="Kazakus">
                     <div class="card-body">
-                        <h5 class="card-title">` + this.title + `</h5>
-                        <p class="card-text">
-                            ` + this.description + `
-                        </p>
-                        <button class="btn btn-primary btn-block" type="button">Craft</button>
+                        <button class="btn btn-primary btn-block" type="button">` + this.craftButtonText + `</button>
+                        <button class="btn btn-secondary btn-block" type="button">Info</button>
                     </div>
                 </div>
             </div>
@@ -162,11 +176,16 @@ class CardBuilder
             this.start();
         });
         
+        this.html.on("click", ".btn-secondary", (event) =>
+        {
+            this.gotoInfoPage();
+        });
+        
         $(window).on("hashchange", (event) =>
         {
             if(location.hash === "#" + this.hash)
             {
-                this.start();
+                this.gotoInfoPage();
             }
         });
         
@@ -202,6 +221,12 @@ class CardBuilder
         
     }
     
+    clearPools()
+    {
+        this.pools = {};
+        this.isPoolsLoaded = false;
+    }
+    
     processPools(processors, onProcessed)
     {
         
@@ -210,6 +235,42 @@ class CardBuilder
     createResultCard(cards)
     {
         return null;
+    }
+    
+    gotoInfoPage()
+    {
+        window.scrollTo(0, 0);
+        
+        this.buildACardApp.setHash(this.hash);
+        
+        this.buildACardApp.pageReferrer = "INFO";
+        
+        this.buildACardApp.setPageState("page-state-info");
+        this.buildACardApp.setPageInfo(this.title, "");
+        
+        this.buildACardApp.cache.infoImgHTML.attr("src", this.imageSrc);
+        this.buildACardApp.cache.infoDescriptionHTML.html(this.description);
+        this.buildACardApp.cache.infoCraftButtonHTML.html(this.craftButtonText);
+        
+        this.buildACardApp.cache.infoCraftButtonHTML.off("click");
+        this.buildACardApp.cache.infoCraftButtonHTML.on("click", (event) =>
+        {
+            this.start();
+        });
+        
+        this.buildACardApp.cache.infoBackButtonHTML.off("click");
+        this.buildACardApp.cache.infoBackButtonHTML.on("click", (event) =>
+        {
+            this.buildACardApp.setHash("");
+            this.buildACardApp.gotoMainPage();
+        });
+        
+        this.buildACardApp.cache.infoWildCheckHTML.prop("checked", this.buildACardApp.getIncludeWildCards());
+        this.buildACardApp.cache.infoWildCheckHTML.off("change");
+        this.buildACardApp.cache.infoWildCheckHTML.on("change", (event) =>
+        {
+            this.buildACardApp.setIncludeWildCards(this.buildACardApp.cache.infoWildCheckHTML.prop("checked"));
+        });
     }
     
     showResultCard(cards)
@@ -265,8 +326,17 @@ class CardBuilder
         this.buildACardApp.cache.buildACardBacktHTML.off("click");
         this.buildACardApp.cache.buildACardBacktHTML.on("click", (event) =>
         {
-            this.buildACardApp.setHash("");
-            this.buildACardApp.gotoMainPage();
+            switch(this.buildACardApp.pageReferrer)
+            {
+                case "MAIN":
+                    this.buildACardApp.setHash("");
+                    this.buildACardApp.gotoMainPage();
+                    break;
+                    
+                case "INFO":
+                    this.gotoInfoPage();
+                    break;
+            }
         });
         
         resultCard.html[0].scrollIntoView();
@@ -290,7 +360,6 @@ class CardBuilder
     }
 }
 
-
 class DeathglitcherRexxarCardBuilder extends CardBuilder
 {
     constructor(buildACardApp)
@@ -311,6 +380,7 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
             <br />
             If combined cost is above 10 mana it will be capped.
         `;
+        this.craftButtonText = "Craft a custom Zombie";
         this.imageSrc = "images/deathglitcher_rexxar.png";
         this.downloadPrefix = "Zombie";
         this.processors = [
@@ -435,6 +505,11 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
             //Minions with only card text
             this.addPool("text", this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
+                if(!this.buildACardApp.getIncludeWildCards() && !this.buildACardApp.isStandardSet(cardData.set))
+                {
+                    return false;
+                }
+                
                 if(typeof cardData.text === "undefined")
                 {
                     return false;
@@ -471,6 +546,11 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
             //Minions that are blank or only has keywords
             this.addPool("keywords", this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
+                if(!this.buildACardApp.getIncludeWildCards() && !this.buildACardApp.isStandardSet(cardData.set))
+                {
+                    return false;
+                }
+                
                 let description = typeof cardData.text === "undefined" ? "" : cardData.text;
                 
                 if(typeof cardData.mechanics !== "undefined")
@@ -527,6 +607,7 @@ class BuildAMechCardBuilder extends CardBuilder
             <br />
             Boom Bots are also included in the first choice, because it's Boom Labs after all.
         `;
+        this.craftButtonText = "Craft a custom Mech";
         this.imageSrc = "images/factory.png";
         this.downloadPrefix = "Mech";
         this.processors = [
@@ -696,6 +777,11 @@ class BuildAMechCardBuilder extends CardBuilder
             //Mechs with only card text
             const textPool = this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
+                if(!this.buildACardApp.getIncludeWildCards() && !this.buildACardApp.isStandardSet(cardData.set))
+                {
+                    return false;
+                }
+                
                 if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "PALADIN")
                 {
                     return false;
@@ -754,6 +840,11 @@ class BuildAMechCardBuilder extends CardBuilder
             //Mechs that are blank or only has keywords
             const keywordsPool = this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
+                if(!this.buildACardApp.getIncludeWildCards() && !this.buildACardApp.isStandardSet(cardData.set))
+                {
+                    return false;
+                }
+                
                 if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "PALADIN")
                 {
                     return false;
@@ -920,6 +1011,7 @@ class SpiritCardBuilder extends CardBuilder
             <br />
             Cost, Attack, Health and Keywords will be combined.
         `;
+        this.craftButtonText = "Craft a custom Spirit";
         this.imageSrc = "images/necromancer.png";
         this.downloadPrefix = "Spirit";
         this.processors = [
@@ -1061,6 +1153,11 @@ class SpiritCardBuilder extends CardBuilder
                     return false;
                 }
                 
+                if(!this.buildACardApp.getIncludeWildCards() && !this.buildACardApp.isStandardSet(cardData.set))
+                {
+                    return false;
+                }
+                
                 if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "WARLOCK")
                 {
                     return false;
@@ -1092,6 +1189,11 @@ class SpiritCardBuilder extends CardBuilder
             //Minions with deathrattle
             this.addPool("deathrattle", this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
+                if(!this.buildACardApp.getIncludeWildCards() && !this.buildACardApp.isStandardSet(cardData.set))
+                {
+                    return false;
+                }
+                
                 if(blacklist[cardData.id])
                 {
                     return false;
@@ -1134,6 +1236,7 @@ class BuildABeastCardBuilder extends CardBuilder
         this.hash = "deathstalker-rexxar";
         this.title = "Deathstalker Rexxar";
         this.description = `Hero card from the game.`;
+        this.craftButtonText = "Craft a custom Zombeast";
         this.imageSrc = "images/deathstalker_rexxar.png";
         this.downloadPrefix = "Zombeast";
         this.processors = [
@@ -1237,6 +1340,11 @@ class BuildABeastCardBuilder extends CardBuilder
             //Beasts with only card text
             this.addPool("text", this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
+                if(!this.buildACardApp.getIncludeWildCards() && !this.buildACardApp.isStandardSet(cardData.set))
+                {
+                    return false;
+                }
+                
                 if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "HUNTER")
                 {
                     return false;
@@ -1274,6 +1382,11 @@ class BuildABeastCardBuilder extends CardBuilder
             //Beasts that are blank or only has keywords
             this.addPool("keywords", this.buildACardApp.pools.allCollectibleMinions.filter((cardData) =>
             {
+                if(!this.buildACardApp.getIncludeWildCards() && !this.buildACardApp.isStandardSet(cardData.set))
+                {
+                    return false;
+                }
+                
                 if(cardData.cardClass !== "NEUTRAL" && cardData.cardClass !== "HUNTER")
                 {
                     return false;
@@ -1334,11 +1447,10 @@ class KazakusPotionCardBuilder extends CardBuilder
     {
         super(buildACardApp)
         
-        this.isPoolsLoaded = false;
-        
         this.hash = "kazakus";
         this.title = "Kazakus";
         this.description = `Legendary minion from the game.`;
+        this.craftButtonText = "Craft a custom spell";
         this.imageSrc = "images/kazakus.png";
         this.downloadPrefix = "Kazakus_Potion";
         this.processors = [
@@ -1539,6 +1651,7 @@ class SwampqueenHagathaCardBuilder extends CardBuilder
         this.hash = "hagatha";
         this.title = "Swampqueen Hagatha";
         this.description = `Legendary minion from the game.`;
+        this.craftButtonText = "Craft a custom Horror";
         this.imageSrc = "images/hagatha.png";
         this.downloadPrefix = "Swampqueen_Hagatha";
         this.processors = [
@@ -1643,6 +1756,11 @@ class SwampqueenHagathaCardBuilder extends CardBuilder
                     return false;
                 }
                 
+                if(!this.buildACardApp.getIncludeWildCards() && !this.buildACardApp.isStandardSet(cardData.set))
+                {
+                    return false;
+                }
+                
                 if(!cardData.collectible)
                 {
                     return false;
@@ -1666,6 +1784,11 @@ class SwampqueenHagathaCardBuilder extends CardBuilder
             {
                 //Exclude the Shaman quest
                 if(cardData.id === "UNG_942")
+                {
+                    return false;
+                }
+                
+                if(!this.buildACardApp.getIncludeWildCards() && !this.buildACardApp.isStandardSet(cardData.set))
                 {
                     return false;
                 }
@@ -1709,14 +1832,59 @@ class BuildACardApp
         this.pools = {};
         this.imageCache = {};
         this.sunwell = sunwell;
+        this.includeWildCards = true;
+        this.pageReferrer = "MAIN";
         this.cardBuilders = [
             new SwampqueenHagathaCardBuilder(this),
             new SpiritCardBuilder(this),
-            new KazakusPotionCardBuilder(this),
             new BuildAMechCardBuilder(this),
+            new KazakusPotionCardBuilder(this),
             new BuildABeastCardBuilder(this),
             new DeathglitcherRexxarCardBuilder(this),
         ];
+        this.standardSets = {
+            "BLANK": false,
+            "BOOMSDAY": true,
+            "BRM": false,
+            "CHEAT": false,
+            "CORE": true,
+            "CREDITS": false,
+            "DALARAN": true,
+            "DEBUG_SP": false,
+            "DEMO": false,
+            "EXPERT1": true,
+            "FP1": false,
+            "FP2": false,
+            "GANGS": false,
+            "GANGS_RESERVE": false,
+            "GILNEAS": true,
+            "GVG": false,
+            "HERO_SKINS": false,
+            "HOF": false,
+            "ICECROWN": false,
+            "INVALID": false,
+            "KARA": false,
+            "KARA_RESERVE": false,
+            "LOE": false,
+            "LOOTAPALOOZA": false,
+            "MISSIONS": false,
+            "NAXX": false,
+            "NONE": false,
+            "OG": false,
+            "OG_RESERVE": false,
+            "PE1": false,
+            "PE2": false,
+            "PROMO": false,
+            "REWARD": false,
+            "SLUSH": false,
+            "TAVERNS_OF_TIME": false,
+            "TB": false,
+            "TEMP1": false,
+            "TEST_TEMPORARY": false,
+            "TGT": false,
+            "TROLL": true,
+            "UNGORO": false
+        }
         
         this.setupCache();
         this.gotoLoadingPage();
@@ -1731,6 +1899,13 @@ class BuildACardApp
         this.cache.pageDescriptionHTML = $("#page-description");
         this.cache.cardBuildersHTML = $("#card-builders");
         this.cache.pageStateChooseHTML = $("#page-state-choose");
+        this.cache.pageInfoHTML = $("#page-state-info");
+        this.cache.infoImgHTML = $("#info-img");
+        this.cache.infoDescriptionHTML = $("#info-description");
+        this.cache.infoCraftButtonHTML = $("#info-craft-button");
+        this.cache.infoBackButtonHTML = $("#info-back-button");
+        this.cache.infoWildCheckHTML = $("#info-wild-check");
+        this.cache.mainWildCheckHTML = $("#main-wild-check");
         this.cache.cardChoice1HTML = $("#card-choice-1");
         this.cache.cardChoice2HTML = $("#card-choice-2");
         this.cache.cardChoice3HTML = $("#card-choice-3");
@@ -1758,7 +1933,6 @@ class BuildACardApp
     {
         $("#page-states .page-state").each((pageStateHTMLIndex, pageStateHTML) =>
         {
-            
             $(pageStateHTML).css("display", "none");
         });
         
@@ -1783,6 +1957,8 @@ class BuildACardApp
         
         if(location.hash === "")
         {
+            this.pageReferrer = "MAIN";
+            
             this.setPageState("page-state-main");
             this.setPageInfo("Build-A-Card Simulator", "Choose a card to start.");
         }
@@ -1790,6 +1966,8 @@ class BuildACardApp
         {
             $(window).trigger("hashchange");
         }
+        
+        this.cache.mainWildCheckHTML.prop("checked", this.getIncludeWildCards());
     }
     
     setupCardChoice(cardData1, cardData2, cardData3, onCardChosen)
@@ -2037,6 +2215,12 @@ class BuildACardApp
                 this.gotoMainPage();
             }
         });
+        
+        this.cache.mainWildCheckHTML.off("change");
+        this.cache.mainWildCheckHTML.on("change", (event) =>
+        {
+            this.setIncludeWildCards(this.cache.mainWildCheckHTML.prop("checked"));
+        });
     }
     
     getImageCached(src, onLoad)
@@ -2056,6 +2240,77 @@ class BuildACardApp
             onLoad(this.imageCache[src]);
         }
     }
+    
+    isStorageAvailable(type)
+    {
+        var storage;
+        
+        try
+        {
+            storage = window[type];
+            
+            var x = '__storage_test__';
+            
+            storage.setItem(x, x);
+            storage.removeItem(x);
+            
+            return true;
+        }
+        catch(e)
+        {
+            return e instanceof DOMException && (
+                // everything except Firefox
+                e.code === 22 ||
+                // Firefox
+                e.code === 1014 ||
+                // test name field too, because code might not be present
+                // everything except Firefox
+                e.name === 'QuotaExceededError' ||
+                // Firefox
+                e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+                // acknowledge QuotaExceededError only if there's something already stored
+                (storage && storage.length !== 0);
+        }
+    }
+    
+    setIncludeWildCards(includeWildCards)
+    {
+        if(this.isStorageAvailable("localStorage"))
+        {
+            localStorage.setItem("includeWildCards", includeWildCards);
+        }
+        else
+        {
+            this.includeWildCards = includeWildCards;
+        }
+        
+        for(let [cardBuilderIndex, cardBuilder] of this.cardBuilders.entries())
+        {
+            cardBuilder.clearPools();
+        }
+    }
+    
+    getIncludeWildCards()
+    {
+        if(this.isStorageAvailable("localStorage"))
+        {
+            if(localStorage.getItem("includeWildCards") === null)
+            {
+                localStorage.setItem("includeWildCards", this.includeWildCards);
+            }
+            
+            return localStorage.getItem("includeWildCards") === "true";
+        }
+        else
+        {
+            return this.includeWildCards;
+        }
+    }
+    
+    isStandardSet(set)
+    {
+        return this.standardSets[set] === true;
+    }
 }
 
 $(window).on("load", (event) =>
@@ -2073,7 +2328,10 @@ $(window).on("load", (event) =>
             bodyFontBoldItalic: "franklin_gothic_fsDemiCn",
             bodyFontSize: 32,
             bodyLineHeight: 40,
-            bodyFontOffset: {x: 0, y: 26}
+            bodyFontOffset: {
+                x: 0,
+                y: 26
+            }
         });
         
         window.buildACardApp = new BuildACardApp(sunwell);

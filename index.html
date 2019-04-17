@@ -55,13 +55,46 @@
                 <div id="page-state-main" class="page-state" style="display: none;">
                     <div class="alert alert-info" role="alert">
                         <img src="images/glyphicons-196-info-sign.png" style="width: 16px; margin-top: -4px;" />
-                        <b>Update 2019-04-14</b>
+                        <b>Recent updates</b>
                         <br />
-                        - Added cards from the Rise of Shadows expansion
+                        • Added cards from the Rise of Shadows expansion
                         <br />
-                        - Fixed Swampqueen Hagatha not offering certain cards.
+                        • Added checkbox for wild cards
+                        <br />
+                        • Added info page for all cards
+                        <br />
+                        • Fixed Swampqueen Hagatha not offering certain cards.
                     </div>
+                    <div class="custom-control custom-checkbox">
+                        <input id="main-wild-check" class="custom-control-input" type="checkbox">
+                        <label class="custom-control-label" for="main-wild-check">Include wild cards</label>
+                    </div>
+                    <br />
                     <div id="card-builders" class="row"></div>
+                </div>
+                <div id="page-state-info" class="page-state">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img id="info-img" class="img-fluid">
+                            <div>
+                                <br />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <p id="info-description"></p>
+                            <br />
+                        </div>
+                        <div class="col-md-4">
+                            <div class="custom-control custom-checkbox">
+                                <input id="info-wild-check" class="custom-control-input" type="checkbox">
+                                <label class="custom-control-label" for="info-wild-check">Include wild cards</label>
+                            </div>
+                            <br />
+                            <button id="info-craft-button" class="btn btn-primary btn-block" type="button"></button>
+                            <button id="info-back-button" class="btn btn-secondary btn-block" type="button">Back</button>
+                            <br />
+                        </div>
+                    </div>
                 </div>
                 <div id="page-state-choose" class="page-state" style="display: none;">
                     <div class="row">
@@ -99,9 +132,9 @@
                         </div>
                         <div class="col-md-4">
                             <button id="build-a-card-another" class="btn btn-primary btn-block" type="button">Craft another</button>
-                            <button id="build-a-card-randomize" class="btn btn-primary btn-block" type="button">Randomize</button>
-                            <button id="build-a-card-download" class="btn btn-primary btn-block" type="button">Download</button>
-                            <button id="build-a-card-back" class="btn btn-primary btn-block" type="button">Back</button>
+                            <button id="build-a-card-randomize" class="btn btn-secondary btn-block" type="button">Randomize</button>
+                            <button id="build-a-card-download" class="btn btn-secondary btn-block" type="button">Download</button>
+                            <button id="build-a-card-back" class="btn btn-secondary btn-block" type="button">Back</button>
                             <br />
                         </div>
                     </div>
