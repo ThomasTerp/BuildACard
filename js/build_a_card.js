@@ -455,7 +455,7 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of textCard.mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL" || mechanic == "REBORN")
             {
                 tempDescription = tempDescription.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), ""), "");
             }
@@ -463,7 +463,7 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL" || mechanic == "REBORN")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -559,7 +559,7 @@ class DeathglitcherRexxarCardBuilder extends CardBuilder
                     {
                         description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
                         
-                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR" && mechanic !== "TWINSPELL")
+                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR" && mechanic !== "TWINSPELL" && mechanic !== "REBORN")
                         {
                             return false;
                         }
@@ -713,7 +713,7 @@ class BuildAMechCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of textCard.mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL" || mechanic == "REBORN")
             {
                 tempDescription = tempDescription.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), ""), "");
             }
@@ -721,7 +721,7 @@ class BuildAMechCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL" || mechanic == "REBORN")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -868,7 +868,7 @@ class BuildAMechCardBuilder extends CardBuilder
                     {
                         description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
                         
-                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR" && mechanic !== "TWINSPELL")
+                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR" && mechanic !== "TWINSPELL" && mechanic !== "REBORN")
                         {
                             return false;
                         }
@@ -1059,7 +1059,7 @@ class SpiritCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL" || mechanic == "REBORN")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -1284,7 +1284,7 @@ class BuildABeastCardBuilder extends CardBuilder
         
         for(let [mechanicIndex, mechanic] of mechanics.entries())
         {
-            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
+            if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL" || mechanic == "REBORN")
             {
                 displayedMechanics.push(mechanic);
             }
@@ -1369,7 +1369,7 @@ class BuildABeastCardBuilder extends CardBuilder
                 {
                     for(let [mechanicIndex, mechanic] of cardData.mechanics.entries())
                     {
-                        if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL")
+                        if(mechanic === "CHARGE" || mechanic === "DIVINE_SHIELD" || mechanic === "ECHO" || mechanic === "LIFESTEAL" || mechanic === "POISONOUS" || mechanic === "RUSH" || mechanic === "STEALTH" || mechanic === "TAUNT" || mechanic === "WINDFURY" || mechanic === "MODULAR" || mechanic == "TWINSPELL" || mechanic == "REBORN")
                         {
                             return false;
                         }
@@ -1410,7 +1410,7 @@ class BuildABeastCardBuilder extends CardBuilder
                     {
                         description = description.replace(new RegExp(this.buildACardApp.getMechanicName(mechanic), "ig"), "");
                         
-                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR" && mechanic !== "TWINSPELL")
+                        if(mechanic !== "CHARGE" && mechanic !== "DIVINE_SHIELD" && mechanic !== "ECHO" && mechanic !== "LIFESTEAL" && mechanic !== "POISONOUS" && mechanic !== "RUSH" && mechanic !== "STEALTH" && mechanic !== "TAUNT" && mechanic !== "WINDFURY" && mechanic !== "MODULAR" && mechanic !== "TWINSPELL" && mechanic !== "REBORN")
                         {
                             return false;
                         }
