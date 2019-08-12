@@ -1750,8 +1750,7 @@ class SwampqueenHagathaCardBuilder extends CardBuilder
             //Shaman spells
             this.addPool("spells", this.buildACardApp.pools.allCards.filter((cardData) =>
             {
-                //Exclude the Shaman quest
-                if(cardData.id === "UNG_942")
+                if(typeof cardData.mechanics !== "undefined" && cardData.mechanics.includes("QUEST"))
                 {
                     return false;
                 }
@@ -1782,8 +1781,7 @@ class SwampqueenHagathaCardBuilder extends CardBuilder
             //Shaman spells that cannot have a target
             this.addPool("noTargetSpells", this.buildACardApp.pools.allCards.filter((cardData) =>
             {
-                //Exclude the Shaman quest
-                if(cardData.id === "UNG_942")
+                if(typeof cardData.mechanics !== "undefined" && cardData.mechanics.includes("QUEST"))
                 {
                     return false;
                 }
@@ -1883,7 +1881,8 @@ class BuildACardApp
             "TEST_TEMPORARY": false,
             "TGT": false,
             "TROLL": true,
-            "UNGORO": false
+            "UNGORO": false,
+            "ULDUM": true
         }
         
         this.setupCache();
