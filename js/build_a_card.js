@@ -153,6 +153,7 @@ class CardBuilder
         this.title = "";
         this.description = "";
         this.craftButtonText = "";
+        this.imageSrc = "";
         this.downloadPrefix = "";
         this.processors = [];
     }
@@ -162,7 +163,7 @@ class CardBuilder
         this.html = $(`
             <div class="col-md-4 bottom-margin">
                 <div class="card border border-secondary"> 
-                <img class="card-img-top clickable" src="` + this.imageSrc + `" alt="Kazakus">
+                <img class="card-img-top clickable" src="` + this.imageSrc + `" alt="` + this.title + `">
                     <div class="card-body">
                         <button class="btn btn-primary btn-block" type="button">` + this.craftButtonText + `</button>
                         <button class="btn btn-secondary btn-block" type="button">Info</button>
