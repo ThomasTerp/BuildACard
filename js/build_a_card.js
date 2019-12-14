@@ -1837,9 +1837,9 @@ class BuildACardApp
         this.includeWildCards = true;
         this.pageReferrer = "MAIN";
         this.cardBuilders = [
-            new SwampqueenHagathaCardBuilder(this),
             new SpiritCardBuilder(this),
             new BuildAMechCardBuilder(this),
+            new SwampqueenHagathaCardBuilder(this),
             new KazakusPotionCardBuilder(this),
             new BuildABeastCardBuilder(this),
             new DeathglitcherRexxarCardBuilder(this),
