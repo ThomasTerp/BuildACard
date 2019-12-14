@@ -1143,7 +1143,10 @@ class SpiritCardBuilder extends CardBuilder
                 ["AT_019"]: true,
                 ["ICC_019"]: true,
                 ["ICC_067"]: true,
-                ["CFM_637"]: true
+                ["CFM_637"]: true,
+                ["DRG_086"]: true,
+                ["DRG_235"]: true,
+                ["DRG_308"]: true
             }
             
             //Minions with a trigger ("Whenever ...", "After ...", "At the start of your turn ..." and "At the end of your turn ...")
@@ -1883,7 +1886,8 @@ class BuildACardApp
             "TGT": false,
             "TROLL": true,
             "UNGORO": false,
-            "ULDUM": true
+            "ULDUM": true,
+			"DRAGONS": true
         }
         
         this.setupCache();
